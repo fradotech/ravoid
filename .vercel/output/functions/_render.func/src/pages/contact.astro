@@ -1,0 +1,27 @@
+---
+import StaticPageLayout from '@/infrastructure/components/layout/StaticPageLayout.astro';
+import { SiteConfig } from '@/app/config/site.config';
+---
+
+<StaticPageLayout title="Contact" description={`Get in touch with ${SiteConfig.name}`}>
+  <p>
+    We value your feedback and are always happy to hear from our readers.
+    Whether you have a question, suggestion, or business inquiry, feel free to reach out.
+  </p>
+
+  <h2>Get in Touch</h2>
+  <ul>
+    <li>Email: <a href="mailto:hello@example.com">hello@example.com</a></li>
+  </ul>
+
+  <h2>Business Inquiries</h2>
+  <p>
+    For advertising, partnerships, or other business-related inquiries,
+    please email us at <a href="mailto:business@example.com">business@example.com</a>.
+  </p>
+
+  <h2>Follow Us</h2>
+  <p>
+    Stay connected and follow us on social media for the latest updates and insights.
+  </p>
+</StaticPageLayout>
