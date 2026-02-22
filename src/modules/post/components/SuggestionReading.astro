@@ -1,0 +1,19 @@
+---
+import PostGrid from '@/infrastructure/components/blog/PostGrid.astro';
+import SectionHeader from '@/infrastructure/components/ui/SectionHeader.astro';
+import { Path } from '@/app/config/path.config';
+import type { Post } from '@/modules/post/post.type';
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+{posts.length > 0 && (
+  <section class="mt-12">
+    <SectionHeader title="You might also like" href={Path.blog.index} linkText="More articles" />
+    <PostGrid posts={posts} columns={2} />
+  </section>
+)}

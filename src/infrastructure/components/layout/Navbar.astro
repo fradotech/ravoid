@@ -1,0 +1,92 @@
+---
+import { SiteConfig } from '@/app/config/site.config';
+import { Path } from '@/app/config/path.config';
+import DarkModeToggle from '@/infrastructure/components/ui/DarkModeToggle.astro';
+
+const navLinks = [
+  { label: 'Home', href: Path.index },
+  { label: 'Blog', href: Path.blog.index },
+  { label: 'Tags', href: Path.tags.index },
+  { label: 'About', href: Path.about },
+];
+
+const currentPath = Astro.url.pathname;
+
+function isActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="sticky top-0 z-50 glass-nav">
+  <nav class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+    <a href={Path.index} class="text-lg font-bold tracking-tight">
+      <span class="gradient-text">{SiteConfig.name}</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'px-3 py-1.5 text-sm font-medium rounded-lg transition-colors',
+            isActive(link.href)
+              ? 'text-white bg-white/10'
+              : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-white/[0.06]',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="ml-2">
+        <DarkModeToggle />
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 md:hidden">
+      <DarkModeToggle />
+      <button
+        id="mobile-menu-toggle"
+        type="button"
+        aria-label="Toggle menu"
+        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-colors"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200/40 dark:border-white/[0.06]">
+    <div class="px-4 py-3 space-y-1">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class:list={[
+            'block px-3 py-2 text-sm font-medium rounded-lg transition-colors',
+            isActive(link.href)
+              ? 'text-white bg-white/10'
+              : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  function initMobileMenu() {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+
+    toggle?.addEventListener('click', () => {
+      menu?.classList.toggle('hidden');
+    });
+  }
+
+  initMobileMenu();
+  document.addEventListener('astro:after-swap', initMobileMenu);
+</script>

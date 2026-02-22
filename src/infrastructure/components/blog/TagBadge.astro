@@ -1,0 +1,23 @@
+---
+import { Path } from '@/app/config/path.config';
+
+interface Props {
+  name: string;
+  slug: string;
+  size?: 'sm' | 'md';
+}
+
+const { name, slug, size = 'sm' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-2.5 py-0.5 text-xs',
+  md: 'px-3.5 py-1 text-sm',
+};
+---
+
+<a
+  href={Path.tags.detail(slug)}
+  class:list={['tag-outline', sizeClasses[size]]}
+>
+  {name}
+</a>

@@ -1,0 +1,46 @@
+---
+import { Path } from '@/app/config/path.config';
+import { formatDate } from '@/infrastructure/utils/date.util';
+import { truncate } from '@/infrastructure/utils/format.util';
+import TagList from './TagList.astro';
+import type { Post } from '@/modules/post/post.type';
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="group glass-card overflow-hidden">
+  <a href={Path.post.detail(post.slug)} class="block">
+    <div class="aspect-video overflow-hidden">
+      <img
+        src={post.thumbnail}
+        alt={post.title}
+        class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+        loading="lazy"
+      />
+    </div>
+  </a>
+
+  <div class="p-5">
+    <div class="mb-3">
+      <TagList tags={post.tags} />
+    </div>
+
+    <a href={Path.post.detail(post.slug)} class="block">
+      <h3 class="font-bold text-gray-900 dark:text-gray-100 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug tracking-tight">
+        {post.title}
+      </h3>
+    </a>
+
+    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed">
+      {truncate(post.excerpt, 140)}
+    </p>
+
+    <time class="block mt-4 text-xs text-gray-400 dark:text-gray-500" datetime={post.publishedAt}>
+      {formatDate(post.publishedAt)}
+    </time>
+  </div>
+</article>

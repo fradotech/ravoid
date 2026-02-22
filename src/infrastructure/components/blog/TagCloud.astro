@@ -1,0 +1,16 @@
+---
+import TagBadge from './TagBadge.astro';
+import type { TagWithCount } from '@/modules/tag/tag.type';
+
+interface Props {
+  tags: TagWithCount[];
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-2">
+  {tags.map((tag) => (
+    <TagBadge name={`${tag.name} (${tag.postCount})`} slug={tag.slug} size="md" />
+  ))}
+</div>

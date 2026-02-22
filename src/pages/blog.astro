@@ -1,0 +1,85 @@
+---
+export const prerender = false;
+
+import BaseLayout from '@/infrastructure/components/layout/BaseLayout.astro';
+import PostGrid from '@/infrastructure/components/blog/PostGrid.astro';
+import SearchBar from '@/infrastructure/components/ui/SearchBar.astro';
+import Pagination from '@/infrastructure/components/ui/Pagination.astro';
+import FilterChip from '@/infrastructure/components/ui/FilterChip.astro';
+import AdBanner from '@/infrastructure/components/ads/AdBanner.astro';
+import { Path } from '@/app/config/path.config';
+import { getAllPosts } from '@/modules/post/post.api';
+import { getAllTags } from '@/modules/tag/tag.api';
+
+const search = Astro.url.searchParams.get('search') || undefined;
+const tag = Astro.url.searchParams.get('tag') || undefined;
+const page = Number(Astro.url.searchParams.get('page')) || 1;
+
+const [postsResult, tags] = await Promise.all([
+  getAllPosts({ page, search, filters: tag ? { tag } : undefined }),
+  getAllTags(),
+]);
+
+const hasSearch = !!search;
+const pageTitle = hasSearch ? `Search: ${search}` : 'Blog';
+---
+
+<BaseLayout
+  title={pageTitle}
+  description="Browse all investment and crypto articles"
+  noIndex={hasSearch}
+  canonicalUrl={hasSearch ? null : undefined}
+>
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        {hasSearch ? `Results for "${search}"` : 'All Articles'}
+      </h1>
+      <div class="max-w-md">
+        <SearchBar value={search} />
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-8">
+      <FilterChip href={Path.blog.index} active={!tag} label="All" />
+      {tags.map((t) => (
+        <FilterChip
+          href={`${Path.blog.index}?tag=${t.slug}`}
+          active={tag === t.slug}
+          label={t.name}
+        />
+      ))}
+    </div>
+
+    {postsResult.data.length > 0 ? (
+      <>
+        <PostGrid posts={postsResult.data} />
+
+        <section class="mt-8">
+          <AdBanner format="horizontal" />
+        </section>
+
+        {postsResult.meta && (
+          <Pagination
+            currentPage={page}
+            totalPages={postsResult.meta.totalPage}
+            baseUrl={Path.blog.index}
+            preserveParams={{ search, tag }}
+          />
+        )}
+      </>
+    ) : (
+      <div class="text-center py-16">
+        <p class="text-lg text-gray-500 dark:text-gray-400">
+          {hasSearch ? `No articles found for "${search}"` : 'No articles found'}
+        </p>
+        <a
+          href={Path.blog.index}
+          class="mt-4 inline-block text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+        >
+          View all articles
+        </a>
+      </div>
+    )}
+  </div>
+</BaseLayout>

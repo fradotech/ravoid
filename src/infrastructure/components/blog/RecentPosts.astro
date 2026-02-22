@@ -1,0 +1,39 @@
+---
+import { Path } from '@/app/config/path.config';
+import { formatDate } from '@/infrastructure/utils/date.util';
+import SectionHeader from '@/infrastructure/components/ui/SectionHeader.astro';
+import type { Post } from '@/modules/post/post.type';
+
+interface Props {
+  posts: Post[];
+  title?: string;
+}
+
+const { posts, title = 'Recent Posts' } = Astro.props;
+---
+
+<div>
+  <SectionHeader title={title} />
+  <div class="space-y-3">
+    {posts.map((post) => (
+      <a href={Path.post.detail(post.slug)} class="flex gap-3 group">
+        <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-gray-100 dark:bg-white/[0.03]">
+          <img
+            src={post.thumbnail}
+            alt={post.title}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="flex-1 min-w-0">
+          <h4 class="text-sm font-medium text-gray-900 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
+            {post.title}
+          </h4>
+          <time class="text-xs text-gray-400 dark:text-gray-500 mt-0.5 block" datetime={post.publishedAt}>
+            {formatDate(post.publishedAt)}
+          </time>
+        </div>
+      </a>
+    ))}
+  </div>
+</div>
