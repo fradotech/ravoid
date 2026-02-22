@@ -100,4 +100,34 @@
     background: rgba(59, 130, 246, 0.1);
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
   }
+
+  .post-content :is(h1, h2, h3, h4) {
+    @apply text-gray-800;
+    letter-spacing: -0.01em;
+  }
+
+  .dark .post-content :is(h1, h2, h3, h4) {
+    color: #d1d5db;
+  }
+
+  .dark .post-content :is(p, li, td, th) {
+    color: #9ca3af;
+  }
+
+  .post-content :is(strong, b) {
+    @apply text-gray-800;
+  }
+
+  .dark .post-content :is(strong, b) {
+    color: #c9cdd4;
+  }
+
+  .post-content blockquote {
+    @apply border-blue-400/40 text-gray-600;
+  }
+
+  .dark .post-content blockquote {
+    @apply border-blue-500/30;
+    color: #8b95a5;
+  }
 }
