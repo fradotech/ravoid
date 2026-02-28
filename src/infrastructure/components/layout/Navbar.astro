@@ -1,6 +1,9 @@
 ---
 import { SiteConfig } from '@/app/config/site.config';
 import { Path } from '@/app/config/path.config';
+import NavLinks from './NavLinks.astro';
+import NavSearch from './NavSearch.astro';
+import NavMobile from './NavMobile.astro';
 import DarkModeToggle from '@/infrastructure/components/ui/DarkModeToggle.astro';
 
 const navLinks = [
@@ -11,39 +14,24 @@ const navLinks = [
 ];
 
 const currentPath = Astro.url.pathname;
-
-function isActive(href: string): boolean {
-  if (href === '/') return currentPath === '/';
-  return currentPath.startsWith(href);
-}
 ---
 
 <header class="sticky top-0 z-50 glass-nav">
-  <nav class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-    <a href={Path.index} class="text-lg font-bold tracking-tight">
+  <nav class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
+    <a href={Path.index} class="text-lg font-bold tracking-tight flex-shrink-0">
       <span>{SiteConfig.name}</span>
     </a>
 
+    <NavSearch />
+
     <div class="hidden md:flex items-center gap-1">
-      {navLinks.map((link) => (
-        <a
-          href={link.href}
-          class:list={[
-            'px-3 py-1.5 text-sm font-medium rounded-lg transition-colors',
-            isActive(link.href)
-              ? 'text-white bg-white/10'
-              : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-gray-100 dark:hover:bg-white/[0.06]',
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
-      <div class="ml-2">
+      <NavLinks links={navLinks} currentPath={currentPath} />
+      <div class="ml-1">
         <DarkModeToggle />
       </div>
     </div>
 
-    <div class="flex items-center gap-2 md:hidden">
+    <div class="flex items-center gap-1 md:hidden">
       <DarkModeToggle />
       <button
         id="mobile-menu-toggle"
@@ -58,35 +46,5 @@ function isActive(href: string): boolean {
     </div>
   </nav>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200/40 dark:border-white/[0.06]">
-    <div class="px-4 py-3 space-y-1">
-      {navLinks.map((link) => (
-        <a
-          href={link.href}
-          class:list={[
-            'block px-3 py-2 text-sm font-medium rounded-lg transition-colors',
-            isActive(link.href)
-              ? 'text-white bg-white/10'
-              : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100',
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
-    </div>
-  </div>
+  <NavMobile links={navLinks} currentPath={currentPath} />
 </header>
-
-<script>
-  function initMobileMenu() {
-    const toggle = document.getElementById('mobile-menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-
-    toggle?.addEventListener('click', () => {
-      menu?.classList.toggle('hidden');
-    });
-  }
-
-  initMobileMenu();
-  document.addEventListener('astro:after-swap', initMobileMenu);
-</script>
