@@ -17,7 +17,7 @@ const { posts, title = 'Trending' } = Astro.props;
   <div class="space-y-4">
     {posts.map((post, index) => (
       <a href={Path.post.detail(post.slug)} class="flex gap-3 group">
-        <span class="text-2xl font-extrabold text-gray-200/80 dark:text-gray-100/[0.08] leading-none tabular-nums">
+        <span class="text-2xl font-medium text-gray-600 dark:text-gray-200/70 leading-none tabular-nums">
           {String(index + 1).padStart(2, '0')}
         </span>
         <div class="flex-1 min-w-0">

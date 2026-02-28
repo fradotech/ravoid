@@ -13,10 +13,7 @@
 
   .dark body {
     color: #a8b2c1;
-    background: #060614;
-    background-image:
-      radial-gradient(ellipse 90% 60% at 50% -20%, rgba(59, 131, 246, 0.36), transparent),
-      radial-gradient(ellipse 20% 120% at 0% 30%, rgba(181, 59, 246, 0.164), transparent);
+    background: #090909;    
     background-attachment: fixed;
   }
 }
@@ -103,31 +100,44 @@
 
   .post-content :is(h1, h2, h3, h4) {
     @apply text-gray-800;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
   }
 
   .dark .post-content :is(h1, h2, h3, h4) {
-    color: #d1d5db;
+    color: #e0e0e6;
+  }
+
+  .post-content :is(p, li, td, th) {
+    @apply text-gray-600;
+    line-height: 1.75;
   }
 
   .dark .post-content :is(p, li, td, th) {
-    color: #9ca3af;
+    color: #a0a0ab;
   }
 
   .post-content :is(strong, b) {
-    @apply text-gray-800;
+    @apply text-gray-700 font-medium;
   }
 
   .dark .post-content :is(strong, b) {
-    color: #c9cdd4;
+    color: #c8c8d0;
   }
 
   .post-content blockquote {
-    @apply border-blue-400/40 text-gray-600;
+    @apply border-gray-300 text-gray-500 text-[0.95rem];
   }
 
   .dark .post-content blockquote {
-    @apply border-blue-500/30;
-    color: #8b95a5;
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #8a8a96;
+  }
+
+  .post-content a {
+    @apply decoration-blue-300/50 hover:decoration-blue-500 transition-colors;
+  }
+
+  .dark .post-content a {
+    text-decoration-color: rgba(96, 165, 250, 0.3);
   }
 }
