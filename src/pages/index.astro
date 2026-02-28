@@ -16,7 +16,10 @@ const { featured, trending, latest } = await getHomeData();
 const tags = await getAllTags();
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="SaaS & Startup Insights"
+  description="Your trusted source for SaaS and startup insights. Latest articles, trending topics, and expert analysis."
+>
   <div class="max-w-7xl mx-auto px-4 py-8">
     <section>
       <FeaturedPost post={featured} />
