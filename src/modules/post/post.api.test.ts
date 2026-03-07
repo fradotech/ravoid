@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { getAllPosts, getPostBySlug, isReservedSlug, getRelatedPosts } from './post.api';
-import { DUMMY_POSTS } from './post.dummy';
+import { DUMMY_POSTS } from './post.mapper';
 
 const samplePost = DUMMY_POSTS[0];
 const sampleTag = samplePost.tags[0]?.slug ?? 'saas';

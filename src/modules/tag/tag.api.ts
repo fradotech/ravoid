@@ -1,4 +1,4 @@
-import { DUMMY_POSTS } from '@/modules/post/post.dummy';
+import { DUMMY_POSTS } from '@/modules/post/post.mapper';
 import type { TagWithCount } from './tag.type';
 
 // TODO: Replace with real API calls

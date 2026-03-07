@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { getAllTags, getTagBySlug } from './tag.api';
-import { DUMMY_POSTS } from '@/modules/post/post.dummy';
+import { DUMMY_POSTS } from '@/modules/post/post.mapper';
 
 const sampleTag = DUMMY_POSTS[0].tags[0];
 

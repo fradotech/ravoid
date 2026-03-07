@@ -3,7 +3,7 @@ import { SiteConfig } from '@/app/config/site.config';
 import { EnvConfig } from '@/app/config/env.config';
 import { Path } from '@/app/config/path.config';
 import { Modules } from '@/app/config/modules.config';
-import { DUMMY_POSTS } from '@/modules/post/post.dummy';
+import { DUMMY_POSTS } from '@/modules/post/post.mapper';
 import { isReservedSlug } from '@/modules/post/post.api';
 
 describe('SiteConfig', () => {

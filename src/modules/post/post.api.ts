@@ -1,7 +1,7 @@
 import type { TPaginateResponse, TPaginationRequest } from '@/app/types/common.type';
 import { Modules } from '@/app/config/modules.config';
 import { SiteConfig } from '@/app/config/site.config';
-import { DUMMY_POSTS } from './post.dummy';
+import { DUMMY_POSTS } from './post.mapper';
 import type { Post } from './post.type';
 
 // TODO: Replace with real API calls
