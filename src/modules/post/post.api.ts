@@ -1,13 +1,13 @@
 import type { TPaginateResponse, TPaginationRequest } from '@/app/types/common.type';
 import { Modules } from '@/app/config/modules.config';
 import { SiteConfig } from '@/app/config/site.config';
-import { DUMMY_POSTS } from './post.mapper';
+import { POSTS } from './post.mapper';
 import type { Post } from './post.type';
 
 // TODO: Replace with real API calls
 // import { httpClient } from '@/infrastructure/api/http.client';
 // import { ApiPath } from '@/app/config/path.config';
-// import { mapRawApiPost, mapRawApiPosts } from './mappers/post-dummy.mapper';
+// import { mapRawApiPost, mapRawApiPosts } from './mappers/post.mapper';
 
 const RESERVED_SLUGS = Object.values(Modules);
 
@@ -17,7 +17,7 @@ export function isReservedSlug(slug: string): boolean {
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   // TODO: return httpClient.get<RawApiPost>(ApiPath.posts.detail(slug)).then(mapRawApiPost);
-  return DUMMY_POSTS.find((post) => post.slug === slug) ?? null;
+  return POSTS.find((post) => post.slug === slug) ?? null;
 }
 
 export async function getAllPosts(params?: TPaginationRequest): Promise<TPaginateResponse<Post>> {
@@ -25,7 +25,7 @@ export async function getAllPosts(params?: TPaginationRequest): Promise<TPaginat
   //   data: mapRawApiPosts(res.data),
   //   meta: res.meta,
   // }));
-  let filtered = [...DUMMY_POSTS];
+  let filtered = [...POSTS];
 
   if (params?.search) {
     const query = params.search.toLowerCase();
@@ -57,22 +57,22 @@ export async function getAllPosts(params?: TPaginationRequest): Promise<TPaginat
 
 export async function getFeaturedPost(): Promise<Post> {
   // TODO: return httpClient.get<RawApiPost>(ApiPath.posts.featured).then(mapRawApiPost);
-  return [...DUMMY_POSTS]
+  return [...POSTS]
     .filter((post) => post.featured)
     .sort(sortByTrending)
-    .at(0) ?? DUMMY_POSTS[0];
+    .at(0) ?? POSTS[0];
 }
 
 export async function getTrendingPosts(limit = 5): Promise<Post[]> {
   // TODO: return httpClient.getList<RawApiPost>(ApiPath.posts.trending, { params: { pageSize: limit } })
   //   .then(res => mapRawApiPosts(res.data));
-  return [...DUMMY_POSTS].sort(sortByTrending).slice(0, limit);
+  return [...POSTS].sort(sortByTrending).slice(0, limit);
 }
 
 export async function getRecentPosts(limit = 6): Promise<Post[]> {
   // TODO: return httpClient.getList<RawApiPost>(ApiPath.posts.recent, { params: { pageSize: limit } })
   //   .then(res => mapRawApiPosts(res.data));
-  return [...DUMMY_POSTS]
+  return [...POSTS]
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, limit);
 }
@@ -81,7 +81,7 @@ export async function getRelatedPosts(currentSlug: string, tags: string[], limit
   // TODO: return httpClient.getList<RawApiPost>(ApiPath.posts.index, {
   //   params: { pageSize: limit, 'filters[tags]': tags.join(','), exclude: currentSlug }
   // }).then(res => mapRawApiPosts(res.data));
-  return DUMMY_POSTS
+  return POSTS
     .filter((post) => post.slug !== currentSlug)
     .filter((post) => post.tags.some((tag) => tags.includes(tag.slug)))
     .slice(0, limit);

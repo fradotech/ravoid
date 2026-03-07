@@ -45,7 +45,7 @@ const contentModules = import.meta.glob('./data/*/content.md', {
   query: '?raw',
 }) as Record<string, string>;
 
-export const DUMMY_POSTS: Post[] = Object.entries(postModules)
+export const POSTS: Post[] = Object.entries(postModules)
   .map(([filePath, module]) => {
     const folder = filePath.split('/').at(-2);
     const content = folder ? contentModules[`./data/${folder}/content.md`] : '';

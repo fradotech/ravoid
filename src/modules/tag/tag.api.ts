@@ -1,4 +1,4 @@
-import { DUMMY_POSTS } from '@/modules/post/post.mapper';
+import { POSTS } from '@/modules/post/post.mapper';
 import type { TagWithCount } from './tag.type';
 
 // TODO: Replace with real API calls
@@ -9,7 +9,7 @@ export async function getAllTags(): Promise<TagWithCount[]> {
   // TODO: return httpClient.getList<TagWithCount>(ApiPath.tags.index).then(res => res.data);
   const tagMap = new Map<string, TagWithCount>();
 
-  DUMMY_POSTS.forEach((post) => {
+  POSTS.forEach((post) => {
     post.tags.forEach((tag) => {
       const existing = tagMap.get(tag.slug);
       if (existing) {

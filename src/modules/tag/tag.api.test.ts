@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { getAllTags, getTagBySlug } from './tag.api';
-import { DUMMY_POSTS } from '@/modules/post/post.mapper';
+import { POSTS } from '@/modules/post/post.mapper';
 
-const sampleTag = DUMMY_POSTS[0].tags[0];
+const sampleTag = POSTS[0].tags[0];
 
 describe('getAllTags', () => {
   it('returns tags sorted by post count descending', async () => {

@@ -3,7 +3,7 @@ import { SiteConfig } from '@/app/config/site.config';
 import { EnvConfig } from '@/app/config/env.config';
 import { Path } from '@/app/config/path.config';
 import { Modules } from '@/app/config/modules.config';
-import { DUMMY_POSTS } from '@/modules/post/post.mapper';
+import {  POSTS } from '@/modules/post/post.mapper';
 import { isReservedSlug } from '@/modules/post/post.api';
 
 describe('SiteConfig', () => {
@@ -42,16 +42,16 @@ describe('reserved slugs', () => {
     });
   });
 
-  it('no dummy post slug conflicts with reserved slugs', () => {
-    DUMMY_POSTS.forEach((post) => {
+  it('no post slug conflicts with reserved slugs', () => {
+    POSTS.forEach((post) => {
       expect(isReservedSlug(post.slug)).toBe(false);
     });
   });
 });
 
 describe('post SEO fields', () => {
-  it('all dummy posts have complete SEO data', () => {
-    DUMMY_POSTS.forEach((post) => {
+  it('all posts have complete SEO data', () => {
+    POSTS.forEach((post) => {
       expect(post.seo.metaTitle).toBeTruthy();
       expect(post.seo.metaDescription).toBeTruthy();
       expect(post.seo.metaDescription.length).toBeLessThanOrEqual(160);
@@ -60,22 +60,22 @@ describe('post SEO fields', () => {
     });
   });
 
-  it('all dummy posts have valid slugs', () => {
-    DUMMY_POSTS.forEach((post) => {
+  it('all posts have valid slugs', () => {
+    POSTS.forEach((post) => {
       expect(post.slug).toMatch(/^[a-z0-9-]+$/);
       expect(post.slug).not.toMatch(/^-|-$/);
     });
   });
 
-  it('all dummy posts have valid dates', () => {
-    DUMMY_POSTS.forEach((post) => {
+  it('all posts have valid dates', () => {
+    POSTS.forEach((post) => {
       expect(new Date(post.publishedAt).getTime()).not.toBeNaN();
       expect(new Date(post.updatedAt).getTime()).not.toBeNaN();
     });
   });
 
-  it('all dummy posts have at least one tag', () => {
-    DUMMY_POSTS.forEach((post) => {
+  it('all posts have at least one tag', () => {
+    POSTS.forEach((post) => {
       expect(post.tags.length).toBeGreaterThanOrEqual(1);
       post.tags.forEach((tag) => {
         expect(tag.name).toBeTruthy();
@@ -84,8 +84,8 @@ describe('post SEO fields', () => {
     });
   });
 
-  it('all dummy posts have images', () => {
-    DUMMY_POSTS.forEach((post) => {
+  it('all posts have images', () => {
+    POSTS.forEach((post) => {
       expect(post.heroImage).toBeTruthy();
       expect(post.thumbnail).toBeTruthy();
     });
