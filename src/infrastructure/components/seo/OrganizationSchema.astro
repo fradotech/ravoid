@@ -1,0 +1,15 @@
+---
+import { SiteConfig } from '@/app/config/site.config';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': SiteConfig.organization.type,
+  name: SiteConfig.organization.name,
+  url: SiteConfig.organization.url,
+  logo: SiteConfig.organization.logo,
+  description: SiteConfig.description,
+  sameAs: Object.values(SiteConfig.socials).filter(Boolean),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

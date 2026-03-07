@@ -8,6 +8,7 @@ import TrendingList from '@/infrastructure/components/blog/TrendingList.astro';
 import TagCloud from '@/infrastructure/components/blog/TagCloud.astro';
 import AdBanner from '@/infrastructure/components/ads/AdBanner.astro';
 import SectionHeader from '@/infrastructure/components/ui/SectionHeader.astro';
+import { SiteConfig } from '@/app/config/site.config';
 import { Path } from '@/app/config/path.config';
 import { getHomeData } from '@/modules/home/home.api';
 import { getAllTags } from '@/modules/tag/tag.api';
@@ -21,6 +22,15 @@ const tags = await getAllTags();
   description="Your trusted source for SaaS and startup insights. Latest articles, trending topics, and expert analysis."
 >
   <div class="max-w-7xl mx-auto px-4 py-8">
+    <section class="mb-10 text-center">
+      <h1 class="text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100">
+        {SiteConfig.tagline}
+      </h1>
+      <p class="mt-2 text-sm md:text-base text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+        {SiteConfig.description}
+      </p>
+    </section>
+
     <section>
       <FeaturedPost post={featured} />
     </section>

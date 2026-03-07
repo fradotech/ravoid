@@ -3,7 +3,7 @@ import { SiteConfig } from '@/app/config/site.config';
 import { EnvConfig } from '@/app/config/env.config';
 import { Path } from '@/app/config/path.config';
 import { Modules } from '@/app/config/modules.config';
-import {  POSTS } from '@/modules/post/post.mapper';
+import { POSTS } from '@/modules/post/post.mapper';
 import { isReservedSlug } from '@/modules/post/post.api';
 
 describe('SiteConfig', () => {
@@ -12,6 +12,27 @@ describe('SiteConfig', () => {
     expect(SiteConfig.description).toBeTruthy();
     expect(SiteConfig.language).toBeTruthy();
     expect(SiteConfig.postsPerPage).toBeGreaterThan(0);
+  });
+
+  it('has tagline for hero positioning', () => {
+    expect(SiteConfig.tagline).toBeTruthy();
+    expect(typeof SiteConfig.tagline).toBe('string');
+    expect(SiteConfig.tagline.length).toBeGreaterThan(10);
+    expect(SiteConfig.tagline.length).toBeLessThan(100);
+  });
+
+  it('has organization schema data', () => {
+    const { organization } = SiteConfig;
+    expect(organization).toBeDefined();
+    expect(organization.type).toBe('Organization');
+    expect(organization.name).toBeTruthy();
+    expect(organization.url).toMatch(/^https?:\/\//);
+    expect(organization.logo).toMatch(/^https?:\/\//);
+  });
+
+  it('organization sameAs derives from socials', () => {
+    const socialUrls = Object.values(SiteConfig.socials).filter(Boolean);
+    expect(socialUrls).toBeInstanceOf(Array);
   });
 });
 
@@ -96,5 +117,36 @@ describe('EnvConfig', () => {
   it('has default values', () => {
     expect(EnvConfig.apiBaseUrl).toBeTruthy();
     expect(EnvConfig.siteUrl).toBeTruthy();
+  });
+});
+
+describe('Organization schema structure', () => {
+  it('produces valid JSON-LD fields', () => {
+    const { organization } = SiteConfig;
+    const schema = {
+      '@context': 'https://schema.org',
+      '@type': organization.type,
+      name: organization.name,
+      url: organization.url,
+      logo: organization.logo,
+      description: SiteConfig.description,
+      sameAs: Object.values(SiteConfig.socials).filter(Boolean),
+    };
+
+    expect(schema['@context']).toBe('https://schema.org');
+    expect(schema['@type']).toBe('Organization');
+    expect(schema.name).toBe(SiteConfig.name);
+    expect(schema.url).toMatch(/^https?:\/\//);
+    expect(schema.logo).toMatch(/^https?:\/\//);
+    expect(schema.description).toBeTruthy();
+    expect(schema.sameAs).toBeInstanceOf(Array);
+  });
+
+  it('logo URL ends with valid image extension', () => {
+    expect(SiteConfig.organization.logo).toMatch(/\.(svg|png|jpg|jpeg|webp)$/);
+  });
+
+  it('organization name matches site name', () => {
+    expect(SiteConfig.organization.name).toBe(SiteConfig.name);
   });
 });
