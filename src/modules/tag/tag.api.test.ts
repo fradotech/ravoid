@@ -1,5 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { getAllTags, getTagBySlug } from './tag.api';
+import { DUMMY_POSTS } from '@/modules/post/post.dummy';
+
+const sampleTag = DUMMY_POSTS[0].tags[0];
 
 describe('getAllTags', () => {
   it('returns tags sorted by post count descending', async () => {
@@ -33,10 +36,10 @@ describe('getAllTags', () => {
 
 describe('getTagBySlug', () => {
   it('returns tag for valid slug', async () => {
-    const tag = await getTagBySlug('crypto');
+    const tag = await getTagBySlug(sampleTag.slug);
 
     expect(tag).not.toBeNull();
-    expect(tag?.name).toBe('Crypto');
+    expect(tag?.name).toBe(sampleTag.name);
     expect(tag?.postCount).toBeGreaterThanOrEqual(1);
   });
 

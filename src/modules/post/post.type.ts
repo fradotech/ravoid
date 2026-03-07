@@ -10,6 +10,8 @@ export interface Post {
   seo: PostSeo;
   publishedAt: string;
   updatedAt: string;
+  featured?: boolean;
+  trendingScore?: number;
 }
 
 export interface Tag {

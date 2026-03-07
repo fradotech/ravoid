@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { getAllPosts, getPostBySlug, isReservedSlug, getRelatedPosts } from './post.api';
+import { DUMMY_POSTS } from './post.dummy';
+
+const samplePost = DUMMY_POSTS[0];
+const sampleTag = samplePost.tags[0]?.slug ?? 'saas';
 
 describe('getAllPosts', () => {
   it('returns paginated posts with default params', async () => {
@@ -13,11 +17,12 @@ describe('getAllPosts', () => {
   });
 
   it('filters posts by search query', async () => {
-    const result = await getAllPosts({ search: 'bitcoin' });
+    const query = samplePost.title.split(' ')[0].toLowerCase();
+    const result = await getAllPosts({ search: query });
 
     result.data.forEach((post) => {
-      const matchesTitle = post.title.toLowerCase().includes('bitcoin');
-      const matchesExcerpt = post.excerpt.toLowerCase().includes('bitcoin');
+      const matchesTitle = post.title.toLowerCase().includes(query);
+      const matchesExcerpt = post.excerpt.toLowerCase().includes(query);
       expect(matchesTitle || matchesExcerpt).toBe(true);
     });
   });
@@ -30,10 +35,10 @@ describe('getAllPosts', () => {
   });
 
   it('filters posts by tag', async () => {
-    const result = await getAllPosts({ filters: { tag: 'defi' } });
+    const result = await getAllPosts({ filters: { tag: sampleTag } });
 
     result.data.forEach((post) => {
-      const hasTag = post.tags.some((tag) => tag.slug === 'defi');
+      const hasTag = post.tags.some((tag) => tag.slug === sampleTag);
       expect(hasTag).toBe(true);
     });
   });
@@ -55,10 +60,10 @@ describe('getAllPosts', () => {
 
 describe('getPostBySlug', () => {
   it('returns post for valid slug', async () => {
-    const post = await getPostBySlug('bitcoin-halving-2026-what-investors-need-to-know');
+    const post = await getPostBySlug(samplePost.slug);
 
     expect(post).not.toBeNull();
-    expect(post?.title).toContain('Bitcoin Halving');
+    expect(post?.title).toBe(samplePost.title);
   });
 
   it('returns null for invalid slug', async () => {
@@ -87,8 +92,8 @@ describe('isReservedSlug', () => {
 
 describe('getRelatedPosts', () => {
   it('excludes current post from results', async () => {
-    const slug = 'bitcoin-halving-2026-what-investors-need-to-know';
-    const related = await getRelatedPosts(slug, ['crypto']);
+    const slug = samplePost.slug;
+    const related = await getRelatedPosts(slug, [sampleTag]);
 
     related.forEach((post) => {
       expect(post.slug).not.toBe(slug);
@@ -96,16 +101,16 @@ describe('getRelatedPosts', () => {
   });
 
   it('returns posts matching given tags', async () => {
-    const related = await getRelatedPosts('some-slug', ['crypto']);
+    const related = await getRelatedPosts('some-slug', [sampleTag]);
 
     related.forEach((post) => {
-      const hasMatchingTag = post.tags.some((tag) => tag.slug === 'crypto');
+      const hasMatchingTag = post.tags.some((tag) => tag.slug === sampleTag);
       expect(hasMatchingTag).toBe(true);
     });
   });
 
   it('respects limit parameter', async () => {
-    const related = await getRelatedPosts('some-slug', ['crypto'], 2);
+    const related = await getRelatedPosts('some-slug', [sampleTag], 2);
 
     expect(related.length).toBeLessThanOrEqual(2);
   });

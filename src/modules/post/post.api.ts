@@ -57,13 +57,16 @@ export async function getAllPosts(params?: TPaginationRequest): Promise<TPaginat
 
 export async function getFeaturedPost(): Promise<Post> {
   // TODO: return httpClient.get<RawApiPost>(ApiPath.posts.featured).then(mapRawApiPost);
-  return DUMMY_POSTS[0];
+  return [...DUMMY_POSTS]
+    .filter((post) => post.featured)
+    .sort(sortByTrending)
+    .at(0) ?? DUMMY_POSTS[0];
 }
 
 export async function getTrendingPosts(limit = 5): Promise<Post[]> {
   // TODO: return httpClient.getList<RawApiPost>(ApiPath.posts.trending, { params: { pageSize: limit } })
   //   .then(res => mapRawApiPosts(res.data));
-  return DUMMY_POSTS.slice(0, limit);
+  return [...DUMMY_POSTS].sort(sortByTrending).slice(0, limit);
 }
 
 export async function getRecentPosts(limit = 6): Promise<Post[]> {
@@ -82,4 +85,14 @@ export async function getRelatedPosts(currentSlug: string, tags: string[], limit
     .filter((post) => post.slug !== currentSlug)
     .filter((post) => post.tags.some((tag) => tags.includes(tag.slug)))
     .slice(0, limit);
+}
+
+function sortByTrending(a: Post, b: Post): number {
+  const scoreDiff = (b.trendingScore ?? 0) - (a.trendingScore ?? 0);
+
+  if (scoreDiff !== 0) {
+    return scoreDiff;
+  }
+
+  return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
 }
