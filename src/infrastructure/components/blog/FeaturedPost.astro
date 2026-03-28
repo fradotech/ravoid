@@ -1,7 +1,6 @@
 ---
 import { Path } from '@/app/config/path.config';
 import { formatDate } from '@/infrastructure/utils/date.util';
-import TagList from './TagList.astro';
 import type { Post } from '@/modules/post/post.type';
 
 interface Props {
@@ -12,7 +11,7 @@ const { post } = Astro.props;
 ---
 
 <article class="group relative rounded-2xl overflow-hidden glass-card !p-0">
-  <a href={Path.post.detail(post.slug)} class="block">
+  <a href={Path.post.detail(post.slug)} class="block" aria-label={post.title}>
     <div class="aspect-[2/1] md:aspect-[21/9] overflow-hidden">
       <img
         src={post.heroImage}
@@ -27,8 +26,10 @@ const { post } = Astro.props;
       </span>
     </div>
     <div class="absolute bottom-0 left-0 right-0 p-5 md:p-8 lg:p-10">
-      <div class="mb-3">
-        <TagList tags={post.tags} />
+      <div class="mb-3 flex flex-wrap gap-1.5">
+        {post.tags.slice(0, 3).map((tag) => (
+          <span class="tag-outline px-2 py-0.5 text-[11px]">{tag.name}</span>
+        ))}
       </div>
       <h2 class="text-xl md:text-2xl lg:text-3xl font-medium text-white line-clamp-2 leading-snug tracking-tight">
         {post.title}
