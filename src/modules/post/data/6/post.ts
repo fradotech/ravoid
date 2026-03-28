@@ -14,5 +14,5 @@ export const post: PostSource = {
   imageId: "1492724441997-5dc865305da7",
   publishedAt: "2026-02-05T08:00:00.000Z",
   featured: false,
-  trendingScore: 7,
+  trendingScore: 12.5,
 };
