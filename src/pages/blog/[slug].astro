@@ -45,12 +45,25 @@ const pageUrl = new URL(Path.post.detail(post.slug), Astro.site).href;
 const canonicalUrl = post.seo.canonicalUrl ?? pageUrl;
 const description = post.seo.metaDescription || post.excerpt;
 
+const publishedTime = new Date(post.publishedAt).getTime();
+const modifiedTime = new Date(post.updatedAt).getTime();
+const dateModified =
+  Number.isFinite(modifiedTime) && modifiedTime >= publishedTime ? post.updatedAt : post.publishedAt;
+
+const articleSection = post.tags[0]?.name ?? 'Blog';
+const keywords = post.tags.map((t) => t.name).join(', ');
+
 const blogPostingJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: post.title,
   description,
-  image: post.heroImage,
+  image: {
+    '@type': 'ImageObject',
+    url: post.heroImage,
+    width: 1200,
+    height: 630,
+  },
   author: {
     '@type': 'Organization',
     name: 'Ravoid',
@@ -64,11 +77,13 @@ const blogPostingJsonLd = {
     },
   },
   datePublished: post.publishedAt,
-  dateModified: post.updatedAt,
+  dateModified,
   mainEntityOfPage: {
     '@type': 'WebPage',
     '@id': canonicalUrl,
   },
+  articleSection,
+  ...(keywords ? { keywords } : {}),
 };
 
 const homeUrl = SiteConfig.siteUrl.replace(/\/$/, '');
