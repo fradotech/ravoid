@@ -2,7 +2,7 @@
 
 A lot of founders talk about pricing as if it sits at the very end of the roadmap. In practice, pricing shapes who your product attracts, how fast it grows, and how predictable the business becomes. A company with weak pricing can build a great product and still struggle because the revenue model does not match the value customers receive.
 
-That is why the **subscription vs usage-based pricing** debate matters so much. It is not just a billing preference. It is a strategic decision that affects sales motion, retention behavior, expansion revenue, and investor perception.
+That is why the **subscription vs usage-based pricing** debate matters so much. It is not just a billing preference. It is a strategic decision that affects sales motion, retention behavior, expansion revenue, and investor perception. In practice, pricing decisions are tightly connected to retention, and a model that does not align well with how customers experience value often leads to [higher churn over time](/blog/churn-reduction-strategies-b2b-saas), especially in self-serve SaaS environments.
 
 ## The Three Common SaaS Pricing Models
 
@@ -28,7 +28,7 @@ The downside is that subscription pricing can hide gaps between price and value.
 
 Usage-based pricing is popular in developer tools, infrastructure, and AI because the unit of value is easier to measure. API calls, storage consumed, compute minutes, and transactions processed all map naturally to customer usage.
 
-Companies like Stripe (per transaction), AWS (per compute/storage), and Twilio (per API usage) are classic examples of usage-based pricing. When customers grow, revenue grows with them.
+Companies like Stripe (per transaction), AWS (per compute/storage), and Twilio (per API usage) are classic examples of usage-based pricing. When customers grow, revenue grows with them. This is also why [payment infrastructure choices](/blog/top-stripe-alternatives-for-startups-2026) matter more than they appear at first, since different providers can significantly affect how pricing is implemented and how margins evolve as volume grows.
 
 That alignment is powerful. It lowers the barrier to entry for new accounts because customers do not need to commit to a large fixed contract before they see value. It also creates strong expansion dynamics when adoption spreads across a team or workload.
 
@@ -48,7 +48,7 @@ The mistake most teams make is overcomplicating the model. If customers need a c
 
 Before choosing a SaaS pricing model, ask four questions. First, can value be measured in a way customers understand? Second, do buyers need cost predictability to approve the purchase? Third, does your product naturally expand with usage, or does value stay relatively stable over time? Fourth, is the motion self-serve, sales-led, or mixed?
 
-If value is hard to meter and buyers want predictable invoices, subscription pricing is usually the cleanest option. If value scales directly with consumption, usage-based pricing may be the stronger fit. If both are true, hybrid is likely the right answer.
+If value is hard to meter and buyers want predictable invoices, subscription pricing is usually the cleanest option. If value scales directly with consumption, usage-based pricing may be the stronger fit. If both are true, hybrid is likely the right answer. In many real-world decisions, pricing is not evaluated in isolation but as part of a broader process of [comparing tools](/blog/how-to-compare-saas-tools-objectively), where cost structure, scalability, and integration trade-offs all play a role.
 
 ## Pricing and Financial Quality
 
@@ -60,7 +60,7 @@ If value is hard to meter and buyers want predictable invoices, subscription pri
 | Forecasting simplicity | High | Low | Medium |
 | Value alignment | Medium | High | High |
 
-Investors tend to like predictability, but they also like efficient expansion. That is why hybrid pricing has become so common in category leaders.
+Investors tend to like predictability, but they also like efficient expansion. That is why hybrid pricing has become so common in category leaders. Pricing also has a direct impact on [cash flow and runway](/blog/saas-burn-rate-and-runway-guide), where even small structural changes can significantly shift how quickly a company moves toward sustainability.
 
 ## Common SaaS Pricing Mistakes
 
