@@ -47,6 +47,28 @@ const props = Astro.props;
       gtag("config", "G-PV5NVMJBH4");
     </script>
 
+    <script is:inline>
+      let sent = false;
+
+      window.addEventListener("scroll", () => {
+        if (sent) return;
+
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+
+        if (scrollPercent > 0.75) {
+          sent = true;
+          if (typeof gtag === "function") {
+            gtag("event", "scroll_75", {
+              event_category: "engagement",
+              event_label: window.location.pathname,
+            });
+          }
+        }
+      });
+    </script>
+
     <script type="text/javascript">
       (function (c, l, a, r, i, t, y) {
         c[a] =
