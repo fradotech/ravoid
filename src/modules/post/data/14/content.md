@@ -52,7 +52,7 @@ Pricing decisions cannot be separated from costs.
 
 Infrastructure, third-party tools, and support all scale differently depending on the product. In some cases, costs grow linearly with usage. In others, they remain relatively fixed.
 
-Infrastructure choices in particular can have a long-term impact. Decisions like using one platform over another — for example in hosting or edge delivery — can shift margins in ways that only become visible at scale, as explored in comparisons like [Vercel vs Netlify vs Cloudflare](/blog/vercel-vs-netlify-vs-cloudflare-pages).
+Infrastructure choices in particular can have a long-term impact. Decisions like using one platform over another, for example in hosting or edge delivery, can shift margins in ways that only become visible at scale, as explored in comparisons like [Vercel vs Netlify vs Cloudflare](/blog/vercel-vs-netlify-vs-cloudflare-pages).
 
 Ignoring this relationship between pricing and cost is what leads to businesses that grow revenue but struggle to improve margins.
 

@@ -2,7 +2,7 @@
 
 Most founders look at pricing examples the wrong way.
 
-They see Stripe charging per transaction, Slack charging per seat, or AWS charging per usage, and assume the model itself is the insight. In reality, the model is just the surface. What actually matters is the underlying logic behind it — how each company translates value into something customers are willing to pay for.
+They see Stripe charging per transaction, Slack charging per seat, or AWS charging per usage, and assume the model itself is the insight. In reality, the model is just the surface. What actually matters is the underlying logic behind it, how each company translates value into something customers are willing to pay for.
 
 If you only copy the structure without understanding the reasoning, pricing becomes fragile very quickly. This is why discussions around [subscription vs usage-based pricing](/blog/saas-pricing-models-subscription-vs-usage-based) often feel incomplete without real context.
 
@@ -10,7 +10,7 @@ If you only copy the structure without understanding the reasoning, pricing beco
 
 Stripe is often described as a usage-based company, but that description misses the important part.
 
-The reason Stripe’s pricing works is not because it is usage-based. It works because the pricing aligns perfectly with how customers already think about their business. When a company processes a payment, they have already made money. Taking a small percentage from that transaction does not feel like an additional cost — it feels like part of the system.
+The reason Stripe’s pricing works is not because it is usage-based. It works because the pricing aligns perfectly with how customers already think about their business. When a company processes a payment, they have already made money. Taking a small percentage from that transaction does not feel like an additional cost, it feels like part of the system.
 
 In other words, Stripe does not force customers to think about pricing. It blends into the workflow.
 
@@ -30,7 +30,7 @@ The trade-off becomes more visible at scale, where power users generate dispropo
 
 AWS represents the other extreme.
 
-Everything is metered. Compute, storage, bandwidth — each component is priced independently. From a value perspective, this is highly accurate. Customers pay exactly for what they use.
+Everything is metered. Compute, storage, bandwidth, each component is priced independently. From a value perspective, this is highly accurate. Customers pay exactly for what they use.
 
 But this precision introduces a new problem: unpredictability.
 

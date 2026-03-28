@@ -1,6 +1,6 @@
 ## Churn Is Not a Retention Problem
 
-Most teams treat churn as something to fix at the end — onboarding tweaks, email reminders, maybe a discount.
+Most teams treat churn as something to fix at the end, onboarding tweaks, email reminders, maybe a discount.
 
 In practice, churn is usually a signal that something more fundamental is off. It reflects how well your product, pricing, and customer expectations actually align. If users leave, it is rarely because of a single missing feature. It is because the overall experience no longer justifies the cost.
 
@@ -69,7 +69,7 @@ Over time, this creates a cycle where growth becomes harder and more expensive.
 
 Most churn reduction strategies focus on what happens after users sign up.
 
-But many churn problems start before that — at the moment of expectation setting.
+But many churn problems start before that, at the moment of expectation setting.
 
 If marketing promises more than the product delivers, churn is inevitable. If the wrong customers are acquired, retention will always be weak.
 

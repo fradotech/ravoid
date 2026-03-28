@@ -4,7 +4,7 @@ LTV (Lifetime Value) and CAC (Customer Acquisition Cost) are often presented as 
 
 In reality, they are one of the clearest indicators of whether a SaaS business actually works.
 
-You can have growth, users, and revenue — but if LTV does not significantly exceed CAC, the model breaks at scale.
+You can have growth, users, and revenue, but if LTV does not significantly exceed CAC, the model breaks at scale.
 
 ## What LTV Really Represents
 
@@ -72,7 +72,7 @@ A higher price increases LTV immediately, but may increase churn. A lower price 
 
 Usage-based pricing introduces another dynamic. As customers grow, LTV can increase significantly without requiring new acquisition.
 
-This is why pricing models are not just about billing — they shape financial outcomes over time.
+This is why pricing models are not just about billing, they shape financial outcomes over time.
 
 ## Payback Period: The Missing Piece
 
