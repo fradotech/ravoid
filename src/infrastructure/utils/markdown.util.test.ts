@@ -72,7 +72,7 @@ describe('renderMarkdown', () => {
   });
 
   it('adds lazy loading to images', async () => {
-    const html = await renderMarkdown('![Alt text](https://example.com/img.jpg)');
+    const html = await renderMarkdown('![Alt text](https://frado.vercel.app/img.jpg)');
 
     expect(html).toContain('loading="lazy"');
   });
