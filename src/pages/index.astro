@@ -18,8 +18,8 @@ const tags = await getAllTags();
 ---
 
 <BaseLayout
-  title="SaaS & Startup Insights"
-  description="Your trusted source for SaaS and startup insights. Latest articles, trending topics, and expert analysis."
+  title="SaaS Pricing, Tools & Infrastructure Insights"
+  description="Deep SaaS pricing analysis, tool comparisons, and infrastructure decisions. Learn how to choose the right stack, pricing model, and growth strategy. Latest articles, trending topics, and expert analysis."
 >
   <div class="max-w-7xl mx-auto px-4 py-8">
     <section class="mb-10 text-center">
@@ -33,6 +33,39 @@ const tags = await getAllTags();
 
     <section>
       <FeaturedPost post={featured} />
+    </section>
+
+    <section class="mt-12">
+      <SectionHeader title="Core Topics" />
+      <p class="text-sm text-gray-500 dark:text-gray-400 -mt-3 mb-5">Explore key SaaS topics we cover</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          {
+            title: 'SaaS Pricing',
+            href: Path.post.detail('saas-pricing-models-subscription-vs-usage-based'),
+            description: 'Subscription vs usage-based pricing, hybrid models, and monetization strategy',
+          },
+          {
+            title: 'Tool Comparisons',
+            href: Path.post.detail('how-to-compare-saas-tools-objectively'),
+            description: 'How to evaluate SaaS tools, avoid bias, and choose the right stack',
+          },
+          {
+            title: 'Infrastructure',
+            href: Path.post.detail('vercel-vs-netlify-vs-cloudflare-pages'),
+            description: 'Hosting, performance, and cost trade-offs for modern SaaS apps',
+          },
+        ].map((topic) => (
+          <a href={topic.href} class="group glass-card p-5">
+            <h3 class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors tracking-tight">
+              {topic.title}
+            </h3>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400/80 leading-relaxed">
+              {topic.description}
+            </p>
+          </a>
+        ))}
+      </div>
     </section>
 
     <section class="mt-12">

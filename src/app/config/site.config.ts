@@ -1,7 +1,7 @@
 export const SiteConfig = {
   name: 'Ravoid',
-  tagline: 'Deep SaaS pricing comparisons & startup tools analysis',
-  description: 'Your trusted source for SaaS and startup insights',
+  tagline: 'SaaS Pricing, Tools & Infrastructure — Explained for Builders',
+  description: 'Practical breakdowns of SaaS pricing models, tool comparisons, and infrastructure decisions — focused on real trade-offs, not theory.',
   siteUrl: 'https://ravoid.com',
   language: 'en',
   postsPerPage: 9,
