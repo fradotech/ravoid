@@ -15,11 +15,11 @@ import { SiteConfig } from '@/app/config/site.config';
 import { Path } from '@/app/config/path.config';
 import { formatDate } from '@/infrastructure/utils/date.util';
 import { extractToc, renderMarkdown } from '@/infrastructure/utils/markdown.util';
-import { getPostBySlug, isReservedSlug, getRelatedPosts, getTrendingPosts, getRecentPosts } from '@/modules/post/post.api';
+import { getPostBySlug, getRelatedPosts, getTrendingPosts, getRecentPosts } from '@/modules/post/post.api';
 
 const { slug } = Astro.params;
 
-if (!slug || isReservedSlug(slug)) {
+if (!slug) {
   return Astro.redirect('/404');
 }
 

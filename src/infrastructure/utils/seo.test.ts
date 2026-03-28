@@ -49,7 +49,7 @@ describe('Path config', () => {
   });
 
   it('dynamic paths return correct format', () => {
-    expect(Path.post.detail('test-slug')).toBe('/test-slug');
+    expect(Path.post.detail('test-slug')).toBe('/blog/test-slug');
     expect(Path.tags.detail('crypto')).toBe('/tags/crypto');
     expect(Path.blog.search('bitcoin')).toContain('search=bitcoin');
     expect(Path.blog.page(2)).toContain('page=2');

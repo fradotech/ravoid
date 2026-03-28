@@ -10,7 +10,7 @@ export const Path = {
   },
 
   post: {
-    detail: (slug: string) => `/${slug}`,
+    detail: (slug: string) => `/${Modules.Blog}/${slug}`,
   },
 
   tags: {
