@@ -1,4 +1,4 @@
 export const EnvConfig = {
   apiBaseUrl: import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:3000',
-  siteUrl: import.meta.env.SITE || 'https://frado.vercel.app',
+  siteUrl: import.meta.env.SITE || 'https://ravoid.com',
 };
