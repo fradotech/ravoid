@@ -1,8 +1,8 @@
 export const SiteConfig = {
-  name: 'Frado',
+  name: 'Ravoid',
   tagline: 'Deep SaaS pricing comparisons & startup tools analysis',
   description: 'Your trusted source for SaaS and startup insights',
-  siteUrl: 'https://frado.vercel.app',
+  siteUrl: 'https://ravoid.com',
   language: 'en',
   postsPerPage: 9,
   socials: {
@@ -12,8 +12,8 @@ export const SiteConfig = {
   },
   organization: {
     type: 'Organization' as const,
-    name: 'Frado',
-    url: 'https://frado.vercel.app',
-    logo: 'https://frado.vercel.app/favicon.svg',
+    name: 'Ravoid',
+    url: 'https://ravoid.com',
+    logo: 'https://ravoid.com/favicon.svg',
   },
 };

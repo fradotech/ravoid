@@ -4,7 +4,7 @@ import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://blog-frado.vercel.app',
+  site: 'https://ravoid.com',
   output: 'server',
   adapter: vercel(),
   integrations: [
