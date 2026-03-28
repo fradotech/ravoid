@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Growth", slug: "growth" },
     { name: "Strategy", slug: "strategy" }
   ],
-  imageId: "1460925895917-afdab827c52f",
+  imageId: "1639305239797-41f29e441d78",
   publishedAt: "2026-03-28T09:00:00.000Z",
   featured: false,
   trendingScore: 11,
