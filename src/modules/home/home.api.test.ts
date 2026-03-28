@@ -11,6 +11,7 @@ describe('getHomeData', () => {
 
     expect(data.trending).toBeInstanceOf(Array);
     expect(data.trending.length).toBeLessThanOrEqual(5);
+    expect(data.trending.some((p) => p.slug === data.featured.slug)).toBe(false);
 
     expect(data.latest).toBeInstanceOf(Array);
     expect(data.latest.length).toBeLessThanOrEqual(6);

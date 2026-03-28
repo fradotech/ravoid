@@ -2,9 +2,9 @@ import { getFeaturedPost, getTrendingPosts, getRecentPosts } from '@/modules/pos
 import type { HomeData } from './home.type';
 
 export async function getHomeData(): Promise<HomeData> {
-  const [featured, trending, recent] = await Promise.all([
-    getFeaturedPost(),
-    getTrendingPosts(5),
+  const featured = await getFeaturedPost();
+  const [trending, recent] = await Promise.all([
+    getTrendingPosts(5, [featured.slug]),
     getRecentPosts(7),
   ]);
 

@@ -11,11 +11,10 @@ import AdBanner from '@/infrastructure/components/ads/AdBanner.astro';
 import TableOfContents from '@/modules/post/components/TableOfContents.astro';
 import PostContent from '@/modules/post/components/PostContent.astro';
 import SuggestionReading from '@/modules/post/components/SuggestionReading.astro';
-import { SiteConfig } from '@/app/config/site.config';
 import { Path } from '@/app/config/path.config';
 import { formatDate } from '@/infrastructure/utils/date.util';
 import { extractToc, renderMarkdown } from '@/infrastructure/utils/markdown.util';
-import { getPostBySlug, getRelatedPosts, getTrendingPosts, getRecentPosts } from '@/modules/post/post.api';
+import { getFeaturedPost, getPostBySlug, getRelatedPosts, getTrendingPosts, getRecentPosts } from '@/modules/post/post.api';
 
 const { slug } = Astro.params;
 
@@ -32,27 +31,42 @@ if (!post) {
 const toc = extractToc(post.content);
 const tagSlugs = post.tags.map((t) => t.slug);
 
+const featured = await getFeaturedPost();
+
 const [html, related, trending, recent] = await Promise.all([
   renderMarkdown(post.content),
   getRelatedPosts(post.slug, tagSlugs),
-  getTrendingPosts(5),
+  getTrendingPosts(5, [featured.slug, post.slug]),
   getRecentPosts(4),
 ]);
 
 const pageUrl = new URL(Path.post.detail(post.slug), Astro.site).href;
+const canonicalUrl = post.seo.canonicalUrl ?? pageUrl;
+const description = post.seo.metaDescription || post.excerpt;
 
-const jsonLd = {
+const blogPostingJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: post.title,
-  description: post.seo.metaDescription,
+  description,
   image: post.heroImage,
-  datePublished: post.publishedAt,
-  dateModified: post.updatedAt,
-  url: pageUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Framesta Fernando',
+  },
   publisher: {
     '@type': 'Organization',
-    name: SiteConfig.name,
+    name: 'Framesta Fernando',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://ravoid.com/favicon.svg',
+    },
+  },
+  datePublished: post.publishedAt,
+  dateModified: post.updatedAt,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
   },
 };
 ---
@@ -67,7 +81,7 @@ const jsonLd = {
   publishedAt={post.publishedAt}
   updatedAt={post.updatedAt}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(blogPostingJsonLd)} />
 
   <article class="max-w-6xl mx-auto px-4 py-8">
     <Breadcrumb items={[

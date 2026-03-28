@@ -63,10 +63,14 @@ export async function getFeaturedPost(): Promise<Post> {
     .at(0) ?? POSTS[0];
 }
 
-export async function getTrendingPosts(limit = 5): Promise<Post[]> {
+export async function getTrendingPosts(limit = 5, excludeSlugs: string[] = []): Promise<Post[]> {
   // TODO: return httpClient.getList<RawApiPost>(ApiPath.posts.trending, { params: { pageSize: limit } })
   //   .then(res => mapRawApiPosts(res.data));
-  return [...POSTS].sort(sortByTrending).slice(0, limit);
+  const exclude = new Set(excludeSlugs.filter(Boolean));
+  return [...POSTS]
+    .sort(sortByTrending)
+    .filter((post) => !exclude.has(post.slug))
+    .slice(0, limit);
 }
 
 export async function getRecentPosts(limit = 6): Promise<Post[]> {
