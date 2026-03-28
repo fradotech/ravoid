@@ -31,13 +31,13 @@ const { post } = Astro.props;
       </h3>
 
       <p
-        class="mt-2 text-sm text-gray-500 dark:text-gray-400/80 line-clamp-3 leading-relaxed"
+        class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed"
       >
         {truncate(post.excerpt, 140)}
       </p>
 
       <time
-        class="block mt-3 text-xs text-gray-400 dark:text-gray-500"
+        class="block mt-3 text-xs text-gray-500 dark:text-gray-400"
         datetime={post.publishedAt}
       >
         {formatDate(post.publishedAt)}

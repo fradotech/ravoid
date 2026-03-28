@@ -24,7 +24,7 @@ const { posts, title = 'Most Read This Week' } = Astro.props;
           <h4 class="text-sm font-medium text-gray-900 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug">
             {post.title}
           </h4>
-          <time class="text-xs text-gray-400 dark:text-gray-500 mt-0.5 block" datetime={post.publishedAt}>
+          <time class="text-xs text-gray-500 dark:text-gray-400 mt-0.5 block" datetime={post.publishedAt}>
             {formatDate(post.publishedAt)}
           </time>
         </div>

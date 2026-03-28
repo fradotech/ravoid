@@ -33,7 +33,7 @@ const jsonLd = {
   <ol class="flex items-center gap-1.5 flex-wrap">
     {allItems.map((item, index) => (
       <li class="flex items-center gap-1.5">
-        {index > 0 && <span class="text-gray-300 dark:text-gray-600">/</span>}
+        {index > 0 && <span class="text-gray-400 dark:text-gray-500">/</span>}
         {item.href && index < allItems.length - 1 ? (
           <a href={item.href} class="hover:text-gray-900 dark:hover:text-gray-200 transition-colors">
             {item.label}
