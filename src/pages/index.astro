@@ -68,6 +68,51 @@ const tags = await getAllTags();
       </div>
     </section>
 
+    <section class="mt-12 max-w-3xl">
+      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+        Choosing the right pricing model, tech stack, and hosting platform can define the trajectory of a SaaS product. We break down real trade-offs between subscription and usage-based pricing, compare tools side by side without vendor bias, and analyze infrastructure decisions that affect both performance and cost. Every article is written to help founders and teams make clearer, more informed choices.
+      </p>
+    </section>
+
+    <section class="mt-12">
+      <SectionHeader title="Start Here" />
+      <p class="text-sm text-gray-500 dark:text-gray-400 -mt-3 mb-5">New to Ravoid? These are the best places to begin</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          {
+            label: '01',
+            title: 'SaaS Pricing Models',
+            href: Path.post.detail('saas-pricing-models-subscription-vs-usage-based'),
+            description: 'Understand subscription, usage-based, and hybrid pricing before choosing one for your product',
+          },
+          {
+            label: '02',
+            title: 'SaaS Tool Comparison',
+            href: Path.post.detail('how-to-compare-saas-tools-objectively'),
+            description: 'A practical framework for evaluating tools without falling for marketing or feature lists',
+          },
+          {
+            label: '03',
+            title: 'Build vs Buy',
+            href: Path.post.detail('build-vs-buy-saas-decision-framework'),
+            description: 'When to build in-house and when to buy off-the-shelf — a decision framework for SaaS teams',
+          },
+        ].map((item) => (
+          <a href={item.href} class="group glass-card p-5 flex gap-4">
+            <span class="text-2xl font-semibold text-gray-200 dark:text-white/10 select-none leading-none">{item.label}</span>
+            <div>
+              <h3 class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors tracking-tight">
+                {item.title}
+              </h3>
+              <p class="mt-1.5 text-sm text-gray-500 dark:text-gray-400/80 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
     <section class="mt-12">
       <AdBanner format="horizontal" />
     </section>
