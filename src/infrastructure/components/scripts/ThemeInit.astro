@@ -1,5 +1,10 @@
----
-import themeScript from '@/infrastructure/scripts/theme.ts?raw';
----
-
-<script is:inline set:html={themeScript} />
+<script is:inline>
+  (function () {
+    var theme = localStorage.getItem("theme");
+    if (theme === "light") {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  })();
+</script>
