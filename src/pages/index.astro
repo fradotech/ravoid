@@ -2,6 +2,7 @@
 export const prerender = false;
 
 import BaseLayout from '@/infrastructure/components/layout/BaseLayout.astro';
+import WebSiteSchema from '@/infrastructure/components/seo/WebSiteSchema.astro';
 import FeaturedPost from '@/infrastructure/components/blog/FeaturedPost.astro';
 import PostGrid from '@/infrastructure/components/blog/PostGrid.astro';
 import TrendingList from '@/infrastructure/components/blog/TrendingList.astro';
@@ -18,9 +19,10 @@ const tags = await getAllTags();
 ---
 
 <BaseLayout
-  title="SaaS Pricing, Tools & Infrastructure Insights"
+  title="SaaS Pricing Models, Tool Comparisons & Infrastructure Decisions"
   description="Deep SaaS pricing analysis, tool comparisons, and infrastructure decisions. Learn how to choose the right stack, pricing model, and growth strategy. Latest articles, trending topics, and expert analysis."
 >
+  <WebSiteSchema slot="head" />
   <div class="max-w-7xl mx-auto px-4 py-8">
     <section class="mb-10 text-center">
       <h1 class="text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100">

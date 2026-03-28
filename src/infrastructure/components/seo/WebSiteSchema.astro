@@ -1,0 +1,21 @@
+---
+import { SiteConfig } from '@/app/config/site.config';
+import { Path } from '@/app/config/path.config';
+
+const siteUrl = SiteConfig.siteUrl;
+const searchTarget = `${siteUrl}${Path.blog.index}?search={search_term_string}`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SiteConfig.name,
+  url: siteUrl,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: searchTarget,
+    'query-input': 'required name=search_term_string',
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
