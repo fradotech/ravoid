@@ -42,6 +42,16 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
+## AI Prompt
+
+#### Hero Image AI Prompt
+
+````
+A premium cinematic 3D illustration for a blog article about "".
+
+Style: photorealistic 3D render, cinematic volumetric lighting, shallow depth of field. Premium SaaS infrastructure editorial aesthetic. Landscape 1200x630. No text, no logos, no people.
+```
+
 ## Ref
 - techcrunch.com
 - theverge.com
