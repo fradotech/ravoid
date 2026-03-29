@@ -14,7 +14,7 @@ export const post: PostSource = {
     { name: "Strategy", slug: "strategy" },
   ],
   imageId: "/images/posts/multi-cloud-vs-single-vendor-hidden-cost.webp",
-  publishedAt: "2026-02-03T08:00:00.000Z",
+  publishedAt: "2026-03-29T09:00:00.000Z",
   featured: false,
   trendingScore: 10,
 };
