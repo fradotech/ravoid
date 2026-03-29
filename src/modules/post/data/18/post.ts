@@ -14,7 +14,7 @@ export const post: PostSource = {
     { name: "Scaling", slug: "scaling" },
   ],
   imageId: "/images/posts/where-serverless-breaks-vercel-cloudflare-real-experience.webp",
-  publishedAt: "2026-02-03T08:00:00.000Z",
+  publishedAt: "2026-03-29T08:00:00.000Z",
   featured: false,
   trendingScore: 13,
 };

@@ -14,7 +14,7 @@ export const post: PostSource = {
     { name: "Comparison", slug: "comparison" },
   ],
   imageId: "/images/posts/stripe-vs-xendit-vs-midtrans-real-cost-comparison.webp",
-  publishedAt: "2026-02-02T08:00:00.000Z",
+  publishedAt: "2026-03-29T08:00:00.000Z",
   featured: false,
   trendingScore: 15,
 };
