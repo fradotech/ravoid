@@ -25,7 +25,9 @@ export async function getAllPosts(params?: TPaginationRequest): Promise<TPaginat
   //   data: mapRawApiPosts(res.data),
   //   meta: res.meta,
   // }));
-  let filtered = [...POSTS];
+  let filtered = [...POSTS].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
 
   if (params?.search) {
     const query = params.search.toLowerCase();

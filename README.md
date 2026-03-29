@@ -46,10 +46,20 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 #### Hero Image AI Prompt
 
-````
-A premium cinematic 3D illustration for a blog article about "".
+```
+A premium cinematic 3D illustration for a blog article about "[TOPIC]".
+The scene shows a dark polished surface with [MAIN VISUAL ELEMENTS - describe 2-3 key objects/metaphors relevant to the topic].
+Each element has distinct color-coded glowing accents to differentiate concepts.
+Thin luminous connection lines link the elements.
+Background: deep dark navy-charcoal gradient with soft bokeh orbs in teal and amber.
+Style: photorealistic 3D render, cinematic volumetric lighting, shallow depth of field.
+Premium SaaS editorial aesthetic. Landscape 1200x630. No text, no logos, no people.
+```
 
-Style: photorealistic 3D render, cinematic volumetric lighting, shallow depth of field. Premium SaaS infrastructure editorial aesthetic. Landscape 1200x630. No text, no logos, no people.
+#### Compress Command
+
+```bash
+cwebp -q 80 -resize 1200 630 input.webp -o public/images/posts/[slug].webp
 ```
 
 ## Ref
