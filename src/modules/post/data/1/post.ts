@@ -13,6 +13,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/saas-pricing-models.webp",
   publishedAt: "2026-02-10T08:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 12,
 };
