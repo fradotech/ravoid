@@ -2,6 +2,7 @@ import type { Post } from './post.type';
 import type { PostSource } from './post.source.type';
 
 function img(id: string, w = 1200, h = 630): string {
+  if (id.startsWith('/')) return id;
   return `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format`;
 }
 

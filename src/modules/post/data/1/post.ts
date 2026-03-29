@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Strategy", slug: "strategy" },
     { name: "Startup", slug: "startup" }
   ],
-  imageId: "1492724441997-5dc865305da7",
+  imageId: "/images/posts/saas-pricing-models.webp",
   publishedAt: "2026-02-10T08:00:00.000Z",
   featured: true,
   trendingScore: 12,
