@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Strategy", slug: "strategy" },
     { name: "Bootstrap", slug: "bootstrap" }
   ],
-  imageId: "1460925895917-afdab827c52f",
+  imageId: "/images/posts/saas-burn-rate-runway.webp",
   publishedAt: "2026-02-06T08:00:00.000Z",
   featured: false,
   trendingScore: 8,

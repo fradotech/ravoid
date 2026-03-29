@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Comparison", slug: "comparison" },
     { name: "Engineering", slug: "engineering" }
   ],
-  imageId: "1492724441997-5dc865305da7",
+  imageId: "/images/posts/vercel-vs-netlify-vs-cloudflare.webp",
   publishedAt: "2026-02-05T08:00:00.000Z",
   featured: false,
   trendingScore: 12.5,

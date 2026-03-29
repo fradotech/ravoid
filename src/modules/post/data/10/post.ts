@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Strategy", slug: "strategy" },
     { name: "Marketing", slug: "marketing" }
   ],
-  imageId: "1500530855697-b586d89ba3ee",
+  imageId: "/images/posts/churn-reduction-b2b-saas.webp",
   publishedAt: "2026-02-01T08:00:00.000Z",
   featured: false,
   trendingScore: 3,

@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "SaaS", slug: "saas" },
     { name: "Productivity", slug: "productivity" }
   ],
-  imageId: "1460925895917-afdab827c52f",
+  imageId: "/images/posts/bootstrapping-saas-tools.webp",
   publishedAt: "2026-02-02T08:00:00.000Z",
   featured: false,
   trendingScore: 4,

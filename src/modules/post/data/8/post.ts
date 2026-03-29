@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Decision Making", slug: "decision-making" },
     { name: "Strategy", slug: "strategy" }
   ],
-  imageId: "1519389950473-47ba0277781c",
+  imageId: "/images/posts/compare-saas-tools-objectively.webp",
   publishedAt: "2026-02-03T08:00:00.000Z",
   featured: false,
   trendingScore: 5,

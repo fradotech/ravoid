@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Decision Making", slug: "decision-making" },
     { name: "Strategy", slug: "strategy" }
   ],
-  imageId: "1521790361543-f645cf042ec4",
+  imageId: "/images/posts/open-source-vs-saas-tco.webp",
   publishedAt: "2026-02-04T08:00:00.000Z",
   featured: false,
   trendingScore: 12.6,

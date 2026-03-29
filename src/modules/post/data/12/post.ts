@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Comparison", slug: "comparison" },
     { name: "Decision Making", slug: "decision-making" }
   ],
-  imageId: "1521790361543-f645cf042ec4",
+  imageId: "/images/posts/ai-saas-evaluation-product-hunt.webp",
   publishedAt: "2026-01-30T08:00:00.000Z",
   featured: false,
   trendingScore: 1,

@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Startup", slug: "startup" },
     { name: "Pricing", slug: "pricing" }
   ],
-  imageId: "1492724441997-5dc865305da7",
+  imageId: "/images/posts/crm-alternatives-startups.webp",
   publishedAt: "2026-01-31T08:00:00.000Z",
   featured: false,
   trendingScore: 2,

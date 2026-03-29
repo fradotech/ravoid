@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Strategy", slug: "strategy" },
     { name: "Growth", slug: "growth" }
   ],
-  imageId: "1596143800142-8de4cfea9686",
+  imageId: "/images/posts/saas-churn-explained.webp",
   publishedAt: "2026-03-28T08:00:00.000Z",
   featured: false,
   trendingScore: 10,

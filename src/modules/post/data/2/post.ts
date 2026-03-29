@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Productivity", slug: "productivity" },
     { name: "Startup", slug: "startup" }
   ],
-  imageId: "1551434678-e076c223a692",
+  imageId: "/images/posts/notion-vs-obsidian-vs-confluence.webp",
   publishedAt: "2026-02-09T08:00:00.000Z",
   featured: false,
   trendingScore: 12.8,

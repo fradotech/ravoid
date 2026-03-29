@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Decision Making", slug: "decision-making" },
     { name: "Startup", slug: "startup" }
   ],
-  imageId: "1519389950473-47ba0277781c",
+  imageId: "/images/posts/build-vs-buy-saas.webp",
   publishedAt: "2026-02-08T08:00:00.000Z",
   featured: false,
   trendingScore: 12.9,

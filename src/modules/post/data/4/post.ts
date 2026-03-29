@@ -11,7 +11,7 @@ export const post: PostSource = {
     { name: "Alternative", slug: "alternative" },
     { name: "Pricing", slug: "pricing" }
   ],
-  imageId: "1507679799987-c73779587ccf",
+  imageId: "/images/posts/stripe-alternatives-startups.webp",
   publishedAt: "2026-02-07T08:00:00.000Z",
   featured: false,
   trendingScore: 12.7,
