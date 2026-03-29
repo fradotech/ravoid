@@ -14,6 +14,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/vercel-vs-cloudflare-vs-self-hosting.webp",
   publishedAt: "2026-03-29T08:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 13,
 };
