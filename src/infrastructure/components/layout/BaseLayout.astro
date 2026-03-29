@@ -1,4 +1,9 @@
 ---
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
 import "@/styles/global.css";
 import { SiteConfig } from "@/app/config/site.config";
 import SEOHead from "@/infrastructure/components/seo/SEOHead.astro";
@@ -27,20 +32,6 @@ const props = Astro.props;
       title="RSS Feed"
       href="/rss.xml"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script is:inline>
-      var l = document.createElement("link");
-      l.rel = "stylesheet";
-      l.href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap";
-      document.head.appendChild(l);
-    </script>
-    <noscript>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-      />
-    </noscript>
     <SEOHead {...props} />
     <OrganizationSchema />
     <slot name="head" />
