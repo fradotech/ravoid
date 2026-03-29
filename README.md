@@ -47,13 +47,41 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 #### Hero Image AI Prompt
 
 ```
-A premium cinematic 3D illustration for a blog article about "[TOPIC]".
-The scene shows a dark polished surface with [MAIN VISUAL ELEMENTS - describe 2-3 key objects/metaphors relevant to the topic].
-Each element has distinct color-coded soft glowing accents to differentiate concepts.
+A premium cinematic 3D illustration for a SaaS blog article about "<TOPIC>".
+
+The scene shows a dark polished surface with <VISUAL_ELEMENTS>.
+Describe 2-3 key floating objects or metaphors relevant to the topic.
+Each element has distinct color-coded glowing accents to differentiate concepts.
 Thin luminous connection lines link the elements.
+
 Background: deep dark navy-charcoal gradient with soft bokeh orbs in teal and amber.
-Style: photorealistic 3D render, cinematic volumetric lighting, shallow depth of field.
-Premium SaaS editorial aesthetic. Landscape 1200x630. No text, no logos, no people.
+
+Style:
+- photorealistic 3D render, cinematic volumetric lighting, shallow depth of field
+- glassmorphism / translucent holographic elements
+- dark moody atmosphere with selective colorful accents
+- NOT flat vector, NOT literal photos — semi-abstract 3D editorial
+- premium SaaS blog aesthetic, consistent with tech publication imagery
+
+Landscape 1200x630. No text, no logos, no people.
+```
+
+#### In-Article Chart/Diagram Prompt
+
+```
+A premium minimal chart visualization for a SaaS blog.
+
+Scene: clean dark background (#0f172a) with a simple <CHART_TYPE>.
+<DESCRIBE_AXES_AND_DATA_LINES>
+
+Style:
+- minimal, modern SaaS aesthetic
+- subtle glow on data lines
+- thin grid lines, high contrast
+- neon blue and warm amber accent colors
+- no clutter, professional data visualization
+
+Landscape 1200x630.
 ```
 
 #### Compress Command
@@ -63,5 +91,6 @@ cwebp -q 80 -resize 1200 630 input.webp -o public/images/posts/[slug].webp
 ```
 
 ## Ref
+
 - techcrunch.com
 - theverge.com
