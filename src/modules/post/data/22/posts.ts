@@ -13,7 +13,7 @@ export const post: PostSource = {
     { name: "Engineering", slug: "engineering" },
   ],
   imageId: "/images/posts/serverless-vs-traditional-hero.webp",
-  publishedAt: "2026-03-29T11:00:00.000Z",
+  publishedAt: "2026-03-29T10:00:00.000Z",
   featured: false,
   trendingScore: 22,
 };
