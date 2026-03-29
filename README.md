@@ -49,7 +49,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 ```
 A premium cinematic 3D illustration for a blog article about "[TOPIC]".
 The scene shows a dark polished surface with [MAIN VISUAL ELEMENTS - describe 2-3 key objects/metaphors relevant to the topic].
-Each element has distinct color-coded glowing accents to differentiate concepts.
+Each element has distinct color-coded soft glowing accents to differentiate concepts.
 Thin luminous connection lines link the elements.
 Background: deep dark navy-charcoal gradient with soft bokeh orbs in teal and amber.
 Style: photorealistic 3D render, cinematic volumetric lighting, shallow depth of field.
