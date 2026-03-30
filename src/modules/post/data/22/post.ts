@@ -14,6 +14,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/serverless-vs-traditional-backend.webp",
   publishedAt: "2026-03-29T10:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 22,
 };

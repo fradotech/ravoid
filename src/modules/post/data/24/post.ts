@@ -14,6 +14,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/openai-vs-self-hosted-llm-cost.webp",
   publishedAt: "2026-03-30T08:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 20,
 };
