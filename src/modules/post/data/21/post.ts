@@ -5,7 +5,7 @@ export const post: PostSource = {
   title: "Why Most SaaS Overpay for Infrastructure (And Don’t Realize It)",
   slug: "why-saas-overpay-infrastructure",
   excerpt:
-    "Most SaaS companies don’t have an infrastructure problem — they have a decision problem. This deep breakdown explains why teams overpay and how it actually happens.",
+    "Most SaaS companies don’t have an infrastructure problem, they have a decision problem. This deep breakdown explains why teams overpay and how it actually happens.",
   tags: [
     { name: "SaaS", slug: "saas" },
     { name: "Infrastructure", slug: "infrastructure" },

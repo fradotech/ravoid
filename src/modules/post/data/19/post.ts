@@ -6,7 +6,7 @@ export const post: PostSource = {
     "Stripe vs Xendit vs Midtrans: The Real Cost of Payments (What Founders Learn Too Late)",
   slug: "stripe-vs-xendit-vs-midtrans-real-cost-comparison",
   excerpt:
-    "Payment providers look similar at first — until real costs, edge cases, and scaling complexity appear. A practical breakdown from a developer and founder perspective.",
+    "Payment providers look similar at first, until real costs, edge cases, and scaling complexity appear. A practical breakdown from a developer and founder perspective.",
   tags: [
     { name: "Fintech", slug: "fintech" },
     { name: "SaaS", slug: "saas" },

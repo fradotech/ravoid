@@ -5,7 +5,7 @@ export const post: PostSource = {
   title: "Serverless vs Traditional Backend: The Cost Curve Nobody Talks About",
   slug: "serverless-vs-traditional-backend",
   excerpt:
-    "Serverless feels cheap at the start — until it doesn’t. This deep breakdown explains where the cost curve flips and why most teams miscalculate it.",
+    "Serverless feels cheap at the start, until it doesn’t. This deep breakdown explains where the cost curve flips and why most teams miscalculate it.",
   tags: [
     { name: "Infrastructure", slug: "infrastructure" },
     { name: "Serverless", slug: "serverless" },

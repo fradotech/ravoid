@@ -1,7 +1,7 @@
 export const SiteConfig = {
   name: 'Ravoid',
-  tagline: 'SaaS Pricing, Tools & Infrastructure — Explained for Builders',
-  description: 'Practical breakdowns of SaaS pricing models, tool comparisons, and infrastructure decisions — focused on real trade-offs, not theory.',
+  tagline: 'SaaS Pricing, Tools & Infrastructure',
+  description: 'Practical breakdowns of SaaS pricing models, tool comparisons, and infrastructure decisions',
   siteUrl: 'https://ravoid.com',
   language: 'en',
   postsPerPage: 9,

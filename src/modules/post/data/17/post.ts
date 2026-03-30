@@ -5,7 +5,7 @@ export const post: PostSource = {
   title: "Vercel vs Cloudflare vs Self-Hosting: What Actually Breaks at Scale",
   slug: "vercel-vs-cloudflare-vs-self-hosting-at-scale",
   excerpt:
-    "Choosing between Vercel, Cloudflare, and self-hosting is easy early on — but things change at scale. This article breaks down what actually fails, where costs explode, and how real trade-offs appear as your SaaS grows.",
+    "Choosing between Vercel, Cloudflare, and self-hosting is easy early on, but things change at scale. This article breaks down what actually fails, where costs explode, and how real trade-offs appear as your SaaS grows.",
   tags: [
     { name: "Infrastructure", slug: "infrastructure" },
     { name: "SaaS", slug: "saas" },

@@ -4,7 +4,7 @@ export const post: PostSource = {
   id: "15",
   title: "SaaS Churn Explained: Why Customers Leave and How to Reduce It",
   slug: "saas-churn-explained-and-reduction",
-  excerpt: "Churn is not just a retention metric — it reflects product, pricing, and value alignment. Learn what actually drives churn and how to reduce it.",
+  excerpt: "Churn is not just a retention metric, it reflects product, pricing, and value alignment. Learn what actually drives churn and how to reduce it.",
   tags: [
     { name: "SaaS", slug: "saas" },
     { name: "Retention", slug: "retention" },

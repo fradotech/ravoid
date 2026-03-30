@@ -6,7 +6,7 @@ export const post: PostSource = {
     "Where Serverless Breaks: Real Lessons from Scaling on Vercel and Cloudflare",
   slug: "where-serverless-breaks-vercel-cloudflare-real-experience",
   excerpt:
-    "Serverless works perfectly — until it doesn’t. A real-world breakdown of where Vercel and Cloudflare start to fail at scale, and what engineers learn too late.",
+    "Serverless works perfectly, until it doesn’t. A real-world breakdown of where Vercel and Cloudflare start to fail at scale, and what engineers learn too late.",
   tags: [
     { name: "Infrastructure", slug: "infrastructure" },
     { name: "SaaS", slug: "saas" },

@@ -18,7 +18,7 @@ In reality, for most SaaS teams, especially in early to mid scale, it isn’t.
 
 Speed is.
 
-And multi-cloud quietly trades one kind of risk for another — one that is much harder to see early on, but significantly more expensive once it compounds.
+And multi-cloud quietly trades one kind of risk for another, one that is much harder to see early on, but significantly more expensive once it compounds.
 
 ---
 
@@ -144,7 +144,7 @@ There is also a team-level impact.
 
 Instead of deep expertise in one ecosystem, you get shallow familiarity across several.
 
-That sounds fine — until something breaks.
+That sounds fine, until something breaks.
 
 Because production issues are not solved by general knowledge.
 
