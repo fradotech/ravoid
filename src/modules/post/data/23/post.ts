@@ -14,6 +14,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/why-ai-cost-explodes-after-scale.webp",
   publishedAt: "2026-03-30T08:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 18,
 };
