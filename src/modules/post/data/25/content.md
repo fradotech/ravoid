@@ -13,7 +13,7 @@ This is the same pattern we have seen before in infrastructure decisions. Early 
 
 Most teams today build AI systems using a familiar stack that looks clean and modular. Typically, it consists of an API layer, an orchestration layer, and an application layer. This structure is intuitive and aligns with how modern SaaS systems are built.
 
-At early stage, this works extremely well. A request comes in, the model responds, and the application handles the rest. The system feels predictable, similar to how serverless architectures feel simple before they hit scale limits. If you have experienced where serverless breaks, the pattern is identical. Simplicity holds until the system starts doing more than it was originally designed for.
+At early stage, this works extremely well. The system behaves predictably, much like serverless platforms before they hit real limits. If you have explored where serverless breaks (https://ravoid.com/blog/where-serverless-breaks-vercel-cloudflare-real-experience), the pattern is identical. Simplicity holds until the system starts doing more than it was originally designed for.
 
 The problem is that this stack assumes execution is trivial. It assumes that once the model produces an output, the rest of the system can handle it deterministically. That assumption is where things start to break.
 
@@ -52,7 +52,7 @@ The system begins to require:
 
 Each of these is manageable on its own. Together, they create a system that is no longer simple to reason about.
 
-This is the same pattern behind why most SaaS overpay infrastructure. Complexity is introduced incrementally, but cost and fragility increase non-linearly.
+This is also why many teams start overpaying infrastructure (https://ravoid.com/blog/why-saas-overpay-infrastructure). Complexity increases gradually, but cost and fragility increase non-linearly.
 
 ---
 
@@ -70,6 +70,8 @@ In practice, this means:
 - execution logic is centralized instead of scattered
 
 This is why OpenClaw often feels like a leap forward. It reduces the amount of glue code required and makes complex workflows feel more natural.
+
+This is similar to the shift seen in infrastructure decisions like multi-cloud vs single vendor (https://ravoid.com/blog/multi-cloud-vs-single-vendor-hidden-cost), where flexibility increases but so does complexity.
 
 ---
 
@@ -162,6 +164,8 @@ The most common issues are:
 
 - **Security surface**
   Autonomous execution increases risk exposure
+
+The cost aspect becomes especially important when combined with openai vs self-hosted LLM cost (https://ravoid.com/blog/openai-vs-self-hosted-llm-cost), where execution complexity directly impacts infrastructure decisions.
 
 ---
 
