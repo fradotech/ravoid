@@ -47,38 +47,27 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 #### Hero Image AI Prompt
 
 ```
-A premium cinematic 3D illustration for a SaaS / tech blog about **"[TOPIC]"**.
+A premium cinematic 3D illustration for a SaaS / tech blog about "<TOPIC>".
 
 Style:
 
-* photorealistic 3D render, ultra-detailed
-* glassmorphism / translucent holographic materials
-* soft reflections, refractions, subtle dispersion
-* cinematic volumetric lighting, moody atmosphere
-* shallow depth of field, background bokeh
-* semi-abstract editorial (not literal, not flat, not vector)
+- dark moody atmosphere with selective colorful accents
+- photorealistic 3D render, ultra-detailed
+- glassmorphism / translucent holographic materials
+- soft reflections, refractions, subtle dispersion
+- cinematic volumetric lighting, moody atmosphere
+- shallow depth of field, background bokeh
+- semi-abstract editorial (not literal, not flat, not vector)
 
 Art direction:
 
-* minimal, clean, high-end tech aesthetic
-* soft neon accents (blue, purple, teal, subtle contrasting highlights)
-* strong sense of depth, layering, and spatial composition
-* elegant glow, light scattering, and atmospheric particles
-
-Composition:
-
-* balanced, modern layout with natural spacing
-* visually striking focal point, no clutter
+- minimal, clean, high-end tech aesthetic
+- soft neon accents (blue, purple, teal, subtle contrasting highlights)
 
 Text:
 
-* no large central title
-* subtle UI-like micro text allowed (optional)
-
-Rendering quality:
-
-* ray-traced lighting, global illumination
-* high dynamic range, crisp details, premium finish
+- no large central title
+- subtle UI-like micro text allowed (optional)
 
 Landscape 1200x630. No text, no logos, no people.
 ```
