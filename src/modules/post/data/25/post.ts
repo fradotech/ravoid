@@ -15,6 +15,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/openclaw-vs-langchain-vs-apis.webp",
   publishedAt: "2026-03-30T12:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 24,
 };
