@@ -18,7 +18,7 @@ What most teams do not realize is that serverless is not inherently cheap.
 
 It is **phase-efficient**.
 
-And once your system moves beyond that phase, the economics begin to change — quietly at first, then all at once.
+And once your system moves beyond that phase, the economics begin to change, quietly at first, then all at once. If you have seen how platforms like Vercel and Cloudflare behave under real production load, the pattern is consistent with [where serverless breaks in practice](https://ravoid.com/blog/where-serverless-breaks-vercel-cloudflare-real-experience).
 
 ---
 
@@ -187,7 +187,7 @@ They delay optimization. They postpone migration. They accept gradual increases.
 
 Until one day, cost is no longer gradual.
 
-And by that point, the system is already deeply coupled to the architecture.
+And by that point, the system is already deeply coupled to the architecture. This is also why [most SaaS teams overpay for infrastructure](https://ravoid.com/blog/why-saas-overpay-infrastructure) without realizing it, the expensive decisions were made months before the bill arrived.
 
 ---
 
@@ -207,7 +207,7 @@ Moving away is no longer a simple migration.
 
 It is a redesign.
 
-And redesigns are expensive — not just in infrastructure, but in time, coordination, and risk.
+And redesigns are expensive, not just in infrastructure, but in time, coordination, and risk. The same lock-in challenge applies to [multi-cloud vs single vendor decisions](https://ravoid.com/blog/multi-cloud-vs-single-vendor-hidden-cost), where the hidden cost is not the technology itself but the architectural dependency it creates.
 
 ---
 

@@ -109,7 +109,7 @@ At small scale, these choices feel efficient.
 
 At medium scale, they start to feel expensive.
 
-At larger scale, they often become the dominant cost driver.
+At larger scale, they often become the dominant cost driver. This is exactly the dynamic explored in [serverless vs traditional backend economics](https://ravoid.com/blog/serverless-vs-traditional-backend), where the cost curve flips at a point most teams never model.
 
 The issue is not the tool.
 
@@ -138,7 +138,7 @@ You are outsourcing operational complexity to the platform — and in return, yo
 
 This is why infrastructure decisions are not just technical.
 
-They are economic.
+They are economic. The same principle applies when teams choose between [open source and SaaS solutions](https://ravoid.com/blog/open-source-vs-saas-total-cost-ownership), where the visible price is often the smallest part of total cost.
 
 ---
 
@@ -201,7 +201,7 @@ To make this more concrete, consider two teams building similar products.
 
 The difference here is not pricing.
 
-It is timing and decision quality.
+It is timing and decision quality. A deeper breakdown of how this plays out with specific platforms can be found in [Vercel vs Cloudflare vs self-hosting at scale](https://ravoid.com/blog/vercel-vs-cloudflare-vs-self-hosting-at-scale).
 
 ---
 

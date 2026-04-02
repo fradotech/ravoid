@@ -14,7 +14,7 @@ Most teams start with a simple intuition. OpenAI is expensive but easy, while se
 
 This intuition is only partially correct. OpenAI cost scales linearly with usage, which makes it predictable but potentially expensive at high volume. Self-hosted systems introduce fixed and step-based costs that can be cheaper at scale, but only if utilization is high and the system is well-tuned.
 
-The hidden problem is timing. Many teams move to self-hosting too early, expecting immediate savings, and instead increase their total cost due to inefficiency and operational overhead.
+The hidden problem is timing. Many teams move to self-hosting too early, expecting immediate savings, and instead increase their total cost due to inefficiency and operational overhead. This mirrors the broader pattern of [why AI cost explodes after scale](https://ravoid.com/blog/why-ai-cost-explodes-after-scale), where the system evolves faster than the cost model that was supposed to contain it.
 
 ---
 
@@ -168,7 +168,7 @@ The main cost amplifiers are:
 | Retries          | Medium         | Invisible overhead           |
 | Model upgrades   | Medium–High    | Quality-driven cost increase |
 
-Unlike self-hosting, these costs scale smoothly, which makes them easier to predict but harder to optimize.
+Unlike self-hosting, these costs scale smoothly, which makes them easier to predict but harder to optimize. The same dynamic applies to [serverless vs traditional backend decisions](https://ravoid.com/blog/serverless-vs-traditional-backend), where linear scaling feels safe until the total becomes structural.
 
 ---
 
@@ -213,7 +213,7 @@ Instead of asking which option is cheaper, a more useful approach is to evaluate
 
 Most teams do not choose the wrong approach. They choose it at the wrong time.
 
-Moving to self-hosting too early introduces inefficiencies that erase expected savings. Staying on APIs too long leads to margin pressure as cost scales linearly with usage. The optimal decision is dynamic and depends on how the system evolves.
+Moving to self-hosting too early introduces inefficiencies that erase expected savings. Staying on APIs too long leads to margin pressure as cost scales linearly with usage. The optimal decision is dynamic and depends on how the system evolves. This is the same timing problem that causes [most SaaS teams to overpay for infrastructure](https://ravoid.com/blog/why-saas-overpay-infrastructure), where the cost is not the tool but the decision made at the wrong moment.
 
 ---
 

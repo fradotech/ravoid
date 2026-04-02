@@ -18,7 +18,7 @@ In reality, for most SaaS teams, especially in early to mid scale, it isn’t.
 
 Speed is.
 
-And multi-cloud quietly trades one kind of risk for another, one that is much harder to see early on, but significantly more expensive once it compounds.
+And multi-cloud quietly trades one kind of risk for another, one that is much harder to see early on, but significantly more expensive once it compounds. This is the same pattern that shows up when teams [evaluate infrastructure platforms at scale](https://ravoid.com/blog/vercel-vs-cloudflare-vs-self-hosting-at-scale), where early decisions shape cost structures that become very difficult to reverse.
 
 ---
 
@@ -88,7 +88,7 @@ It becomes:
 
 Nothing is broken.
 
-But everything is slower.
+But everything is slower. This is the same kind of invisible overhead that makes [most SaaS teams overpay for infrastructure](https://ravoid.com/blog/why-saas-overpay-infrastructure) without realizing the root cause is architecture, not pricing.
 
 ---
 
@@ -134,7 +134,7 @@ At small scale, this is negligible.
 
 At scale, it becomes structural.
 
-And unlike compute cost, this one is hard to optimize away.
+And unlike compute cost, this one is hard to optimize away. Teams exploring [serverless vs traditional backend](https://ravoid.com/blog/serverless-vs-traditional-backend) face a similar cost curve problem, where data movement becomes the dominant expense at scale.
 
 ---
 

@@ -15,7 +15,7 @@ Most teams reduce AI cost into a simple equation that feels intuitive and reliab
 
 The problem is not that this model is wrong, but that it describes a system that no longer exists once the product evolves. It assumes consistency, efficiency, and isolation across requests, while real systems introduce variability, retries, orchestration, and layered decision-making. What begins as a useful approximation slowly becomes a misleading simplification.
 
-Interestingly, higher traffic is often not the primary driver of cost increase. System design decisions usually are. That shift is subtle at first, but it becomes dominant as the system matures.
+Interestingly, higher traffic is often not the primary driver of cost increase. System design decisions usually are. This is the same structural problem that causes [most SaaS teams to overpay for infrastructure](https://ravoid.com/blog/why-saas-overpay-infrastructure), where the expensive choices happen quietly and long before the bill arrives. That shift is subtle at first, but it becomes dominant as the system matures.
 
 ---
 
@@ -72,7 +72,7 @@ The most common breakdown points are:
 - **Observability overhead**
   Logging, evaluation, and monitoring introduce additional cost layers
 
-Each of these decisions is rational in isolation. Together, they redefine what a request actually costs.
+Each of these decisions is rational in isolation. Together, they redefine what a request actually costs. The pattern is similar to how [serverless cost curves flip](https://ravoid.com/blog/serverless-vs-traditional-backend) at a point most teams never model in advance.
 
 ---
 
@@ -167,7 +167,7 @@ Every improvement in an AI system introduces a trade-off. The mistake is assumin
 | Multi-step pipelines | More control          | More compute            | Complex workflows         |
 | Faster response      | Better UX             | Higher parallel usage   | Real-time systems         |
 
-These are not edge cases. They are the default path of most production systems.
+These are not edge cases. They are the default path of most production systems. A deeper breakdown of how this plays out when choosing between APIs and self-hosted infrastructure can be found in [OpenAI vs self-hosted LLM cost analysis](https://ravoid.com/blog/openai-vs-self-hosted-llm-cost).
 
 ---
 

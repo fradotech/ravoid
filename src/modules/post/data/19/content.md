@@ -31,7 +31,7 @@ At this level, most founders assume:
 
 This assumption is wrong.
 
-Because transaction fees are only one part of the cost.
+Because transaction fees are only one part of the cost. This is the same trap that appears across [SaaS pricing models](https://ravoid.com/blog/saas-pricing-models-subscription-vs-usage-based), where the visible price creates a false sense of clarity while the real cost lives in operational behavior.
 
 ## The Hidden Layer: Where Cost Actually Compounds
 
@@ -49,7 +49,7 @@ It creates:
 
 Some providers handle retries cleanly. Others require you to build defensive logic.
 
-Over time, this becomes engineering cost.
+Over time, this becomes engineering cost, the kind of [hidden infrastructure expense](https://ravoid.com/blog/why-saas-overpay-infrastructure) that most teams only notice after it has compounded.
 
 ### 2. Disputes and Chargebacks
 
@@ -192,7 +192,7 @@ You have to:
 
 This is why most teams stick longer than they should.
 
-The cost of switching is not technical. It is operational.
+The cost of switching is not technical. It is operational. This mirrors the broader challenge of [build vs buy decisions](https://ravoid.com/blog/build-vs-buy-saas-decision-framework), where the real cost is not the initial integration but the switching cost that accumulates over time.
 
 ## The Real Decision Framework
 
