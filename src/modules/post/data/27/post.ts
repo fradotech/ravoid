@@ -16,5 +16,5 @@ export const post: PostSource = {
   imageId: "/images/posts/ai-agent-frameworks-production-why-95-percent-fail.webp",
   publishedAt: "2026-04-02T12:00:00.000Z",
   featured: false,
-  trendingScore: 23,
+  trendingScore: 24,
 };

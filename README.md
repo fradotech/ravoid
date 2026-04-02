@@ -47,7 +47,7 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 #### Hero Image AI Prompt
 
 ```
-A premium cinematic 3D illustration for a SaaS / tech blog about "<TOPIC>".
+A premium cinematic 3D illustration for a SaaS / tech blog.
 
 Style:
 
@@ -69,6 +69,10 @@ Text:
 - no large central title
 - subtle UI-like micro text allowed (optional)
 
+---
+TOPIC:
+
+---
 Landscape 1200x630. No text, no logos, no people.
 ```
 

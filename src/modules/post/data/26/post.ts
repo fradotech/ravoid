@@ -16,5 +16,5 @@ export const post: PostSource = {
   imageId: "/images/posts/rag-vector-database-real-cost-at-scale.webp",
   publishedAt: "2026-04-02T08:00:00.000Z",
   featured: false,
-  trendingScore: 22,
+  trendingScore: 23,
 };
