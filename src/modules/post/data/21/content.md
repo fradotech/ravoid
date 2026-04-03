@@ -4,7 +4,7 @@
 
 Most SaaS teams eventually reach a moment where they start questioning their infrastructure cost.
 
-The AWS bill feels too high. Vercel suddenly looks expensive. Cloudflare usage starts creeping up. The instinctive reaction is almost always the same — something must be wrong with pricing.
+The AWS bill feels too high. Vercel suddenly looks expensive. Cloudflare usage starts creeping up. The instinctive reaction is almost always the same, something must be wrong with pricing.
 
 So the team starts optimizing.
 
@@ -12,7 +12,7 @@ They downsize instances. Add caching. Remove unused resources. Maybe switch a fe
 
 But in most real-world cases, this is not where the real problem is.
 
-Because by the time you are actively optimizing cost, the expensive decisions have already been made — quietly, months earlier, when nobody was thinking about cost at all.
+Because by the time you are actively optimizing cost, the expensive decisions have already been made, quietly, months earlier, when nobody was thinking about cost at all.
 
 The issue is rarely pricing.
 
@@ -36,7 +36,7 @@ Usually when:
 
 By then, your system is already shaped.
 
-The architecture is no longer flexible. It has dependencies, assumptions, and implicit constraints baked into it. Changing direction is no longer just a technical task — it becomes a coordination problem across multiple systems.
+The architecture is no longer flexible. It has dependencies, assumptions, and implicit constraints baked into it. Changing direction is no longer just a technical task, it becomes a coordination problem across multiple systems.
 
 This is why infrastructure cost behaves like a lagging indicator.
 
@@ -89,7 +89,7 @@ But it introduces overhead everywhere:
 
 And more importantly, it slows development.
 
-You are solving problems that do not exist yet — while paying for them every month.
+You are solving problems that do not exist yet, while paying for them every month.
 
 ---
 
@@ -134,7 +134,7 @@ But they are not free.
 
 What you are actually paying for is abstraction.
 
-You are outsourcing operational complexity to the platform — and in return, you accept a pricing model that is often less predictable and sometimes significantly higher.
+You are outsourcing operational complexity to the platform, and in return, you accept a pricing model that is often less predictable and sometimes significantly higher.
 
 This is why infrastructure decisions are not just technical.
 

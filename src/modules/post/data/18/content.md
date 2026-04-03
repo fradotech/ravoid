@@ -1,10 +1,10 @@
-## Serverless Doesn’t Fail Early — That’s the Problem
+## Serverless Doesn’t Fail Early, That’s the Problem
 
 Serverless platforms like Vercel and Cloudflare rarely fail when you are starting.
 
 They fail when you are already committed.
 
-At low traffic, everything works exactly as advertised. Deployments are instant, scaling feels infinite, and the system appears simpler than anything you would build yourself. For early-stage teams, this is not just convenient — it is transformative.
+At low traffic, everything works exactly as advertised. Deployments are instant, scaling feels infinite, and the system appears simpler than anything you would build yourself. For early-stage teams, this is not just convenient, it is transformative.
 
 The problem is that serverless systems are designed to hide complexity. And when complexity is hidden, you do not see the failure modes until they are already part of your architecture.
 
@@ -85,7 +85,7 @@ In traditional systems, debugging is local and reproducible.
 
 In serverless systems, debugging is observational.
 
-You rely on logs, traces, and partial context. You rarely have full visibility into the environment where the issue occurred. Reproducing bugs becomes harder because the system is not a single machine — it is a distributed execution model.
+You rely on logs, traces, and partial context. You rarely have full visibility into the environment where the issue occurred. Reproducing bugs becomes harder because the system is not a single machine, it is a distributed execution model.
 
 This changes how engineers work.
 
@@ -93,7 +93,7 @@ Instead of stepping through code, you analyze behavior patterns. Instead of fixi
 
 This is not inherently worse. But it is fundamentally different, and most teams underestimate how much this slows down iteration at scale.
 
-## Where Cloudflare Feels Better — and Where It Doesn’t
+## Where Cloudflare Feels Better, and Where It Doesn’t
 
 Cloudflare’s edge model solves one class of problems very well: global latency.
 
@@ -107,7 +107,7 @@ You gain performance, but you lose flexibility.
 
 For teams that design around these constraints early, Cloudflare works exceptionally well. For teams that try to migrate existing architectures, friction appears quickly.
 
-## Where Vercel Feels Better — and Where It Doesn’t
+## Where Vercel Feels Better, and Where It Doesn’t
 
 Vercel optimizes for developer experience.
 
@@ -158,4 +158,4 @@ Vercel and Cloudflare both solve real problems, and both introduce new ones. The
 
 The goal is not to avoid these platforms.
 
-It is to understand where they stop helping — and start shaping your system in ways you did not intend.
+It is to understand where they stop helping, and start shaping your system in ways you did not intend.

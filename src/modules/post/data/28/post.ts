@@ -14,7 +14,7 @@ export const post: PostSource = {
     { name: "Strategy", slug: "strategy" },
   ],
   imageId: "/images/posts/token-economics-ai-saas-pricing.webp",
-  publishedAt: "2026-04-04T08:00:00.000Z",
+  publishedAt: "2026-04-02T08:00:00.000Z",
   featured: false,
   trendingScore: 23,
 };

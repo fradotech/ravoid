@@ -1,6 +1,6 @@
 ## Multi-Cloud vs Single Vendor: The Hidden Cost Engineers Only Realize After Scaling
 
-### Multi-Cloud Sounds Smart — Until You Actually Run It
+### Multi-Cloud Sounds Smart, Until You Actually Run It
 
 “Don’t put all your eggs in one basket.”
 

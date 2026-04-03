@@ -47,7 +47,7 @@ Here is a realistic monthly cost breakdown for a growth-stage support agent hand
 | Observability & Tracing Layer   | $0                    | $950                   | Building this reactively is far more expensive     |
 | Engineering Maintenance & Fixes | $4,000 (part-time)    | $18,000 (dedicated)    | Constant graph and prompt adjustments              |
 | Human Escalation & Cleanup      | $1,200                | $9,500                 | The hidden productivity tax                        |
-| **Total Monthly Cost**          | **~$5,470**           | **~$32,500**           | —                                                  |
+| **Total Monthly Cost**          | **~$5,470**           | **~$32,500**           | -                                                  |
 
 The jump from pilot to growth often shocks teams because they modeled costs based only on successful trajectories. Failed or looping paths, which become dominant at higher volumes, drive most of the unexpected spend.
 

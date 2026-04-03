@@ -1,4 +1,4 @@
-## Payment Is Simple — Until It Isn’t
+## Payment Is Simple, Until It Isn’t
 
 At the beginning, integrating payments feels like a solved problem.
 
@@ -81,7 +81,7 @@ This is where providers diverge significantly.
 
 A system that is easy to integrate is not always easy to reconcile.
 
-## Stripe: The Cleanest Developer Experience — With Trade-Offs
+## Stripe: The Cleanest Developer Experience, With Trade-Offs
 
 Stripe is designed for developers.
 
@@ -129,7 +129,7 @@ From an engineering perspective, this means:
 - more conditional logic
 - more reconciliation checks
 
-It works well — but requires more awareness of local system behavior.
+It works well, but requires more awareness of local system behavior.
 
 ## Midtrans: Broad Coverage, Mixed Developer Experience
 

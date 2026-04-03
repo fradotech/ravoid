@@ -1,4 +1,4 @@
-## The Decision Feels Reversible — Until Scale Removes That Option
+## The Decision Feels Reversible, Until Scale Removes That Option
 
 At the beginning, choosing infrastructure rarely feels like a permanent decision.
 
@@ -10,7 +10,7 @@ Infrastructure decisions are not truly tested when everything is small. They are
 
 The differences between Vercel, Cloudflare, and self-hosting only become visible when something breaks.
 
-## A Typical Growth Path — Where Assumptions Start to Fail
+## A Typical Growth Path, Where Assumptions Start to Fail
 
 Most SaaS products go through a predictable pattern, even if the details vary.
 
@@ -26,7 +26,7 @@ The platform you chose early on has not changed. But your relationship with its 
 
 ## Vercel: When Abstraction Starts Hiding the Problem
 
-Vercel is optimized for speed — not runtime performance, but developer speed.
+Vercel is optimized for speed, not runtime performance, but developer speed.
 
 Early on, this is a massive advantage. You deploy instantly, preview environments are seamless, and the entire workflow encourages iteration. For small teams, this removes a category of problems that would otherwise slow you down.
 
@@ -36,10 +36,10 @@ The first issue that appears is cost unpredictability. Serverless functions scal
 
 A typical pattern looks like this:
 
-- Early stage: <$50/month — negligible  
-- Growth stage: $200–$500 — still acceptable  
-- Scale stage: $1,000+ — starts requiring explanation  
-- High scale: $3,000–$10,000+ — becomes a decision factor  
+- Early stage: <$50/month, negligible  
+- Growth stage: $200–$500, still acceptable  
+- Scale stage: $1,000+, starts requiring explanation  
+- High scale: $3,000–$10,000+, becomes a decision factor  
 
 The problem is not just the number. It is the lack of predictability.
 
@@ -47,13 +47,13 @@ The second issue is execution constraints. Cold starts, function duration limits
 
 The third issue is debugging. When your infrastructure is abstracted, you are debugging through layers you do not control. Logs exist, but context is limited. Reproducing issues becomes harder, not because your code is complex, but because the environment is.
 
-Vercel works exceptionally well — until you need to go beyond what it was designed to simplify.
+Vercel works exceptionally well, until you need to go beyond what it was designed to simplify.
 
 ## Cloudflare: Performance Gains With Mental Overhead
 
 Cloudflare introduces a different model. Instead of abstracting everything behind serverless functions, it pushes execution to the edge.
 
-This can be powerful. Latency improves, global distribution becomes native, and certain workloads — especially read-heavy or cacheable ones — become dramatically more efficient.
+This can be powerful. Latency improves, global distribution becomes native, and certain workloads, especially read-heavy or cacheable ones, become dramatically more efficient.
 
 But this model comes with its own trade-offs.
 

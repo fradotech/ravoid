@@ -1,4 +1,4 @@
-## Serverless Feels Cheap — Until You Hit the Curve
+## Serverless Feels Cheap, Until You Hit the Curve
 
 ### The Illusion of Cheap Infrastructure
 
@@ -50,7 +50,7 @@ Serverless is front-loaded efficiency.
 
 Traditional backend is back-loaded efficiency.
 
-The crossover point is where most teams get surprised — because they never modeled it in the first place.
+The crossover point is where most teams get surprised, because they never modeled it in the first place.
 
 ---
 
