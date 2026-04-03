@@ -1,33 +1,119 @@
 ---
-import StaticPageLayout from '@/infrastructure/components/layout/StaticPageLayout.astro';
-import { SiteConfig } from '@/app/config/site.config';
-import { Path } from '@/app/config/path.config';
+import StaticPageLayout from "@/infrastructure/components/layout/StaticPageLayout.astro";
+import { SiteConfig } from "@/app/config/site.config";
+import { Path } from "@/app/config/path.config";
 ---
 
-<StaticPageLayout title="About" description={`About ${SiteConfig.name}`}>
+<StaticPageLayout
+  title="About Ravoid"
+  description="Uncomfortable truths about SaaS infrastructure, AI agents in production, and the real cost of scaling."
+>
+  <h1>About Ravoid</h1>
+
   <p>
-    Welcome to {SiteConfig.name}, Deep SaaS pricing analysis, tool comparisons, and infrastructure decisions. Learn how to choose the right stack, pricing model, and growth strategy.
-    We provide in-depth analysis, guides, and news to help you make informed financial decisions.
+    Ravoid delivers sharp, no-fluff insights for engineering leaders and
+    technical founders building serious SaaS and AI systems in production.
   </p>
 
-  <h2>Our Mission</h2>
   <p>
-    We believe that SaaS and startup education should be accessible to everyone.
-    Our team of experienced analysts and writers work to break down complex
-    SaaS and startup topics into clear, actionable content.
+    We cut through the hype around AI agent frameworks, infrastructure choices,
+    and cost models. Most decisions that feel obviously correct in the early
+    stage quietly become expensive, or outright risky, once you hit real usage
+    and scale.
   </p>
 
-  <h2>What We Cover</h2>
+  <h2>Why Ravoid Exists</h2>
+
+  <p>
+    Too many teams waste months and six-figure budgets on “flexible” agent
+    frameworks, multi-cloud setups, or token pricing models that collapse under
+    pressure. Ravoid exists to show the uncomfortable trade-offs before you pay
+    the price.
+  </p>
+
+  <p>
+    Every article here is built on real production experience, realistic cost
+    numbers, concrete scenarios across early, growth, and scale stages,
+    meaningful trade-off tables, and decision frameworks that actually help you
+    choose what survives scaling.
+  </p>
+
+  <h2>What You’ll Get</h2>
+
   <ul>
-    <li>SaaS pricing models and strategies</li>
-    <li>Startup funding and fundraising</li>
-    <li>Market analysis and trend reports</li>
-    <li>SaaS and startup news and updates</li>
+    <li>
+      Opinionated breakdowns of AI agent frameworks in production, why most
+      never escape pilot and what actually matters at scale.
+    </li>
+    <li>
+      Deep infrastructure analysis: serverless vs traditional, single vendor vs
+      multi-cloud, and the hidden costs engineers only discover after it’s too
+      late.
+    </li>
+    <li>
+      Realistic AI cost modeling and token economics, because “cheap at small
+      volume” almost never stays cheap.
+    </li>
+    <li>
+      Stage-specific guidance and practical mental models so you stop guessing
+      and start making defensible technical decisions.
+    </li>
   </ul>
+
+  <h2>Behind Ravoid</h2>
+
+  <div class="flex items-start gap-4 mt-6">
+    <img
+      src="https://media.licdn.com/dms/image/v2/D4D03AQE_vcPpSpWXfA/profile-displayphoto-shrink_200_200/B4DZXKAxxqHYAY-/0/1742850957386?e=2147483647&v=beta&t=JpASrSsdp9PSQRwlnQQ8C3PYdU_q0aMiTE7NkVjbv8Y"
+      alt="Framesta Fernando"
+      class="w-24 h-24 rounded-full object-cover flex-shrink-0"
+      width="96"
+      height="96"
+    />
+
+    <div>
+      <div
+        class="mt-3 flex items-center flex-wrap gap-x-1.5 text-sm text-gray-500 dark:text-gray-400"
+      >
+        <span>Written by</span>
+        <span
+          itemprop="author"
+          class="text-gray-600 dark:text-gray-300 font-medium"
+          >Framesta Fernando</span
+        >
+      </div>
+
+      <p class="mt-3 text-gray-600 dark:text-gray-400">
+        Engineering Manager at MrScraper and former Technical Architect at DOT
+        Indonesia. With over 5 years building scalable backend systems using
+        NestJS, .NET, and Next.js, including leading a 24-engineer team, the
+        lessons here come from decisions that were made (and sometimes painfully
+        corrected) in real production environments, especially around AI agents
+        and infrastructure scaling.
+      </p>
+    </div>
+  </div>
+
+  <h2>Join the Readers Who Want the Truth</h2>
+
+  <p>
+    If you’re responsible for systems that must stay reliable and cost-effective
+    as they grow, Ravoid is built for you.
+  </p>
+
+  <p>
+    Subscribe for sharp insights delivered directly, no fluff, no weekly tool
+    roundups, just the hard-earned truths that matter when you’re in the
+    trenches of production.
+  </p>
 
   <h2>Contact</h2>
   <p>
-    Have questions or feedback? We would love to hear from you.
-    Reach out to us through our <a href={Path.contact}>contact page</a>.
+    Have feedback, a war story, or a specific decision you want challenged?
+    Reach out via the <a href={Path.contact}>contact page</a> or connect on <a
+      href="https://linkedin.com/in/fradotech"
+      target="_blank"
+      rel="noopener">LinkedIn</a
+    >.
   </p>
 </StaticPageLayout>
