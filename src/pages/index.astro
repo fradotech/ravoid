@@ -42,69 +42,6 @@ const tags = await getAllTags();
     </section>
 
     <section class="mt-12">
-      <SectionHeader title="Core Topics" />
-      <p class="text-sm text-gray-500 dark:text-gray-400 -mt-3 mb-5">
-        Explore key SaaS topics we cover
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {
-          [
-            {
-              title: "SaaS Pricing",
-              href: Path.post.detail(
-                "saas-pricing-models-subscription-vs-usage-based",
-              ),
-              description:
-                "Subscription vs usage-based pricing, hybrid models, and monetization strategy",
-            },
-            {
-              title: "Tool Comparisons",
-              href: Path.post.detail("how-to-compare-saas-tools-objectively"),
-              description:
-                "How to evaluate SaaS tools, avoid bias, and choose the right stack",
-            },
-            {
-              title: "Infrastructure",
-              href: Path.post.detail("vercel-vs-netlify-vs-cloudflare-pages"),
-              description:
-                "Hosting, performance, and cost trade-offs for modern SaaS apps",
-            },
-          ].map((topic) => (
-            <a href={topic.href} class="group glass-card p-5">
-              <h3 class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors tracking-tight">
-                {topic.title}
-              </h3>
-              <p class="mt-2 text-sm text-gray-500 dark:text-gray-400/80 leading-relaxed">
-                {topic.description}
-              </p>
-            </a>
-          ))
-        }
-      </div>
-    </section>
-
-    <section class="mt-12 max-w-3xl">
-      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-        Choosing the right pricing model, tech stack, and hosting platform can
-        define the trajectory of a SaaS product. We break down real trade-offs
-        between
-        <a
-          href="/blog/saas-pricing-models-subscription-vs-usage-based"
-          class="text-blue-600 dark:text-blue-400 underline decoration-blue-300/50 hover:decoration-blue-500 dark:decoration-blue-400/30 dark:hover:decoration-blue-400"
-          >subscription and usage-based pricing</a
-        >, compare tools side by side in our
-        <a
-          href="/blog/how-to-compare-saas-tools-objectively"
-          class="text-blue-600 dark:text-blue-400 underline decoration-blue-300/50 hover:decoration-blue-500 dark:decoration-blue-400/30 dark:hover:decoration-blue-400">SaaS evaluation framework</a
-        >, and analyze infrastructure decisions in our
-        <a
-          href="/blog/vercel-vs-netlify-vs-cloudflare-pages"
-          class="text-blue-600 dark:text-blue-400 underline decoration-blue-300/50 hover:decoration-blue-500 dark:decoration-blue-400/30 dark:hover:decoration-blue-400">hosting comparison guide</a
-        >.
-      </p>
-    </section>
-
-    <section class="mt-12">
       <AdBanner format="horizontal" />
     </section>
 
