@@ -3,7 +3,7 @@ import type { PostSource } from "../../post.source.type";
 export const post: PostSource = {
   id: "32",
   title:
-    "RAG Is Not Free: The Brutal Cost Curve After 10 Million Records (and When to Kill It)",
+    "RAG Is Not Free: The Brutal Cost Curve After 10 Million Records and When to Kill It",
   slug: "rag-is-not-free-brutal-cost-curve-10-million-records",
   excerpt:
     "Vector databases look cheap at 100k records. At 10 million, the bill becomes painful, and for many use cases, simpler markdown + search often wins at a fraction of the cost and complexity.",

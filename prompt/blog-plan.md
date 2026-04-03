@@ -60,7 +60,7 @@ Semua artikel harus long-form, opinionated, uncomfortable, dengan minimal 2–4 
 
 **Catatan produksi:** Sangat actionable. Bisa pakai contoh ClawRouter/OpenClaw.
 
-### #32 – RAG Is Not Free: The Brutal Cost Curve After 10 Million Records (and When to Kill It)
+### #32 – RAG Is Not Free: The Brutal Cost Curve After 10 Million Records and When to Kill It
 
 **Hook:** “Vector databases look cheap at 100k records. At 10 million, the bill becomes painful — and for many use cases, simpler markdown + search often wins anyway.”
 

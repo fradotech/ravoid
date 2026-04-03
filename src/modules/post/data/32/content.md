@@ -1,5 +1,3 @@
-## RAG Is Not Free: The Brutal Cost Curve After 10 Million Records (and When to Kill It)##
-
 Vector databases look cheap at 100k records. At 10 million, the bill becomes painful, and for many use cases, simpler markdown + search often wins anyway.
 
 Most teams treat RAG as the obvious default for any knowledge base. They chunk documents, generate embeddings, load everything into a vector database, and assume the combination will stay scalable and cheap while delivering superior answers. This feels like responsible engineering. It is not.

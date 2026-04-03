@@ -1,5 +1,3 @@
-# Smart Routing & Self-Hosted: How Smart Teams Cut AI Costs 60–80% Without Losing Quality
-
 Most teams still route everything to the most expensive model. The smart ones quietly save 60–80% by routing intelligently, and many are already moving heavy traffic to self-hosted.
 
 Two years ago every engineering leader I knew treated frontier models like electricity: flip the switch and it just works. Today the same leaders are staring at six-figure inference bills and wondering why their “simple” AI features cost more than the rest of the product combined. The pattern is identical across startups and scale-ups. They ship fast, celebrate the demo, and only later realize they built their entire inference layer on a false assumption that is quietly bleeding them dry.
