@@ -1,52 +1,48 @@
-import type { APIRoute } from 'astro';
-
-const LOOPS_ENDPOINT =
-  'https://app.loops.so/api/newsletter-form/b1654a6d00fcb7643d72323b4ad15232';
+import type { APIRoute } from "astro";
 
 export const POST: APIRoute = async ({ request }) => {
-  const headers = { 'Content-Type': 'application/json' };
+  const contentType = request.headers.get("content-type");
+  let email: string | null = null;
 
-  try {
+  if (contentType?.includes("application/json")) {
     const body = await request.json();
-    const email = body.email?.trim();
-
-    if (!email) {
-      return new Response(
-        JSON.stringify({ success: false, message: 'Email is required.' }),
-        { status: 400, headers },
-      );
-    }
-
-    const formBody = `email=${encodeURIComponent(email)}&source=ravoid.com`;
-
-    const res = await fetch(LOOPS_ENDPOINT, {
-      method: 'POST',
-      body: formBody,
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    });
-
-    if (res.status === 429) {
-      return new Response(
-        JSON.stringify({
-          success: false,
-          message: 'Too many signups. Please try again in a moment.',
-        }),
-        { status: 429, headers },
-      );
-    }
-
-    const data = await res.json();
-    return new Response(JSON.stringify(data), {
-      status: data.success ? 200 : 400,
-      headers,
-    });
-  } catch {
-    return new Response(
-      JSON.stringify({
-        success: false,
-        message: 'Something went wrong. Please try again.',
-      }),
-      { status: 500, headers },
-    );
+    email = body.email?.trim();
+  } else if (contentType?.includes("application/x-www-form-urlencoded")) {
+    const body = await request.text();
+    const params = new URLSearchParams(body);
+    email = params.get("email")?.trim() || null;
+  } else {
+    const data = await request.formData();
+    email = (data.get("email") as string)?.trim();
   }
+
+  if (!email) {
+    return new Response(JSON.stringify({ message: "Email required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  const res = await fetch("https://app.loops.so/api/v1/contacts/create", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer b1654a6d00fcb7643d72323b4ad15232`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, source: "ravoid.com" }),
+  });
+
+  const loopsData = await res.json();
+  
+  if (res.ok) {
+    return new Response(JSON.stringify({ success: true, message: "Successfully subscribed!" }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  return new Response(JSON.stringify({ success: false, message: loopsData.message || "Failed, please try again." }), {
+    status: 400,
+    headers: { "Content-Type": "application/json" },
+  });
 };
