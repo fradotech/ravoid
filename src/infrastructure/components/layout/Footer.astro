@@ -1,6 +1,7 @@
 ---
 import { SiteConfig } from '@/app/config/site.config';
 import { Path } from '@/app/config/path.config';
+import NewsletterForm from '@/infrastructure/components/newsletter/NewsletterForm.astro';
 
 const currentYear = new Date().getFullYear();
 
@@ -46,6 +47,7 @@ const footerLinks = [
         <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
           Get the latest SaaS and startup insights delivered to your inbox.
         </p>
+        <NewsletterForm variant="footer" />
       </div>
     </div>
 

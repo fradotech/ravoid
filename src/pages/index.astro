@@ -8,6 +8,7 @@ import PostGrid from "@/infrastructure/components/blog/PostGrid.astro";
 import TrendingList from "@/infrastructure/components/blog/TrendingList.astro";
 import TagCloud from "@/infrastructure/components/blog/TagCloud.astro";
 import AdBanner from "@/infrastructure/components/ads/AdBanner.astro";
+import NewsletterForm from "@/infrastructure/components/newsletter/NewsletterForm.astro";
 import SectionHeader from "@/infrastructure/components/ui/SectionHeader.astro";
 import { SiteConfig } from "@/app/config/site.config";
 import { Path } from "@/app/config/path.config";
@@ -60,6 +61,14 @@ const tags = await getAllTags();
           </div>
         </aside>
       </div>
+    </section>
+
+    <section class="mt-12">
+      <NewsletterForm
+        variant="inline"
+        heading="SaaS insights, straight to your inbox"
+        description="Weekly deep dives on pricing, infrastructure, and engineering decisions. No fluff."
+      />
     </section>
 
     <section class="mt-12">

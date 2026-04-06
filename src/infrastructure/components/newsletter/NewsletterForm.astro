@@ -1,0 +1,155 @@
+---
+interface Props {
+  variant?: 'inline' | 'compact' | 'footer';
+  heading?: string;
+  description?: string;
+}
+
+const {
+  variant = 'inline',
+  heading = 'Get deep SaaS analysis in your inbox',
+  description = 'No spam. Unsubscribe anytime.',
+} = Astro.props;
+
+const formId = `newsletter-${variant}-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+{variant === 'inline' && (
+  <div
+    id={formId}
+    class="relative rounded-xl border border-gray-200/60 dark:border-white/[0.08] bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/30 dark:from-blue-950/20 dark:via-transparent dark:to-indigo-950/10 p-6 md:p-8"
+  >
+    <div class="max-w-xl">
+      <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200 tracking-tight">
+        {heading}
+      </h3>
+      <p class="mt-1.5 text-sm text-gray-500 dark:text-gray-400">
+        Weekly insights on SaaS pricing, infrastructure costs, and engineering decisions.
+      </p>
+      <form class="mt-4 flex flex-col sm:flex-row gap-3" data-newsletter-form>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="you@company.com"
+          class="flex-1 min-w-0 rounded-lg border border-gray-300 dark:border-white/[0.12] bg-white dark:bg-white/[0.05] px-4 py-2.5 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all"
+        />
+        <button
+          type="submit"
+          class="shrink-0 rounded-lg bg-blue-600 hover:bg-blue-700 px-5 py-2.5 text-sm font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          Subscribe
+        </button>
+      </form>
+      <p class="mt-2.5 text-xs text-gray-400 dark:text-gray-500">{description}</p>
+    </div>
+    <div class="newsletter-success hidden mt-4 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800/30 px-4 py-3">
+      <p class="text-sm text-emerald-700 dark:text-emerald-400 font-medium">You're in! Check your inbox to confirm.</p>
+    </div>
+    <div class="newsletter-error hidden mt-4 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/30 px-4 py-3">
+      <p class="text-sm text-red-600 dark:text-red-400"></p>
+    </div>
+  </div>
+)}
+
+{variant === 'compact' && (
+  <div
+    id={formId}
+    class="rounded-xl border border-gray-200/60 dark:border-white/[0.08] bg-gray-50/50 dark:bg-white/[0.02] p-4"
+  >
+    <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200">{heading}</h3>
+    <form class="mt-3 space-y-2.5" data-newsletter-form>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="you@company.com"
+        class="w-full rounded-lg border border-gray-300 dark:border-white/[0.12] bg-white dark:bg-white/[0.05] px-3.5 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all"
+      />
+      <button
+        type="submit"
+        class="w-full rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Subscribe
+      </button>
+    </form>
+    <p class="mt-2 text-xs text-gray-400 dark:text-gray-500">{description}</p>
+    <div class="newsletter-success hidden mt-3 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800/30 px-3 py-2">
+      <p class="text-sm text-emerald-700 dark:text-emerald-400 font-medium">You're in!</p>
+    </div>
+    <div class="newsletter-error hidden mt-3 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/30 px-3 py-2">
+      <p class="text-sm text-red-600 dark:text-red-400"></p>
+    </div>
+  </div>
+)}
+
+{variant === 'footer' && (
+  <div id={formId}>
+    <form class="mt-4 flex gap-2" data-newsletter-form>
+      <input
+        type="email"
+        name="email"
+        required
+        placeholder="you@company.com"
+        class="flex-1 min-w-0 rounded-lg border border-gray-300 dark:border-white/[0.12] bg-white dark:bg-white/[0.06] px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/40 focus:border-blue-500 transition-all"
+      />
+      <button
+        type="submit"
+        class="shrink-0 rounded-lg bg-blue-600 hover:bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500/40 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Subscribe
+      </button>
+    </form>
+    <div class="newsletter-success hidden mt-2 text-sm text-emerald-600 dark:text-emerald-400 font-medium">You're in! Check your inbox.</div>
+    <div class="newsletter-error hidden mt-2 text-sm text-red-500 dark:text-red-400"></div>
+  </div>
+)}
+
+<script is:inline>
+  document.querySelectorAll('[data-newsletter-form]').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var container = form.closest('[id^="newsletter-"]');
+      var emailInput = form.querySelector('input[name="email"]');
+      var button = form.querySelector('button[type="submit"]');
+      var successEl = container.querySelector('.newsletter-success');
+      var errorEl = container.querySelector('.newsletter-error');
+
+      if (!emailInput.value) return;
+
+      button.disabled = true;
+      button.textContent = 'Subscribing...';
+      if (successEl) successEl.classList.add('hidden');
+      if (errorEl) errorEl.classList.add('hidden');
+
+      fetch('/api/newsletter', {
+        method: 'POST',
+        body: JSON.stringify({ email: emailInput.value }),
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.status === 429) {
+          throw new Error('Too many signups. Please try again in a moment.');
+        }
+        return res.json();
+      })
+      .then(function(data) {
+        if (data.success) {
+          form.classList.add('hidden');
+          if (successEl) successEl.classList.remove('hidden');
+        } else {
+          throw new Error(data.message || 'Something went wrong. Please try again.');
+        }
+      })
+      .catch(function(err) {
+        if (errorEl) {
+          var p = errorEl.querySelector('p') || errorEl;
+          p.textContent = err.message;
+          errorEl.classList.remove('hidden');
+        }
+        button.disabled = false;
+        button.textContent = 'Subscribe';
+      });
+    });
+  });
+</script>

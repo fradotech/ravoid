@@ -8,6 +8,7 @@ import TrendingList from "@/infrastructure/components/blog/TrendingList.astro";
 import RecentPosts from "@/infrastructure/components/blog/RecentPosts.astro";
 import ShareButtons from "@/infrastructure/components/ui/ShareButtons.astro";
 import AdBanner from "@/infrastructure/components/ads/AdBanner.astro";
+import NewsletterForm from "@/infrastructure/components/newsletter/NewsletterForm.astro";
 import TableOfContents from "@/modules/post/components/TableOfContents.astro";
 import PostContent from "@/modules/post/components/PostContent.astro";
 import SuggestionReading from "@/modules/post/components/SuggestionReading.astro";
@@ -170,6 +171,10 @@ const blogPostingJsonLd = {
       <div class="lg:col-span-2">
         <PostContent html={html} />
 
+        <div class="mt-10">
+          <NewsletterForm variant="inline" />
+        </div>
+
         <div
           class="mt-10 pt-6 border-t border-gray-200/60 dark:border-white/[0.08]"
         >
@@ -189,6 +194,7 @@ const blogPostingJsonLd = {
       <aside class="hidden lg:block">
         <div class="sticky top-20 space-y-6">
           <TableOfContents items={toc} />
+          <NewsletterForm variant="compact" heading="Stay in the loop" />
           <AdBanner format="rectangle" />
           <TrendingList posts={trending} />
           <RecentPosts posts={recent} />
