@@ -140,4 +140,24 @@
   .dark .post-content a {
     text-decoration-color: rgba(96, 165, 250, 0.3);
   }
+
+  .post-content .table-wrapper {
+    @apply overflow-x-auto py-2 my-4;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile: reduce font size and padding */
+  @media (max-width: 768px) {
+    .post-content table {
+      font-size: 0.75rem;
+    }
+
+    .post-content :is(th, td) {
+      @apply px-2 py-1.5;
+    }
+
+    .post-content .table-wrapper {
+      @apply -mx-4 px-4;
+    }
+  }
 }

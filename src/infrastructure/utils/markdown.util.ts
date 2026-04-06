@@ -64,6 +64,9 @@ export async function renderMarkdown(markdown: string): Promise<string> {
 
   let html = await marked.parse(markdown);
 
+  html = html.replace(/<table>/g, '<div class="table-wrapper"><table>');
+  html = html.replace(/<\/table>/g, '</table></div>');
+
   const shikiRegex = /<!--shiki:(\w+)--><pre><code class="language-\w+">([\s\S]*?)<\/code><\/pre>/g;
   const replacements: { original: string; highlighted: string }[] = [];
 
