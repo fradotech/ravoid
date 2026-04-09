@@ -9,12 +9,21 @@
 
   body {
     @apply bg-white text-gray-900 transition-colors duration-200;
+    background-image: 
+      radial-gradient(ellipse 1200px 700px at 15% 20%, rgba(59, 130, 246, 0.12) 0%, rgba(59, 130, 246, 0.05) 30%, transparent 70%),
+      radial-gradient(ellipse 1000px 600px at 85% 75%, rgba(34, 211, 238, 0.1) 0%, rgba(34, 211, 238, 0.04) 30%, transparent 70%),
+      radial-gradient(ellipse 900px 500px at 50% 100%, rgba(139, 92, 246, 0.06) 0%, transparent 60%);
+    background-attachment: fixed;
   }
 
   .dark body {
     color: #a8b2c1;
-    background: #090909;    
+    background: #090909;
     background-attachment: fixed;
+    background-image: 
+      radial-gradient(ellipse 1200px 700px at 15% 20%, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.08) 30%, transparent 70%),
+      radial-gradient(ellipse 1000px 600px at 85% 75%, rgba(34, 211, 238, 0.15) 0%, rgba(34, 211, 238, 0.05) 30%, transparent 70%),
+      radial-gradient(ellipse 900px 500px at 50% 100%, rgba(139, 92, 246, 0.12) 0%, transparent 60%);
   }
 }
 
