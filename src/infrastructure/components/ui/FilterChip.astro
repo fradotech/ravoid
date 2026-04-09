@@ -11,7 +11,7 @@ const { href, active = false, label } = Astro.props;
 <a
   href={href}
   class:list={[
-    'px-3.5 py-1.5 text-sm rounded-full font-medium transition-all duration-200 backdrop-blur-sm',
+    'px-3.5 py-1.5 text-sm rounded-full font-medium transition-all duration-200',
     active
       ? 'bg-blue-600/90 text-white shadow-lg shadow-blue-500/20'
       : 'bg-white/60 dark:bg-white/10 text-gray-600 dark:text-gray-400 hover:bg-white/80 dark:hover:bg-white/20',
