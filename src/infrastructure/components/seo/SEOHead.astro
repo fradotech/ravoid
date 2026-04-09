@@ -19,7 +19,7 @@ const {
 const pageTitle = title ? `${title} | ${SiteConfig.name}` : SiteConfig.name;
 const siteBase = Astro.site?.href || EnvConfig.siteUrl;
 const canonical = canonicalUrl || new URL(Astro.url.pathname, siteBase).href;
-const ogImageUrl = ogImage || new URL('/og-default.png', siteBase).href;
+const ogImageUrl = ogImage || new URL('/og-default.webp', siteBase).href;
 const metaDescription = description.length > 155
   ? description.slice(0, description.lastIndexOf(' ', 155)) + '...'
   : description;

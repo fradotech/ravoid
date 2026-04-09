@@ -1,8 +1,12 @@
 import type { Post } from './post.type';
 import type { PostSource } from './post.source.type';
 
+const SITE_URL = 'https://ravoid.com';
+
 function img(id: string, w = 1200, h = 630): string {
-  if (id.startsWith('/')) return id;
+  if (id.startsWith('/')) {
+    return `${SITE_URL}${id}`;
+  }
   return `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format`;
 }
 
