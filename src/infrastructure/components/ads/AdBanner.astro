@@ -15,7 +15,7 @@ const heightClasses: Record<string, string> = {
 
 <div
   class:list={[
-    'ad-container flex items-center justify-center rounded-xl border border-gray-200/40 dark:border-white/[0.06] bg-gray-50/50 dark:bg-white/[0.02]',
+    'ad-container flex items-center justify-center rounded-xl backdrop-blur-md bg-white/40 dark:bg-white/[0.05] shadow-sm',
     heightClasses[format],
     sticky && 'sticky top-20',
     'hidden' // TODO: enable
