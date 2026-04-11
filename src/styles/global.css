@@ -9,10 +9,24 @@
 
   body {
     @apply bg-white text-gray-900 transition-colors duration-200;
-    background-image: 
-      radial-gradient(ellipse 1200px 700px at 15% 20%, rgba(59, 130, 246, 0.12) 0%, rgba(59, 130, 246, 0.05) 30%, transparent 70%),
-      radial-gradient(ellipse 1000px 600px at 85% 75%, rgba(34, 211, 238, 0.1) 0%, rgba(34, 211, 238, 0.04) 30%, transparent 70%),
-      radial-gradient(ellipse 900px 500px at 50% 100%, rgba(139, 92, 246, 0.06) 0%, transparent 60%);
+    background-image:
+      radial-gradient(
+        ellipse 1200px 700px at 15% 20%,
+        rgba(99, 102, 241, 0.15) 0%,
+        rgba(99, 102, 241, 0.05) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 1000px 600px at 85% 75%,
+        rgba(168, 85, 247, 0.12) 0%,
+        rgba(168, 85, 247, 0.04) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 900px 500px at 50% 100%,
+        rgba(236, 72, 153, 0.1) 0%,
+        transparent 60%
+      );
     background-attachment: fixed;
   }
 
@@ -20,10 +34,24 @@
     color: #a8b2c1;
     background: #090909;
     background-attachment: fixed;
-    background-image: 
-      radial-gradient(ellipse 1200px 700px at 15% 20%, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.08) 30%, transparent 70%),
-      radial-gradient(ellipse 1000px 600px at 85% 75%, rgba(34, 211, 238, 0.15) 0%, rgba(34, 211, 238, 0.05) 30%, transparent 70%),
-      radial-gradient(ellipse 900px 500px at 50% 100%, rgba(139, 92, 246, 0.12) 0%, transparent 60%);
+    background-image:
+      radial-gradient(
+        ellipse 1200px 700px at 15% 20%,
+        rgba(99, 102, 241, 0.25) 0%,
+        rgba(99, 102, 241, 0.1) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 1000px 600px at 85% 75%,
+        rgba(168, 85, 247, 0.2) 0%,
+        rgba(168, 85, 247, 0.08) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 900px 500px at 50% 100%,
+        rgba(236, 72, 153, 0.15) 0%,
+        transparent 60%
+      );
   }
 }
 
@@ -78,7 +106,7 @@
   .glass-input:focus {
     @apply ring-2 ring-blue-500/40 outline-none;
     background: rgba(255, 255, 255, 0.9);
-    box-shadow: 
+    box-shadow:
       inset 0 2px 8px rgba(0, 0, 0, 0.04),
       0 0 20px rgba(59, 130, 246, 0.16);
   }
@@ -90,7 +118,7 @@
 
   .dark .glass-input:focus {
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 
+    box-shadow:
       inset 0 2px 8px rgba(0, 0, 0, 0.2),
       0 0 20px rgba(59, 130, 246, 0.24);
   }
@@ -110,8 +138,17 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6);
+    @apply bg-clip-text text-transparent font-black;
+    background-image: linear-gradient(
+      90deg,
+      #3b82f6 0%,
+      #6366f1 40%,
+      #8b5cf6 70%,
+      #ec4899 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
   }
 
   .tag-outline {
