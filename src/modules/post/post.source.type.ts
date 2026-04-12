@@ -7,7 +7,7 @@ export interface PostSource {
   excerpt: string;
   tags: Tag[];
   imageId: string;
-  publishedAt: string;
+  publishedAt: string | null;
   featured: boolean;
   trendingScore: number;
 }

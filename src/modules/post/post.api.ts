@@ -25,9 +25,11 @@ export async function getAllPosts(params?: TPaginationRequest): Promise<TPaginat
   //   data: mapRawApiPosts(res.data),
   //   meta: res.meta,
   // }));
-  let filtered = [...POSTS].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  );
+  let filtered = [...POSTS]
+    .filter((post) => post.publishedAt)
+    .sort(
+      (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    );
 
   if (params?.search) {
     const query = params.search.toLowerCase();
@@ -60,9 +62,9 @@ export async function getAllPosts(params?: TPaginationRequest): Promise<TPaginat
 export async function getFeaturedPost(): Promise<Post> {
   // TODO: return httpClient.get<RawApiPost>(ApiPath.posts.featured).then(mapRawApiPost);
   return [...POSTS]
-    .filter((post) => post.featured)
+    .filter((post) => post.publishedAt && post.featured)
     .sort(sortByTrending)
-    .at(0) ?? POSTS[0];
+    .at(0) ?? POSTS.find(p => p.publishedAt) ?? POSTS[0];
 }
 
 export async function getTrendingPosts(limit = 5, excludeSlugs: string[] = []): Promise<Post[]> {
@@ -70,6 +72,7 @@ export async function getTrendingPosts(limit = 5, excludeSlugs: string[] = []): 
   //   .then(res => mapRawApiPosts(res.data));
   const exclude = new Set(excludeSlugs.filter(Boolean));
   return [...POSTS]
+    .filter((post) => post.publishedAt)
     .sort(sortByTrending)
     .filter((post) => !exclude.has(post.slug))
     .slice(0, limit);
@@ -79,6 +82,7 @@ export async function getRecentPosts(limit = 6): Promise<Post[]> {
   // TODO: return httpClient.getList<RawApiPost>(ApiPath.posts.recent, { params: { pageSize: limit } })
   //   .then(res => mapRawApiPosts(res.data));
   return [...POSTS]
+    .filter((post) => post.publishedAt)
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, limit);
 }
@@ -88,6 +92,7 @@ export async function getRelatedPosts(currentSlug: string, tags: string[], limit
   //   params: { pageSize: limit, 'filters[tags]': tags.join(','), exclude: currentSlug }
   // }).then(res => mapRawApiPosts(res.data));
   return POSTS
+    .filter((post) => post.publishedAt)
     .filter((post) => post.slug !== currentSlug)
     .filter((post) => post.tags.some((tag) => tags.includes(tag.slug)))
     .slice(0, limit);
