@@ -25,6 +25,7 @@ import {
   getTrendingPosts,
   getRecentPosts,
 } from "@/modules/post/post.api";
+import AuthorCard from "@/infrastructure/author/AuthorCard.astro";
 
 const { slug } = Astro.params;
 
@@ -187,6 +188,8 @@ const blogPostingJsonLd = {
         <div class="mt-8">
           <AdBanner format="horizontal" />
         </div>
+
+        <AuthorCard />
 
         <SuggestionReading posts={related} />
       </div>

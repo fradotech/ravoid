@@ -4,6 +4,7 @@ import { formatDate } from "@/infrastructure/utils/date.util";
 import { truncate } from "@/infrastructure/utils/format.util";
 import TagList from "./TagList.astro";
 import type { Post } from "@/modules/post/post.type";
+import { SiteConfig } from "@/app/config/site.config";
 
 interface Props {
   post: Post;
@@ -12,18 +13,22 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<article class="group glass-card overflow-hidden">
-  <a href={Path.post.detail(post.slug)} class="block" aria-label={post.title}>
+<article class="group glass-card overflow-hidden flex flex-col h-full">
+  <a
+    href={Path.post.detail(post.slug)}
+    class="flex flex-col h-full block"
+    aria-label={post.title}
+  >
     <div class="aspect-video overflow-hidden">
       <img
         src={post.thumbnail}
         alt={post.title}
-        class="w-full h-full object-cover"
+        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         loading="lazy"
       />
     </div>
 
-    <div class="p-5">
+    <div class="p-5 flex flex-col flex-grow">
       <h3
         class="font-medium text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-snug tracking-tight"
       >
@@ -31,17 +36,34 @@ const { post } = Astro.props;
       </h3>
 
       <p
-        class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed"
+        class="mt-2 text-sm text-gray-500 dark:text-gray-400 line-clamp-3 leading-relaxed mb-4"
       >
         {truncate(post.excerpt, 140)}
       </p>
 
-      <time
-        class="block mt-3 text-xs text-gray-500 dark:text-gray-400"
-        datetime={post.publishedAt}
+      <div
+        class="mt-auto flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-800/50"
       >
-        {formatDate(post.publishedAt)}
-      </time>
+        <div class="flex items-center gap-2">
+          <img
+            src={SiteConfig.author.avatar}
+            alt={SiteConfig.author.name}
+            class="w-6 h-6 rounded-full object-cover"
+            loading="lazy"
+          />
+
+          <span class="text-xs font-medium text-gray-700 dark:text-gray-300">
+            {SiteConfig.author?.name || "Framesta"}
+          </span>
+        </div>
+
+        <time
+          class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap"
+          datetime={post.publishedAt}
+        >
+          {formatDate(post.publishedAt)}
+        </time>
+      </div>
     </div>
   </a>
 </article>
