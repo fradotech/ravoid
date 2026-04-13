@@ -28,7 +28,7 @@ export async function GET(_context: APIContext) {
 
   const postPages: SitemapEntry[] = POSTS.map((post) => ({
     loc: `${site}/blog/${post.slug}`,
-    lastmod: post.updatedAt?.split('T')[0] ?? post.publishedAt.split('T')[0],
+    lastmod: post.updatedAt?.split('T')[0] ?? post.publishedAt?.split('T')[0],
     changefreq: 'weekly',
     priority: '0.8',
   }));
