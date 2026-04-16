@@ -27,6 +27,7 @@ import {
   getRecentPosts,
 } from "@/modules/post/post.api";
 import AuthorCard from "@/infrastructure/author/AuthorCard.astro";
+import { SiteConfig } from "@/app/config/site.config";
 
 const { slug } = Astro.params;
 
@@ -80,7 +81,8 @@ const blogPostingJsonLd = {
   },
   author: {
     "@type": "Person",
-    name: "Framesta Fernando",
+    name: SiteConfig.author.name,
+    url: SiteConfig.author.url,
   },
   publisher: {
     "@type": "Organization",

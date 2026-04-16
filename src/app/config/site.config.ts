@@ -19,6 +19,7 @@ export const SiteConfig = {
   },
   author: {
     name: "Framesta Fernando",
+    url: "https://frado.id",
     avatar: "/images/profile-picture.jpg",
     title: "Engineering Manager & Technical Architect",
     excerpt:
