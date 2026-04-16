@@ -48,7 +48,7 @@ Here is the part that makes most engineering leaders uncomfortable. The intellig
 
 Smart teams treat the router as the actual product. They score every incoming request across 14–15 dimensions: prompt length, required reasoning depth, domain specificity, safety sensitivity, latency budget, output format constraints, user tier, cache hit probability, fine-tune availability, cost sensitivity, regulatory flags, multi-turn context depth, hallucination risk tolerance, and two more proprietary signals they refuse to share. Each dimension gets a 0–10 normalized score. A weighted sum produces a single complexity score between 0 and 100. Anything under 65 goes to the cheapest viable path. Anything over 85 goes to frontier. The middle band gets dynamic routing based on real-time load and cost.
 
-This is exactly how OpenClaw works in production. We open-sourced the core of it [in our earlier piece on production routers](https://ravoid.com/blog/25). The scoring is not magic. It is disciplined observation of your own traffic. Most teams never look at their logs this way because it forces them to admit how much of their spend is pure waste. For a deeper comparison of routing approaches, see how OpenClaw stacks up against traditional frameworks in [OpenClaw vs LangChain vs raw APIs](https://ravoid.com/blog/openclaw-vs-langchain-vs-apis).
+This is exactly how OpenClaw works in production. We open-sourced the core of it [in our earlier piece on production routers](https://ravoid.com/blog/openclaw-vs-langchain-vs-apis). The scoring is not magic. It is disciplined observation of your own traffic. Most teams never look at their logs this way because it forces them to admit how much of their spend is pure waste. For a deeper comparison of routing approaches, see how OpenClaw stacks up against traditional frameworks in [OpenClaw vs LangChain vs raw APIs](https://ravoid.com/blog/openclaw-vs-langchain-vs-apis).
 
 The conceptual shift is brutal but liberating:
 
@@ -97,7 +97,7 @@ The table is directionally accurate for most SaaS workloads I have seen. Your ex
 
 The hybrid row is where the serious money lives. It is also where most teams chicken out because it requires owning infrastructure again. The ones who push through discover that self-hosting is no longer the exotic choice. It is the default for any team that has already accepted Kubernetes in their stack.
 
-We covered the operational side of self-hosting in [our deep dive on inference at scale](https://ravoid.com/blog/30). The economics have shifted faster than most realize. For more on why traditional orchestration layers often fall short at production scale, revisit [OpenClaw vs LangChain vs raw APIs](https://ravoid.com/blog/openclaw-vs-langchain-vs-apis).
+We covered the operational side of self-hosting in [our deep dive on inference at scale](https://ravoid.com/blog/ai-cost-explosion-token-prices-down-99-percent-bill-up-320-percent). The economics have shifted faster than most realize. For more on why traditional orchestration layers often fall short at production scale, revisit [OpenClaw vs LangChain vs raw APIs](https://ravoid.com/blog/openclaw-vs-langchain-vs-apis).
 
 ## Decision Guidance That Matches Reality
 
@@ -105,7 +105,7 @@ Early stage (under 200k requests/month): Build the simplest router possible. Har
 
 Growth stage (200k–3M requests/month): Go hybrid immediately. Spin up a small GPU cluster or use managed inference like Fireworks or Together. Route aggressively to self-hosted for everything under the 65 score threshold. You will thank yourself when your biggest customer suddenly demands SOC 2 compliance.
 
-Scale stage (3M+ requests/month): Self-hosted becomes the majority path. Frontier is the exception handler. At this point the router is no longer an optimization. It is the product architecture. Treat it with the same rigor you treat your database layer. [Our earlier analysis on why most AI cost models are broken](https://ravoid.com/blog/28) shows exactly how teams miss this transition.
+Scale stage (3M+ requests/month): Self-hosted becomes the majority path. Frontier is the exception handler. At this point the router is no longer an optimization. It is the product architecture. Treat it with the same rigor you treat your database layer. [Our earlier analysis on why most AI cost models are broken](https://ravoid.com/blog/token-economics-ai-saas-pricing-bleeding-money) shows exactly how teams miss this transition.
 
 The guidance is not generic. It is tied to volume, customer expectations, and engineering headcount. Ignore the stage and you will either over-engineer too early or under-optimize too late.
 
