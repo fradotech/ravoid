@@ -16,6 +16,7 @@ import { Path } from "@/app/config/path.config";
 import { formatDate } from "@/infrastructure/utils/date.util";
 import {
   extractToc,
+  extractFAQs,
   renderMarkdown,
 } from "@/infrastructure/utils/markdown.util";
 import {
@@ -40,6 +41,7 @@ if (!post) {
 }
 
 const toc = extractToc(post.content);
+const faqs = extractFAQs(post.content);
 const tagSlugs = post.tags.map((t) => t.slug);
 
 const featured = await getFeaturedPost();
@@ -97,6 +99,22 @@ const blogPostingJsonLd = {
   articleSection,
   ...(keywords ? { keywords } : {}),
 };
+
+const faqPageJsonLd =
+  faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
+      }
+    : null;
 ---
 
 <BaseLayout
@@ -114,6 +132,16 @@ const blogPostingJsonLd = {
     type="application/ld+json"
     set:html={JSON.stringify(blogPostingJsonLd)}
   />
+
+  {
+    faqPageJsonLd && (
+      <script
+        slot="head"
+        type="application/ld+json"
+        set:html={JSON.stringify(faqPageJsonLd)}
+      />
+    )
+  }
 
   <article class="max-w-6xl mx-auto px-4 py-8">
     <Breadcrumb
