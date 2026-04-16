@@ -20,5 +20,5 @@ export const post: PostSource = {
   imageId: "/images/posts/opus-4-7-vision-document-ai-collapse.webp",
   publishedAt: "2026-04-16T18:00:00.000Z",
   featured: false,
-  trendingScore: 23,
+  trendingScore: 24,
 };
