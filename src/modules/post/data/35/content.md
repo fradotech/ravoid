@@ -121,3 +121,130 @@ The teams that survive the next five years of frontier model upgrades will be th
 ## A Real Cost-Per-Outcome Formula for Opus 4.7
 
 The fix for the tokenizer tax is not better forecasting against the pricing page. It is a different formula. Stop modeling cost as price times tokens. Start modeling it as outcome cost, and let the vendor's tokenizer become an internal variable, not a contract.
+
+```
+Effective Cost Per Outcome = (T_in * P_in * M_t) + (T_out * P_out * M_e * M_v)
+                             --------------------------------------------------
+                                                R_o
+```
+
+Where:
+
+- **T_in** = average input tokens per logical request, measured on the previous tokenizer version
+- **P_in** = vendor input price per token
+- **M_t** = tokenizer multiplier (1.0 to 1.35 for Opus 4.6 to 4.7)
+- **T_out** = average output tokens per logical request, measured on the previous effort setting
+- **P_out** = vendor output price per token
+- **M_e** = effort level multiplier (medium to high to xhigh, roughly 1.0, 1.3, 1.7 on output volume)
+- **M_v** = self-verification multiplier (1.0 if disabled, ~1.15 if enabled)
+- **R_o** = resolution rate (the percentage of requests that actually succeeded at the business outcome)
+
+The point of the formula is not the exact numbers, which vary per workload. It is forcing every cost discussion to include the multipliers nobody currently sees on the pricing page.
+
+| Variable           | What Increases It                     | What You Can Control                                     |
+| ------------------ | ------------------------------------- | -------------------------------------------------------- |
+| M_t (tokenizer)    | Vendor model version upgrade          | Choose when to migrate, batch the cache rebuild cost     |
+| M_e (effort)       | xhigh defaults, complex agentic tasks | Route low-complexity requests to medium effort           |
+| M_v (verification) | Self-checking model behavior          | Disable for low-stakes paths                             |
+| R_o (resolution)   | Better model quality                  | This is the only multiplier that lowers cost per outcome |
+
+The trap is treating Opus 4.7 as a pure replacement for 4.6. The reality is that for cost-per-outcome to improve, the resolution rate gain (R_o) has to outpace the combined inflation from M_t, M_e, and M_v. For coding-heavy and agentic workloads, Anthropic's data shows it does. For straightforward prompt-response chat, it often does not.
+
+## Migrate Now, Stage Later, or Stay on 4.6
+
+Most teams will frame this as a binary, ship today or hold. The real choice has four options, and the right one depends on workload mix.
+
+| Decision                               | What You Gain                                                     | What You Pay                                                                               | When It Breaks                                                                                                                                                     |
+| -------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Migrate everything to Opus 4.7 today   | Best capability across coding, vision, agentic tasks              | 35-50% bill increase month one, cache rebuild cost, prompt re-audit                        | Workloads that were cost-sensitive on 4.6 become unsustainable on 4.7                                                                                              |
+| Stage migration by workload class      | Capture quality gains where they matter, contain cost on the rest | Engineering time to instrument and route, 4-6 week migration window                        | Routing logic becomes its own maintenance burden, covered in [smart routing across model tiers](https://ravoid.com/blog/smart-routing-self-hosted-ai-cost-savings) |
+| Stay on Opus 4.6 for now               | Predictable cost, stable cache, no prompt re-tuning               | Falling behind on coding and vision benchmarks; 4.6 will be deprecated within 12-18 months | The first deprecation notice arrives and forces a rushed migration anyway                                                                                          |
+| Downshift to Sonnet 4.6 where possible | 40% lower input cost, 40% lower output cost than Opus 4.7         | Quality regression on hardest tasks; only viable for medium-complexity workloads           | Reasoning-heavy work degrades silently                                                                                                                             |
+
+The honest answer for most growth-stage and scale-stage teams is the second option: stage migration by workload class, gated by per-feature cost-per-outcome measurement. The first option is the most common choice and the most expensive one. The third is a delay tactic that becomes the second option six months later, with all the same work but compressed into less time.
+
+## What to Do at Your Stage
+
+The tokenizer tax does not affect every team equally, and the right response is not the same across the board.
+
+### Early stage (under $5K/month on Opus)
+
+Migrate to Opus 4.7 today, downgrade effort to `medium` for everything except your hardest coding paths, and treat the bill increase as a learning exercise. Build a one-line cost-per-outcome metric now, even if the absolute numbers are tiny. The discipline matters more than the dollars at this stage.
+
+### Growth stage ($20K-$80K/month on Opus)
+
+Hold migration for two weeks. Use that time to instrument token counting per request, build a per-feature cost dashboard, and identify which workloads genuinely benefit from 4.7's capability gains. Then migrate one feature at a time, measuring cost-per-outcome before and after. Expect 2-3 features to win and 1-2 to be moved back to 4.6 or down to Sonnet 4.6. This is also the right moment to revisit the trade-offs we covered in [OpenAI vs self-hosted LLM cost](https://ravoid.com/blog/openai-vs-self-hosted-llm-cost), because the tokenizer change makes self-hosted Llama on a fixed-cost GPU look meaningfully better for routine traffic.
+
+### Scale stage ($150K+/month on Opus)
+
+Treat this as a renegotiation event, not a migration. Anthropic enterprise sales teams are aware of the tokenizer math and have flexibility. Bring measured token-inflation data from your actual workloads, not estimates from blog posts. Negotiate either a tokenizer-adjusted unit price or a workload-specific pricing tier. In parallel, build the routing infrastructure described in [smart routing and self-hosted AI cost savings](https://ravoid.com/blog/smart-routing-self-hosted-ai-cost-savings) so that you can shift traffic between Opus 4.7, Opus 4.6, Sonnet 4.6, and self-hosted models based on real-time cost-per-outcome signals.
+
+The mistake at every stage is the same: assuming the migration is free because the per-token price did not change.
+
+## Two Mistakes Already Visible Today
+
+Two mistakes are already showing up in production decks I have reviewed this morning.
+
+The first is the "drop-in upgrade" framing. Engineering leads are pitching the migration to leadership as "same cost, better quality" because that is what the announcement said. When the bill arrives 35% higher, the credibility hit lands on the engineer who pitched it, not on Anthropic's marketing copy. Anyone presenting Opus 4.7 as a free upgrade is signing up for a difficult Q3 review.
+
+The second is silent reliance on `xhigh` becoming the default for coding and agentic use cases. Anthropic recommends it. Most teams will not override it. The result is that the cost increase is largest exactly where Opus is most heavily used, and nobody made an explicit decision to spend that money. As we covered in [the broader AI cost explosion analysis](https://ravoid.com/blog/ai-cost-explosion-token-prices-down-99-percent-bill-up-320-percent), agentic usage is the silent killer of margins, and `xhigh` is the new accelerant.
+
+## Reading the Invoice You Did Not Sign
+
+Anthropic shipped a better model today. The marketing said the price did not change. Both statements are true. Neither statement is the whole truth.
+
+The whole truth is that frontier model pricing has entered a new regime. The unit price is now a marketing artifact. The actual cost of inference depends on a tokenizer you do not control, an effort level you may not have configured, a self-verification step you cannot disable, and a cache that just got invalidated. The pricing page is the easy part. The math behind it is the hard part, and Anthropic has made the math more complicated without changing the page.
+
+The teams that will do well in this regime are the ones that stop quoting "$5 per million input tokens" in their cost models and start quoting "cost per resolved support ticket" or "cost per merged PR" instead. Vendors will keep changing tokenizers. Vendors will keep introducing new effort defaults. Vendors will keep adding self-verification, multi-step thinking, and adaptive reasoning that pushes token counts up. None of that is a problem if you measure outcomes. All of it is a problem if you measure tokens.
+
+> The pricing page is the contract. The tokenizer is the bill.
+
+If you are migrating to Opus 4.7 this week, do it with eyes open. If your CFO asks why the bill went up, do not pretend it was traffic. It was not.
+
+## FAQ
+
+### Q: Did Anthropic raise the price of Claude Opus 4.7?
+
+No, the per-token price is identical to Opus 4.6 at $5 per million input tokens and $25 per million output tokens. However, Opus 4.7 ships with a new tokenizer that maps the same English content to roughly 1.0 to 1.35x more tokens, and a new `xhigh` default effort level that produces more output tokens on coding and agentic workloads. Real bills typically rise 30-50% on identical workloads despite the unchanged unit price.
+
+### Q: How much will my Opus bill go up after migrating to 4.7?
+
+Expect a 25-35% increase on input token spend due to the tokenizer change, and a 20-40% increase on output token spend if you keep the new `xhigh` default for coding and agentic tasks. Workloads heavy in code, JSON, or non-English languages tend to see the larger end of the range. Plain English chat workloads see closer to 25-30% total increase. The first month also includes one-time cache rebuild cost as the new tokenizer invalidates existing prompt caches.
+
+### Q: Should I migrate to Opus 4.7 immediately?
+
+For workloads where capability gains matter (complex coding, agentic orchestration, vision-heavy tasks), yes, but stage the migration by workload class rather than swapping all traffic at once. For workloads where Opus 4.6 was already meeting quality bars (chat, summarization, classification), there is no urgency. Anthropic typically supports prior model versions for 12-18 months, giving you time to migrate based on cost-per-outcome data rather than launch-day excitement.
+
+### Q: What is the xhigh effort level in Opus 4.7?
+
+`xhigh` is a new effort setting introduced in Opus 4.7 that sits between `high` and `max`. Anthropic recommends it as the starting point for coding and agentic use cases. It increases the model's internal thinking budget, which improves task resolution rates but also produces more output tokens per request. Teams that do not explicitly set effort to `medium` or `high` will inherit `xhigh` and the higher token spend that comes with it.
+
+### Q: Does prompt caching still work on Opus 4.7?
+
+Yes, prompt caching offers the same up-to-90% discount on cache hits ($0.50 per million tokens versus $5 standard input). However, the new tokenizer means cached prompts from Opus 4.6 do not transfer. The first 2-4 weeks after migration run with significantly reduced cache hit rates, costing 5-15% extra in transitional inference until the cache rebuilds against the new tokenizer.
+
+### Q: Is Opus 4.7 worth it compared to Sonnet 4.6 for cost-sensitive workloads?
+
+For most cost-sensitive workloads, Sonnet 4.6 at $3 per million input tokens and $15 per million output tokens remains the better choice. Opus 4.7's capability gains are concentrated in the hardest 15-20% of tasks: complex multi-file refactoring, long-running agentic workflows, and high-resolution vision. For routine inference, Sonnet 4.6 is roughly 60% cheaper on input and 40% cheaper on output, with quality that is competitive on tasks below the Opus complexity threshold.
+
+### Q: What is the budget_tokens deprecation in Opus 4.7?
+
+Opus 4.7 deprecates the `budget_tokens` parameter in favor of a new `task_budget` mechanism. Code that still passes `budget_tokens` is accepted for backward compatibility, but the behavior may differ from previous expectations. Teams relying on `budget_tokens` as a cost ceiling should migrate to `task_budget` or risk losing the spending guardrails they thought were in place.
+
+## Next Read
+
+If you are now thinking about how to actually route traffic between Opus 4.7, Opus 4.6, and Sonnet 4.6 to keep costs predictable, our breakdown of [smart routing and self-hosted AI cost savings](https://ravoid.com/blog/smart-routing-self-hosted-ai-cost-savings) shows the routing patterns smart teams use to cut total inference cost 60-80% without losing quality.
+
+---
+
+### Sources & Further Reading
+
+- [Anthropic: Introducing Claude Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7)
+- [Claude Docs: What's new in Opus 4.7](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7)
+- [Claude API Pricing Reference](https://platform.claude.com/docs/en/about-claude/pricing)
+- [Help Net Security: Claude Opus 4.7 release analysis](https://www.helpnetsecurity.com/2026/04/16/claude-opus-4-7-released/)
+- [Dev.to: Opus 4.7 migration test, budget_tokens deprecation](https://dev.to/ji_ai/opus-47-killed-budgettokens-what-changed-and-how-to-migrate-3ian)
+
+---
+
+_Last updated: April 16, 2026_
