@@ -82,6 +82,10 @@ Landscape 1200x630. No text, no logos, no people.
 cwebp -q 80 -resize 1200 630 input.webp -o public/images/posts/[slug].webp
 ```
 
+## GSC Test
+
+- https://search.google.com/test/rich-results
+
 ## Ref
 
 - techcrunch.com
