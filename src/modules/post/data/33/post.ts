@@ -16,6 +16,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/cursor-vs-windsurf-developer-roi-illusion.webp",
   publishedAt: "2026-04-07T10:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 23,
 };
