@@ -141,10 +141,8 @@
     @apply bg-clip-text text-transparent font-black;
     background-image: linear-gradient(
       90deg,
-      #3b82f6 0%,
-      #6366f1 40%,
-      #8b5cf6 70%,
-      #ec4899 100%
+      #68dcff 0%,
+      #f941ff 50%
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

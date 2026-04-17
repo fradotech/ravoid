@@ -1,0 +1,80 @@
+---
+interface ValueProp {
+  title: string;
+  description: string;
+  icon: string;
+  color: "emerald" | "blue" | "purple";
+}
+
+const valueProps: ValueProp[] = [
+  {
+    title: "Real cost numbers",
+    description:
+      "Every scenario uses verifiable vendor pricing and concrete production data. No vague \"it depends\" conclusions.",
+    icon: "M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6",
+    color: "emerald",
+  },
+  {
+    title: "Opinionated, not balanced",
+    description:
+      "Clear recommendations based on production experience. Not market surveys, not vendor-funded reports.",
+    icon: "M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z",
+    color: "blue",
+  },
+  {
+    title: "Stage-aware guidance",
+    description:
+      "Early, growth, and scale stages produce different cost dynamics. Every analysis covers all three explicitly.",
+    icon: "M3 3v18h18M7 15l4-4 4 4 5-5",
+    color: "purple",
+  },
+];
+
+const colorMap = {
+  emerald: {
+    bg: "bg-emerald-50 dark:bg-emerald-950/40",
+    text: "text-emerald-600 dark:text-emerald-400",
+  },
+  blue: {
+    bg: "bg-blue-50 dark:bg-blue-950/40",
+    text: "text-blue-600 dark:text-blue-400",
+  },
+  purple: {
+    bg: "bg-purple-50 dark:bg-purple-950/40",
+    text: "text-purple-600 dark:text-purple-400",
+  },
+};
+---
+
+<section class="max-w-6xl mx-auto px-4 pt-16 md:pt-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {
+      valueProps.map((prop) => (
+        <div class="p-6 rounded-xl bg-white/40 dark:bg-gray-900/30 backdrop-blur-sm hover:bg-white/50 dark:hover:bg-gray-900/40 transition-colors">
+          <div
+            class={`w-10 h-10 mb-4 rounded-lg ${colorMap[prop.color].bg} flex items-center justify-center ${colorMap[prop.color].text}`}
+          >
+            <svg
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d={prop.icon}></path>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2 tracking-tight">
+            {prop.title}
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+            {prop.description}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</section>

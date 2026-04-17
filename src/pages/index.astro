@@ -1,78 +1,77 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
 import BaseLayout from "@/infrastructure/components/layout/BaseLayout.astro";
 import WebSiteSchema from "@/infrastructure/components/seo/WebSiteSchema.astro";
-import FeaturedPost from "@/infrastructure/components/blog/FeaturedPost.astro";
-import PostGrid from "@/infrastructure/components/blog/PostGrid.astro";
-import TrendingList from "@/infrastructure/components/blog/TrendingList.astro";
-import TagCloud from "@/infrastructure/components/blog/TagCloud.astro";
 import AdBanner from "@/infrastructure/components/ads/AdBanner.astro";
-import NewsletterForm from "@/infrastructure/components/newsletter/NewsletterForm.astro";
-import SectionHeader from "@/infrastructure/components/ui/SectionHeader.astro";
+import AuthorCard from "@/infrastructure/author/AuthorCard.astro";
+import HomeHero from "@/infrastructure/components/home/HomeHero.astro";
+import HomeFeaturedSection from "@/infrastructure/components/home/HomeFeaturedSection.astro";
+import HomeValueProps from "@/infrastructure/components/home/HomeValueProps.astro";
+import HomeLatestSection from "@/infrastructure/components/home/HomeLatestSection.astro";
+import HomeNewsletterSection from "@/infrastructure/components/home/HomeNewsletterSection.astro";
 import { SiteConfig } from "@/app/config/site.config";
-import { Path } from "@/app/config/path.config";
 import { getHomeData } from "@/modules/home/home.api";
 import { getAllTags } from "@/modules/tag/tag.api";
+import type { Tag } from "@/modules/post/post.type";
 
 const { featured, trending, latest } = await getHomeData();
 const tags = await getAllTags();
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `Latest Articles — ${SiteConfig.name}`,
+  itemListElement: latest.slice(0, 10).map((post, idx) => ({
+    "@type": "ListItem",
+    position: idx + 1,
+    url: new URL(
+      `/blog/${post.slug}`,
+      Astro.site,
+    ).href,
+    name: post.title,
+  })),
+};
+
+const featuredTopics: Tag[] = [
+  { name: "AI Cost", slug: "cost-analysis" },
+  { name: "AI Agents", slug: "agents" },
+  { name: "LLM", slug: "llm" },
+  { name: "Anthropic", slug: "anthropic" },
+  { name: "Infrastructure", slug: "infrastructure" },
+  { name: "SaaS Pricing", slug: "pricing" },
+  { name: "Serverless", slug: "serverless" },
+];
 ---
 
 <BaseLayout
-  title={SiteConfig.tagline}
-  description="Deep SaaS pricing analysis, tool comparisons, and infrastructure decisions. Learn how to choose the right stack, pricing model, and growth strategy. Latest articles, trending topics, and expert analysis."
+  title={`${SiteConfig.tagline} | ${SiteConfig.name}`}
+  description="Deep technical analysis of AI infrastructure cost, SaaS pricing models, and engineering decisions. Stage-specific guidance for engineering leaders building production systems, with real numbers and opinionated recommendations."
 >
   <WebSiteSchema slot="head" />
-  <div class="max-w-7xl mx-auto px-4 py-8">
-    <section class="mb-10 text-center">
-      <h1
-        class="text-2xl md:text-3xl font-medium tracking-tight text-gray-900 dark:text-gray-100 max-w-4xl mx-auto"
-      >
-        {SiteConfig.tagline}
-      </h1>
-      <p
-        class="mt-2 text-sm md:text-base text-gray-500 dark:text-gray-400 max-w-4xl mx-auto"
-      >
-        {SiteConfig.description}
-      </p>
-    </section>
+  <script
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(itemListSchema)}
+  />
 
-    <section>
-      <FeaturedPost post={featured} />
-    </section>
+  <HomeHero tagline={SiteConfig.tagline} description="Deep breakdowns of AI infrastructure cost, SaaS pricing, and engineering decisions. Real numbers, stage-specific guidance, and opinions shaped by production experience." featuredTopics={featuredTopics} />
 
-    <section class="mt-12">
-      <AdBanner format="horizontal" />
-    </section>
+  <HomeFeaturedSection post={featured} />
 
-    <section class="mt-12">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2">
-          <SectionHeader title="Latest" href={Path.blog.index} />
-          <PostGrid posts={latest} columns={2} />
-        </div>
+  <HomeValueProps />
 
-        <aside class="space-y-8">
-          <TrendingList posts={trending} />
-          <div>
-            <SectionHeader title="Topics" href={Path.tags.index} />
-            <TagCloud tags={tags} />
-          </div>
-        </aside>
-      </div>
-    </section>
+  <HomeLatestSection {latest} {trending} {tags} />
 
-    <section class="mt-12">
-      <NewsletterForm
-        variant="inline"
-        heading="SaaS insights, straight to your inbox"
-        description="Weekly deep dives on pricing, infrastructure, and engineering decisions. No fluff."
-      />
-    </section>
+  <!-- SINGLE AD SLOT -->
+  <section class="max-w-6xl mx-auto px-4 pt-16">
+    <AdBanner format="horizontal" />
+  </section>
 
-    <section class="mt-12">
-      <AdBanner format="horizontal" />
-    </section>
-  </div>
+  <HomeNewsletterSection />
+
+  <!-- AUTHOR CARD -->
+  <section class="max-w-6xl mx-auto px-4 pt-16 md:pt-20">
+    <AuthorCard />
+  </section>
 </BaseLayout>
