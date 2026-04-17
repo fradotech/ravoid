@@ -1,8 +1,9 @@
 ---
+import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
-import "@/styles/font-optimization.css";
+import "@fontsource/inter/800.css";
 import "@/styles/global.css";
 import { SiteConfig } from "@/app/config/site.config";
 import SEOHead from "@/infrastructure/components/seo/SEOHead.astro";
@@ -34,34 +35,6 @@ const props = Astro.props;
       name="theme-color"
       content="#0a0a0a"
       media="(prefers-color-scheme: dark)"
-    />
-
-    <!-- Font optimization -->
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-      crossorigin
-    />
-    <link
-      rel="preconnect"
-      href="https://cdn.jsdelivr.net"
-      crossorigin
-    />
-    
-    <!-- Preload critical fonts -->
-    <link
-      rel="preload"
-      href="/_astro/inter-lat-500-normal.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-    <link
-      rel="preload"
-      href="/_astro/inter-lat-600-normal.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
     />
 
     <link
