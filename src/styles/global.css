@@ -227,6 +227,16 @@
     -webkit-overflow-scrolling: touch;
   }
 
+  /* Scrollable container without visible scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Mobile: reduce font size and padding */
   @media (max-width: 768px) {
     .post-content table {
