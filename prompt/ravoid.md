@@ -100,7 +100,7 @@ Plus: **FAQ section** at end with `### Q:` format for FAQPage schema extraction.
 - **Fonts:** Inter via `@fontsource/inter` (weights 400, 500, 600, 700, 800)
 - **Analytics:** GTM
 - **Dark mode:** Via `ThemeInit` component, `prefers-color-scheme`
-- **Feeds:** RSS at `/rss.xml`, sitemap at `/sitemap-index.xml`
+- **Feeds:** RSS at `/rss.xml`, sitemap at `/sitemap.xml`
 - **Images:** WebP, at `/public/images/posts/[slug].webp`
 
 ---
