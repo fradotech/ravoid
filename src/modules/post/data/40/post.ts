@@ -17,7 +17,7 @@ export const post: PostSource = {
     { name: "Productivity", slug: "productivity" },
   ],
   imageId: "/images/posts/obsidian-vs-confluence-knowledge-stack-decision.webp",
-  publishedAt: "2026-04-20T10:00:00.000Z",
+  publishedAt: "2026-04-19T20:00:00.000Z",
   featured: false,
-  trendingScore: 22,
+  trendingScore: 23,
 };

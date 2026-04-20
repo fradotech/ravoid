@@ -149,6 +149,10 @@ https://ravoid.com/blog/smart-routing-self-hosted-ai-cost-savings
 https://ravoid.com/blog/rag-is-not-free-brutal-cost-curve-10-million-records
 https://ravoid.com/blog/cursor-vs-windsurf-developer-roi-illusion
 https://ravoid.com/blog/multi-agent-orchestration-handoff-problem
+https://ravoid.com/blog/langchain-exit-raw-sdk-migration-2026
+https://ravoid.com/blog/opus-4-7-xhigh-effort-trap
+https://ravoid.com/blog/opus-4-7-vision-document-ai-collapse
+https://ravoid.com/blog/opus-4-7-tokenizer-tax
 
 ```
 

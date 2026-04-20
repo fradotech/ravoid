@@ -79,7 +79,7 @@ Landscape 1200x630. No text, no logos, no people.
 #### Compress Command
 
 ```bash
-cwebp -q 80 -resize 1200 630 input.webp -o public/images/posts/[slug].webp
+cwebp -q 100 -resize 1200 630 input.webp -o public/images/posts/[slug].webp
 ```
 
 ## GSC Test
