@@ -15,7 +15,7 @@ export const SiteConfig = {
     type: "Organization" as const,
     name: "Ravoid",
     url: "https://ravoid.com",
-    logo: "https://ravoid.com/favicon.svg",
+    logo: "https://ravoid.com/favicon.ico",
   },
   author: {
     name: "Framesta Fernando",
