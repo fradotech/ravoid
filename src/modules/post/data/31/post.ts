@@ -11,7 +11,6 @@ export const post: PostSource = {
     { name: "AI", slug: "ai" },
     { name: "Cost", slug: "cost" },
     { name: "Infrastructure", slug: "infrastructure" },
-    { name: "Routing", slug: "routing" },
     { name: "Agents", slug: "agents" },
     { name: "SaaS", slug: "saas" },
   ],

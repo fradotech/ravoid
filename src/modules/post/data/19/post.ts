@@ -10,7 +10,7 @@ export const post: PostSource = {
   tags: [
     { name: "Fintech", slug: "fintech" },
     { name: "SaaS", slug: "saas" },
-    { name: "Payments", slug: "payments" },
+    { name: "Payment", slug: "payment" },
     { name: "Comparison", slug: "comparison" },
   ],
   imageId: "/images/posts/stripe-vs-xendit-vs-midtrans-real-cost-comparison.webp",

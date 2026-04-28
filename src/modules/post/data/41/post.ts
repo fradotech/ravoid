@@ -13,8 +13,6 @@ export const post: PostSource = {
     { name: "Cost Analysis", slug: "cost-analysis" },
     { name: "LLM", slug: "llm" },
     { name: "Production", slug: "production" },
-    { name: "Observability", slug: "observability" },
-    { name: "Engineering Leadership", slug: "engineering-leadership" },
   ],
   imageId: "/images/posts/ai-agent-budget-enforcement.webp",
   publishedAt: "2026-04-20T10:00:00.000Z",

@@ -11,8 +11,6 @@ export const post: PostSource = {
     { name: "AI", slug: "ai" },
     { name: "Cursor", slug: "cursor" },
     { name: "Windsurf", slug: "windsurf" },
-    { name: "Engineering ROI", slug: "engineering-roi" },
-    { name: "Infrastructure Economics", slug: "infrastructure-economics" },
   ],
   imageId: "/images/posts/cursor-vs-windsurf-developer-roi-illusion.webp",
   publishedAt: "2026-04-07T10:00:00.000Z",

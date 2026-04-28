@@ -12,7 +12,6 @@ export const post: PostSource = {
     { name: "LLM", slug: "llm" },
     { name: "Anthropic", slug: "anthropic" },
     { name: "Frontier Models", slug: "frontier-models" },
-    { name: "Vision", slug: "vision" },
     { name: "Cost Analysis", slug: "cost-analysis" },
     { name: "Production", slug: "production" },
     { name: "Migration", slug: "migration" },

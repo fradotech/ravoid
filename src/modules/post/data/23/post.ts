@@ -10,7 +10,7 @@ export const post: PostSource = {
     { name: "AI", slug: "ai" },
     { name: "Infrastructure", slug: "infrastructure" },
     { name: "Cost", slug: "cost" },
-    { name: "FinOps", slug: "finops" },
+    { name: "Payment", slug: "payment" },
   ],
   imageId: "/images/posts/why-ai-cost-explodes-after-scale.webp",
   publishedAt: "2026-03-30T08:00:00.000Z",

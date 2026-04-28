@@ -7,7 +7,6 @@ export const post: PostSource = {
   excerpt: "Churn is not just a retention metric, it reflects product, pricing, and value alignment. Learn what actually drives churn and how to reduce it.",
   tags: [
     { name: "SaaS", slug: "saas" },
-    { name: "Retention", slug: "retention" },
     { name: "Strategy", slug: "strategy" },
     { name: "Growth", slug: "growth" }
   ],

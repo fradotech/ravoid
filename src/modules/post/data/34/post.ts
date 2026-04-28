@@ -14,7 +14,6 @@ export const post: PostSource = {
     { name: "Production", slug: "production" },
     { name: "Infrastructure", slug: "infrastructure" },
     { name: "SaaS", slug: "saas" },
-    { name: "Handoff", slug: "handoff" },
   ],
   imageId: "/images/posts/multi-agent-orchestration-handoff-problem.webp",
   publishedAt: "2026-04-12T15:00:00.000Z",
