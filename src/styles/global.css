@@ -9,11 +9,49 @@
 
   body {
     @apply bg-white text-gray-900 transition-colors duration-200;
+    background-image:
+      radial-gradient(
+        ellipse 1200px 700px at 15% 20%,
+        rgba(99, 102, 241, 0.15) 0%,
+        rgba(99, 102, 241, 0.05) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 1000px 600px at 85% 75%,
+        rgba(168, 85, 247, 0.12) 0%,
+        rgba(168, 85, 247, 0.04) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 900px 500px at 50% 100%,
+        rgba(236, 72, 153, 0.1) 0%,
+        transparent 60%
+      );
+    background-attachment: fixed;
   }
 
   .dark body {
     color: #a8b2c1;
     background: #090909;
+    background-attachment: fixed;
+    background-image:
+      radial-gradient(
+        ellipse 1200px 700px at 15% 20%,
+        rgba(99, 102, 241, 0.25) 0%,
+        rgba(99, 102, 241, 0.1) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 1000px 600px at 85% 75%,
+        rgba(168, 85, 247, 0.2) 0%,
+        rgba(168, 85, 247, 0.08) 30%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 900px 500px at 50% 100%,
+        rgba(236, 72, 153, 0.15) 0%,
+        transparent 60%
+      );
   }
 }
 
@@ -39,7 +77,7 @@
   }
 
   .dark .glass-card:hover {
-    background: rgba(30, 41, 59, 0.5);
+    background: rgba(30, 41, 59, 0.28);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
   }
 

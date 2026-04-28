@@ -81,16 +81,6 @@ import type { Tag } from "@/modules/post/post.type";
       role="navigation"
       aria-label="Popular topics"
     >
-      <!-- {
-        featuredTopics.map((topic) => (
-          <a
-            href={`/tags/${topic.slug}`}
-            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border border-gray-200 dark:border-gray-700/60 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
-          >
-            {topic.label}
-          </a>
-        ))
-      } -->
       <TagList tags={featuredTopics} limit={10} size="md" />
     </div>
   </div>

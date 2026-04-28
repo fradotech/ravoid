@@ -20,7 +20,7 @@ const tags = await getAllTags();
           class="flex items-center justify-between p-4 glass-card"
         >
           <span class="font-medium text-gray-900 dark:text-gray-100">{tag.name}</span>
-          <span class="text-sm text-gray-500 dark:text-gray-400">{pluralize(tag.postCount, 'post')}</span>
+          <span class="text-sm text-gray-500 dark:text-gray-400">{pluralize(tag.postCount || 0, 'post')}</span>
         </a>
       ))}
     </div>
