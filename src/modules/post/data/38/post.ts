@@ -19,6 +19,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/langchain-exit-raw-sdk-migration-2026.webp",
   publishedAt: "2026-04-18T10:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 23,
 };

@@ -19,6 +19,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/opus-4-7-tokenizer-tax.webp",
   publishedAt: "2026-04-16T16:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 24,
 };

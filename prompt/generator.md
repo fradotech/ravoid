@@ -34,6 +34,7 @@ You will receive ONE input: a topic. You must auto-derive everything else (keywo
 - Estimates: prefix explicitly ("estimated", "rough order-of-magnitude").
 - NEVER fabricate company names. Use specific anonymization: "a 50-engineer fintech in SEA, ~12M tx/month".
 - ≥1 verifiable benchmark or pricing number per major claim.
+- The Post-Mortem Rule: Include at least one brief "failed architecture" anecdote or post-mortem related to the topic, detailing the specific technical metric that broke (e.g., "Memory spiked to 90%", "Cloudflare bill jumped by $4,000").
 
 ---
 
@@ -54,15 +55,15 @@ You will receive ONE input: a topic. You must auto-derive everything else (keywo
 1. **Hook** — 1-2 sharp sentences, pattern break.
 2. **TL;DR** — 40-60 words, plain answer to the search query, contains primary keyword once. Format as `> **TL;DR:** ...`
 3. **Context** — common belief / situation.
-4. **False Assumption** — the incorrect mental model.
+4. **False Assumption (The Contradiction)** — State the incorrect mental model, then immediately flip it with a sharp contradiction (e.g., "Most teams assume caching solves latency. Caching actually hides terrible database schema design.").
 5. **Concrete Early Example** — realistic scenario with rough numbers.
 6. **Where the Model Breaks** — short intro + 3-5 bullets.
 7. **Deep Scenario Expansion** — early stage, growth stage, scale stage with numbers.
 8. **Hidden Cost / System Leak** — explanation + breakdown table.
-9. **Anchor Insight** — deepest section, core mechanism, conceptual `pattern → insight` table.
+9. **Anchor Insight (Moat vs Commodity)** — The deepest section. Explain why the common approach is a cheap commodity, and identify the _true_ architectural moat (e.g., "AI wrappers are commodities; data normalization pipelines are moats."). Include a conceptual `pattern → insight` table.
 10. **Framework / Mental Model** — formula or model + variable interpretation table.
 11. **Trade-off Comparison** — table with columns: `decision | what you gain | what you pay | when it breaks`.
-12. **Decision Guidance** — when each approach makes sense, by stage and constraints.
+12. **Decision Guidance (The Absolute Rule)** — When each approach makes sense. You MUST include at least one absolute constraint formatted as "The rule: If [Condition], then [Action/Kill it]." (e.g., "The rule: If your background jobs take longer than your request timeout, you don't need a larger instance; you need a message broker.")
 13. **Common Mistakes (Short)** — 1-2 mistakes, direct.
 14. **Closing** — distinctive section title (do NOT reuse), reframe + 1-2 quotable lines.
 15. **FAQ** — 5-7 questions matching real "People Also Ask", each answer 40-80 words. Format:
@@ -153,7 +154,12 @@ https://ravoid.com/blog/langchain-exit-raw-sdk-migration-2026
 https://ravoid.com/blog/opus-4-7-xhigh-effort-trap
 https://ravoid.com/blog/opus-4-7-vision-document-ai-collapse
 https://ravoid.com/blog/opus-4-7-tokenizer-tax
-
+https://ravoid.com/blog/mcp-server-sprawl-hidden-token-tax
+https://ravoid.com/blog/obsidian-vs-confluence-knowledge-stack-decision
+https://ravoid.com/blog/ai-agent-budget-enforcement
+https://ravoid.com/blog/massive-context-window-cost
+https://ravoid.com/blog/pgvector-scaling-issues
+https://ravoid.com/blog/aws-bedrock-vs-azure-openai-2026
 ```
 
 ---

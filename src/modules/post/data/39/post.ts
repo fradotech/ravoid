@@ -19,6 +19,6 @@ export const post: PostSource = {
   ],
   imageId: "/images/posts/mcp-server-sprawl-hidden-token-tax.webp",
   publishedAt: "2026-04-19T10:00:00.000Z",
-  featured: true,
+  featured: false,
   trendingScore: 23,
 };
