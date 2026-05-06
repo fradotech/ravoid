@@ -17,5 +17,5 @@ export const post: PostSource = {
   imageId: "/images/posts/residential-proxy-cost-scaling-trap.webp",
   publishedAt: "2026-05-06T10:00:00.000Z",
   featured: false,
-  trendingScore: 20,
+  trendingScore: 24,
 };
