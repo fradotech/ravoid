@@ -23,6 +23,6 @@ export const SiteConfig = {
     avatar: "/images/profile-picture.jpg",
     title: "Engineering Manager & Technical Architect",
     excerpt:
-      "Engineering Manager at MrScraper, having previously served as a Technical Architect at DOT Indonesia. For the past 5+ years, I've specialized in designing scalable backend systems that power hundreds of microservices and workers, consistently handling hundreds of requests per second.",
+      "5 years of experience leading dozens of engineers and architecting robust backend ecosystems to handle massive data volumes powering 100+ microservices, consistently sustaining hundreds of RPS, and optimizing databases to query millions of records in milliseconds.",
   },
 };
