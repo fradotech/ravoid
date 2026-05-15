@@ -127,6 +127,9 @@ https://ravoid.com/blog/ai-agent-budget-enforcement
 https://ravoid.com/blog/massive-context-window-cost
 https://ravoid.com/blog/pgvector-scaling-issues
 https://ravoid.com/blog/aws-bedrock-vs-azure-openai-2026
+https://ravoid.com/blog/vibe-coding-technical-debt
+https://ravoid.com/blog/residential-proxy-cost-scaling-trap
+https://ravoid.com/blog/headless-browser-scraping-architecture
 
 ```
 
