@@ -141,9 +141,9 @@ https://ravoid.com/blog/headless-browser-scraping-architecture
 
 ---
 
-## OUTPUT FORMAT (RETURN EXACTLY TWO FILES)
+## OUTPUT FORMAT (RETURN EXACTLY TWO TEXT)
 
-### FILE 1: `src/content/posts/[slug]/post.ts`
+### TEXT 1: `src/content/posts/[slug]/post.ts`
 
 ```typescript
 import type { PostSource } from "../../post.source.type";
@@ -166,7 +166,7 @@ export const post: PostSource = {
 
 > Note: leave `id` as the literal string `"[NEXT_ID]"` for the user to fill. All other fields must be fully populated.
 
-### FILE 2: `src/content/posts/[slug]/content.md`
+### TEXT 2: `src/content/posts/[slug]/content.md`
 
 ```markdown
 # [H1 title]
