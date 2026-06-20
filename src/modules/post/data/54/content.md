@@ -1,6 +1,6 @@
 # The $0.09 That Quietly Doubles Your Cloud Bill
 
-_By Framesta Fernando · Engineering Manager & Technical Architect · 11 min read · Published June 26, 2026_
+_By Framesta Fernando · Engineering Manager & Technical Architect · 11 min read · Published June 25, 2026_
 
 > **TL;DR:** Cloud egress cost is the line item nobody budgets and everybody pays. At roughly $0.09 per GB for internet egress plus $0.01 per GB each way for cross-AZ traffic, a chatty architecture leaks money at every network boundary. The fix is topological: keep traffic inside the boundaries that are free, and stop crossing the ones that bill.
 
@@ -106,4 +106,4 @@ Egress is one of several infrastructure lines that grow invisibly with usage. Th
 
 ---
 
-_Last updated: June 26, 2026_
+_Last updated: June 25, 2026_

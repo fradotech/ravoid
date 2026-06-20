@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Architecture', slug: 'architecture' },
   ],
   imageId: '/images/posts/cloud-egress-cost-trap.webp',
-  publishedAt: '2026-06-26T10:00:00.000Z',
+  publishedAt: '2026-06-25T10:00:00.000Z',
   featured: false,
   trendingScore: 23,
 };

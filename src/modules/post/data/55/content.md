@@ -1,6 +1,6 @@
 # Your 80% Margin Died the Day You Shipped AI
 
-_By Framesta Fernando · Engineering Manager & Technical Architect · 11 min read · Published June 29, 2026_
+_By Framesta Fernando · Engineering Manager & Technical Architect · 11 min read · Published June 26, 2026_
 
 > **TL;DR:** AI gross margin is the number your board has not repriced. Traditional SaaS runs near 80% gross margin because software COGS is mostly fixed. Inference makes COGS variable, scaling with every request, so a single AI feature can drop an 80% margin to 45%. Price the feature on its marginal cost, or it eats the business.
 
@@ -128,4 +128,4 @@ The pricing-side conclusion of the same shift is that access-based billing no lo
 
 ---
 
-_Last updated: June 29, 2026_
+_Last updated: June 26, 2026_

@@ -1,6 +1,6 @@
 # The LLM Gateway You Built Is Now a Liability
 
-_By Framesta Fernando · Engineering Manager & Technical Architect · 11 min read · Published July 1, 2026_
+_By Framesta Fernando · Engineering Manager & Technical Architect · 11 min read · Published June 27, 2026_
 
 > **TL;DR:** The LLM gateway build vs buy decision looks obvious early: a thin proxy you stand up in an afternoon. Then it accretes routing, caching, rate limits, key management, and audit logging until it is an unowned internal platform on someone's on-call rotation. Self-host below a few million tokens a month, but price the operational tax, not just the per-token fee.
 
@@ -117,4 +117,4 @@ The part of a gateway genuinely worth owning is the routing intelligence, not th
 
 ---
 
-_Last updated: July 1, 2026_
+_Last updated: June 27, 2026_

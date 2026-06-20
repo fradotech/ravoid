@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Token Economics', slug: 'token-economics' },
   ],
   imageId: '/images/posts/rag-vs-fine-tuning-cost.webp',
-  publishedAt: '2026-07-03T10:00:00.000Z',
+  publishedAt: '2026-06-28T10:00:00.000Z',
   featured: false,
   trendingScore: 24,
 };
