@@ -8,7 +8,7 @@ You will receive ONE input: a topic. You must auto-derive the keyword strategy, 
 
 > **Parameters (the human sets these before running):**
 > - `{CURRENT_YEAR}` — e.g. `2026`. Use this anywhere the prompt references "current year".
-> - `{NEXT_ID}` — the next numeric post id. Compute as `max(existing numeric ids) + 1`. As of this writing the highest id is `49`, so the next is `50`. **Never leave this as a placeholder in the output.**
+> - `{NEXT_ID}` — the next numeric post id. Compute as `max(existing numeric ids) + 1`. As of this writing the highest id is `100`, so the next is `101`. **Never leave this as a placeholder in the output.**
 > - `{TODAY_ISO}` — today's date as ISO 8601, e.g. `2026-06-20T10:00:00.000Z`.
 
 ---
@@ -160,6 +160,57 @@ https://ravoid.com/blog/residential-proxy-cost-scaling-trap
 https://ravoid.com/blog/headless-browser-scraping-architecture
 https://ravoid.com/blog/llm-token-bloat-trap-html-parsing
 https://ravoid.com/blog/cheap-ai-models-production-cost
+https://ravoid.com/blog/per-seat-pricing-is-dead
+https://ravoid.com/blog/datadog-cost-observability-trap
+https://ravoid.com/blog/prompt-caching-cost-savings
+https://ravoid.com/blog/token-price-drop-myth
+https://ravoid.com/blog/cloud-egress-cost-trap
+https://ravoid.com/blog/ai-gross-margin-cogs
+https://ravoid.com/blog/llm-gateway-build-vs-buy
+https://ravoid.com/blog/rag-vs-fine-tuning-cost
+https://ravoid.com/blog/postgres-for-everything-limits
+https://ravoid.com/blog/outcome-based-pricing-trap
+https://ravoid.com/blog/kubernetes-cost-2026
+https://ravoid.com/blog/batch-inference-cost-savings
+https://ravoid.com/blog/ai-agent-evaluation-cost
+https://ravoid.com/blog/multi-region-cost
+https://ravoid.com/blog/fine-tuning-deprecation
+https://ravoid.com/blog/ai-free-tier-cost
+https://ravoid.com/blog/self-hosted-llm-devops-tax
+https://ravoid.com/blog/embedding-migration-cost
+https://ravoid.com/blog/ai-platform-lock-in-cost
+https://ravoid.com/blog/spot-gpu-cost
+https://ravoid.com/blog/kv-cache-cost
+https://ravoid.com/blog/prompt-injection-rce
+https://ravoid.com/blog/cac-payback-2026
+https://ravoid.com/blog/nat-gateway-cost
+https://ravoid.com/blog/snowflake-cost
+https://ravoid.com/blog/reasoning-model-cost
+https://ravoid.com/blog/mcp-tool-poisoning
+https://ravoid.com/blog/websocket-cost-at-scale
+https://ravoid.com/blog/rule-of-40-2026
+https://ravoid.com/blog/reserved-vs-on-demand
+https://ravoid.com/blog/llm-quantization-production
+https://ravoid.com/blog/bi-dashboard-warehouse-cost
+https://ravoid.com/blog/shadow-mcp
+https://ravoid.com/blog/github-actions-cost
+https://ravoid.com/blog/net-revenue-retention-2026
+https://ravoid.com/blog/continuous-batching-vllm
+https://ravoid.com/blog/s3-storage-class-cost
+https://ravoid.com/blog/stripe-fees-2026
+https://ravoid.com/blog/multi-agent-security
+https://ravoid.com/blog/databricks-cost
+https://ravoid.com/blog/token-surge-pricing
+https://ravoid.com/blog/burn-multiple
+https://ravoid.com/blog/zombie-infrastructure-cost
+https://ravoid.com/blog/multi-tenant-llm-isolation
+https://ravoid.com/blog/ai-data-residency
+https://ravoid.com/blog/semantic-cache-llm
+https://ravoid.com/blog/self-hosted-runners-cost
+https://ravoid.com/blog/data-pipeline-cost
+https://ravoid.com/blog/usage-based-billing-build-vs-buy
+https://ravoid.com/blog/logging-cost-at-scale
+https://ravoid.com/blog/long-context-inference-cost
 ```
 
 ---
