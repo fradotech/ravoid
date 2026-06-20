@@ -7,6 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "gen:hero": "node scripts/generate-hero.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },
