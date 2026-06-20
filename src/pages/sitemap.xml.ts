@@ -1,6 +1,7 @@
 import type { APIContext } from 'astro';
 import { SiteConfig } from '@/app/config/site.config';
 import { POSTS } from '@/modules/post/post.mapper';
+import { isPublished } from '@/modules/post/post.api';
 import { getAllTags } from '@/modules/tag/tag.api';
 
 const site = SiteConfig.siteUrl;
@@ -26,7 +27,7 @@ export async function GET(_context: APIContext) {
     { loc: `${site}/terms`, changefreq: 'yearly', priority: '0.2' },
   ];
 
-  const postPages: SitemapEntry[] = POSTS.map((post) => ({
+  const postPages: SitemapEntry[] = POSTS.filter(isPublished).map((post) => ({
     loc: `${site}/blog/${post.slug}`,
     lastmod: post.updatedAt?.split('T')[0] ?? post.publishedAt?.split('T')[0],
     changefreq: 'weekly',

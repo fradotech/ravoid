@@ -20,25 +20,30 @@ import {
   renderMarkdown,
 } from "@/infrastructure/utils/markdown.util";
 import {
-  getAllPosts,
+  getBuildablePosts,
   getFeaturedPost,
   getRelatedPosts,
   getTrendingPosts,
   getRecentPosts,
+  isPublished,
 } from "@/modules/post/post.api";
 import type { Post } from "@/modules/post/post.type";
 import AuthorCard from "@/infrastructure/author/AuthorCard.astro";
 import { SiteConfig } from "@/app/config/site.config";
 
 export async function getStaticPaths() {
-  const { data } = await getAllPosts({ pageSize: 10000 });
-  return data.map((post) => ({
+  const posts = await getBuildablePosts();
+  return posts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
   }));
 }
 
 const { post } = Astro.props as { post: Post };
+
+// Scheduled (future-dated) posts still get a built page so links never 404,
+// but they stay out of search results until they are live.
+const scheduled = !isPublished(post);
 
 const toc = extractToc(post.content);
 const faqs = extractFAQs(post.content);
@@ -130,7 +135,7 @@ const faqPageJsonLd =
   ogImage={post.seo.ogImage}
   ogImageAlt={post.title}
   canonicalUrl={post.seo.canonicalUrl}
-  noIndex={post.seo.noIndex}
+  noIndex={post.seo.noIndex || scheduled}
   type="article"
   publishedAt={post.publishedAt}
   updatedAt={post.updatedAt}
