@@ -79,10 +79,10 @@
     background-size: 100% 620px;
     background-image:
       radial-gradient(
-        ellipse 2200px 760px at 10% -120px,
-        rgba(99, 102, 241, 0.26) 10%,
-        rgba(47, 84, 218, 0.12) 58%,
-        transparent 92%
+        ellipse 2200px 760px at 20% 30px,
+        rgba(36, 53, 179, 0.289) 12%,
+        rgba(164, 47, 218, 0.053) 28%,
+        transparent 72%
       );
   }
 }
