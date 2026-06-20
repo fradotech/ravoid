@@ -109,52 +109,73 @@ async function generateOpenAI(prompt) {
   return Buffer.from(json.data[0].b64_json, 'base64');
 }
 
-// Center-crop to the 1200x630 aspect ratio, then resize, then encode webp.
-async function toWebp(pngBuf, outPath) {
+// Pollinations: free, no API key, Flux-backed. Returns a sized image directly.
+async function generatePollinations(prompt) {
+  console.log('Provider: Pollinations (Flux, free)');
+  const seed = Math.floor(Math.random() * 1e9);
+  const url =
+    `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}` +
+    `?width=${TARGET_W}&height=${TARGET_H}&model=flux&nologo=true&seed=${seed}`;
+
+  // Pollinations renders on demand and can take 10-40s; allow a long timeout.
+  const res = await fetch(url, { signal: AbortSignal.timeout(120000) });
+  if (!res.ok) throw new Error(`Pollinations ${res.status}: ${await res.text()}`);
+  return Buffer.from(await res.arrayBuffer());
+}
+
+// Encode to webp. Pollinations already returns 1200x630, so skip the crop and
+// just resize/encode; provider images of other sizes get center-cropped first.
+async function toWebp(imgBuf, outPath, skipCrop = false) {
   const tmpDir = join(ROOT, 'scripts/.tmp');
   await mkdir(tmpDir, { recursive: true });
-  const tmpPng = join(tmpDir, `${slug}.png`);
-  await writeFile(tmpPng, pngBuf);
+  const tmpIn = join(tmpDir, `${slug}.in`);
+  await writeFile(tmpIn, imgBuf);
 
-  const { width, height } = pngSize(pngBuf);
-  let cropW = width;
-  let cropH = Math.round(width / RATIO);
-  if (cropH > height) {
-    cropH = height;
-    cropW = Math.round(height * RATIO);
+  const args = ['-q', '90'];
+  if (!skipCrop) {
+    const { width, height } = pngSize(imgBuf);
+    let cropW = width;
+    let cropH = Math.round(width / RATIO);
+    if (cropH > height) {
+      cropH = height;
+      cropW = Math.round(height * RATIO);
+    }
+    const x = Math.floor((width - cropW) / 2);
+    const y = Math.floor((height - cropH) / 2);
+    args.push('-crop', String(x), String(y), String(cropW), String(cropH));
   }
-  const x = Math.floor((width - cropW) / 2);
-  const y = Math.floor((height - cropH) / 2);
+  args.push('-resize', String(TARGET_W), String(TARGET_H), tmpIn, '-o', outPath);
 
-  await execFileP('cwebp', [
-    '-q', '90',
-    '-crop', String(x), String(y), String(cropW), String(cropH),
-    '-resize', String(TARGET_W), String(TARGET_H),
-    tmpPng, '-o', outPath,
-  ]);
-
+  await execFileP('cwebp', args);
   await rm(tmpDir, { recursive: true, force: true });
 }
 
 async function main() {
   const prompt = await buildPrompt();
+  const provider = (process.env.IMAGE_PROVIDER || '').toLowerCase();
   let pngBuf;
+  let skipCrop = false;
 
-  if (process.env.REPLICATE_API_TOKEN) {
+  if (provider === 'pollinations') {
+    pngBuf = await generatePollinations(prompt);
+    skipCrop = true; // already 1200x630
+  } else if (provider === 'replicate' || (!provider && process.env.REPLICATE_API_TOKEN)) {
     pngBuf = await generateReplicate(prompt);
-  } else if (process.env.OPENAI_API_KEY) {
+  } else if (provider === 'openai' || (!provider && process.env.OPENAI_API_KEY)) {
     pngBuf = await generateOpenAI(prompt);
+  } else if (!provider) {
+    // No key configured: fall back to the free, no-key provider.
+    pngBuf = await generatePollinations(prompt);
+    skipCrop = true;
   } else {
-    console.error(
-      'No API key found. Set REPLICATE_API_TOKEN (recommended) or OPENAI_API_KEY and retry.',
-    );
+    console.error(`Unknown IMAGE_PROVIDER "${provider}". Use pollinations, replicate, or openai.`);
     process.exit(1);
   }
 
   const outDir = join(ROOT, 'public/images/posts');
   await mkdir(outDir, { recursive: true });
   const outPath = join(outDir, `${slug}.webp`);
-  await toWebp(pngBuf, outPath);
+  await toWebp(pngBuf, outPath, skipCrop);
   console.log(`✓ Hero written: public/images/posts/${slug}.webp (1200x630)`);
 }
 
