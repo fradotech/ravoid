@@ -1,5 +1,5 @@
 ---
-export const prerender = false;
+export const prerender = true;
 
 import BaseLayout from "@/infrastructure/components/layout/BaseLayout.astro";
 import Breadcrumb from "@/infrastructure/components/seo/Breadcrumb.astro";
@@ -20,26 +20,25 @@ import {
   renderMarkdown,
 } from "@/infrastructure/utils/markdown.util";
 import {
+  getAllPosts,
   getFeaturedPost,
-  getPostBySlug,
   getRelatedPosts,
   getTrendingPosts,
   getRecentPosts,
 } from "@/modules/post/post.api";
+import type { Post } from "@/modules/post/post.type";
 import AuthorCard from "@/infrastructure/author/AuthorCard.astro";
 import { SiteConfig } from "@/app/config/site.config";
 
-const { slug } = Astro.params;
-
-if (!slug) {
-  return Astro.redirect("/404");
+export async function getStaticPaths() {
+  const { data } = await getAllPosts({ pageSize: 10000 });
+  return data.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
 }
 
-const post = await getPostBySlug(slug);
-
-if (!post) {
-  return Astro.redirect("/404");
-}
+const { post } = Astro.props as { post: Post };
 
 const toc = extractToc(post.content);
 const faqs = extractFAQs(post.content);

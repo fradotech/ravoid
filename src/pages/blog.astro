@@ -15,6 +15,12 @@ const search = Astro.url.searchParams.get('search') || undefined;
 const tag = Astro.url.searchParams.get('tag') || undefined;
 const page = Number(Astro.url.searchParams.get('page')) || 1;
 
+// Content is static; let Vercel's CDN cache rendered listings and revalidate in the background.
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+);
+
 const [postsResult, tags] = await Promise.all([
   getAllPosts({ page, search, filters: tag ? { tag } : undefined }),
   getAllTags(),

@@ -23,6 +23,13 @@ if (!tag) {
 }
 
 const page = Number(Astro.url.searchParams.get('page')) || 1;
+
+// Content is static; let Vercel's CDN cache rendered tag pages and revalidate in the background.
+Astro.response.headers.set(
+  'Cache-Control',
+  'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400',
+);
+
 const postsResult = await getAllPosts({ page, filters: { tag: slug } });
 ---
 
