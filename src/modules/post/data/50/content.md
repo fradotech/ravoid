@@ -1,6 +1,6 @@
 # Per-Seat Pricing Is Dead. Your Margins Already Know
 
-_By Framesta Fernando · Engineering Manager & Technical Architect · 12 min read · Published June 20, 2026_
+_By Framesta Fernando · Engineering Manager & Technical Architect · 12 min read · Published June 18, 2026_
 
 > **TL;DR:** Per-seat pricing is dead because AI broke the link between headcount and value. When an agent does the work of five analysts, your customer needs fewer seats while getting more output, so seat-based SaaS now caps your revenue at the exact moment you deliver the most. Price the work, not the login.
 
@@ -140,4 +140,4 @@ If you are rebuilding pricing around metered value, the COGS side is where most 
 
 ---
 
-_Last updated: June 20, 2026_
+_Last updated: June 18, 2026_

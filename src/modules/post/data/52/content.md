@@ -1,6 +1,6 @@
 # Prompt Caching: The 90% Bill Cut You Never Turned On
 
-_By Framesta Fernando · Engineering Manager & Technical Architect · 12 min read · Published June 20, 2026_
+_By Framesta Fernando · Engineering Manager & Technical Architect · 12 min read · Published June 22, 2026_
 
 > **TL;DR:** Prompt caching cuts LLM input token cost by up to 90% on Anthropic and 50% on OpenAI by reusing the model's processed copy of a stable prompt prefix. Most teams ship without it. The catch is mechanical: a cache hit needs a byte-identical prefix, so stable content must come first and anything variable must come last.
 
@@ -145,4 +145,4 @@ Caching fixes the input side of the bill. For the full picture of where AI margi
 
 ---
 
-_Last updated: June 20, 2026_
+_Last updated: June 22, 2026_

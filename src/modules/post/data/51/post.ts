@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Build vs Buy', slug: 'build-vs-buy' },
   ],
   imageId: '/images/posts/datadog-cost-observability-trap.webp',
-  publishedAt: '2026-06-21T01:00:00.000Z',
+  publishedAt: '2026-06-20T01:00:00.000Z',
   featured: false,
   trendingScore: 24,
 };

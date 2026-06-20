@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Build vs Buy', slug: 'build-vs-buy' },
   ],
   imageId: '/images/posts/per-seat-pricing-is-dead.webp',
-  publishedAt: '2026-06-20T00:00:00.000Z',
+  publishedAt: '2026-06-18T00:00:00.000Z',
   featured: false,
   trendingScore: 28,
 };
