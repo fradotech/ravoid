@@ -31,9 +31,15 @@ Astro.response.headers.set(
 );
 
 const postsResult = await getAllPosts({ page, filters: { tag: slug } });
+
+// Self-referencing canonical so paginated tag pages stay indexable.
+const canonicalUrl = new URL(
+  page > 1 ? `${Path.tags.detail(slug)}?page=${page}` : Path.tags.detail(slug),
+  Astro.site,
+).href;
 ---
 
-<BaseLayout title={tag.name} description={`Articles tagged with ${tag.name}`}>
+<BaseLayout title={tag.name} description={`Articles tagged with ${tag.name}`} canonicalUrl={canonicalUrl}>
   <div class="max-w-6xl mx-auto px-4 py-8">
     <Breadcrumb items={[
       { label: 'Tags', href: Path.tags.index },

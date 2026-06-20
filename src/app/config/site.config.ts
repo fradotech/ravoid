@@ -5,7 +5,13 @@ export const SiteConfig = {
     "Practical breakdowns of SaaS pricing models, tool comparisons, and infrastructure decisions",
   siteUrl: "https://ravoid.com",
   language: "en",
+  ogLocale: "en_US",
+  twitterHandle: "@frado_id",
   postsPerPage: 9,
+  ogImage: {
+    width: 1200,
+    height: 630,
+  },
   socials: {
     twitter: "https://x.com/frado_id",
     github: "https://github.com/fradotech",
@@ -15,7 +21,7 @@ export const SiteConfig = {
     type: "Organization" as const,
     name: "Ravoid",
     url: "https://ravoid.com",
-    logo: "https://ravoid.com/favicon.ico",
+    logo: "https://ravoid.com/favicon-512.webp",
   },
   author: {
     name: "Framesta Fernando",

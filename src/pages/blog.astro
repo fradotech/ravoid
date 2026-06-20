@@ -28,13 +28,26 @@ const [postsResult, tags] = await Promise.all([
 
 const hasSearch = !!search;
 const pageTitle = hasSearch ? `Search: ${search}` : 'Blog';
+
+// Self-referencing canonicals so deep paginated pages stay indexable.
+// Tag-filtered views consolidate to their dedicated /tags/[slug] archive.
+let canonicalUrl: string | null | undefined;
+if (hasSearch) {
+  canonicalUrl = null;
+} else if (tag) {
+  canonicalUrl = new URL(Path.tags.detail(tag), Astro.site).href;
+} else if (page > 1) {
+  canonicalUrl = new URL(`${Path.blog.index}?page=${page}`, Astro.site).href;
+} else {
+  canonicalUrl = undefined;
+}
 ---
 
 <BaseLayout
   title={pageTitle}
   description="Browse all SaaS and startup articles"
   noIndex={hasSearch}
-  canonicalUrl={hasSearch ? null : undefined}
+  canonicalUrl={canonicalUrl}
 >
   <div class="max-w-6xl mx-auto px-4 py-8">
     <div class="mb-8">

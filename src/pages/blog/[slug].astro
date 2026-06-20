@@ -66,20 +66,26 @@ const dateModified =
 
 const articleSection = post.tags[0]?.name ?? "Blog";
 const keywords = post.tags.map((t) => t.name).join(", ");
+const tagNames = post.tags.map((t) => t.name);
+const wordCount = post.content.trim().split(/\s+/).filter(Boolean).length;
 
 const blogPostingJsonLd = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   headline: post.title,
   description,
+  inLanguage: SiteConfig.language,
+  isAccessibleForFree: true,
+  wordCount,
   image: {
     "@type": "ImageObject",
     url: post.heroImage,
-    width: 1200,
-    height: 630,
+    width: SiteConfig.ogImage.width,
+    height: SiteConfig.ogImage.height,
   },
   author: {
     "@type": "Person",
+    "@id": `${SiteConfig.author.url}#person`,
     name: SiteConfig.author.name,
     url: SiteConfig.author.url,
   },
@@ -122,11 +128,14 @@ const faqPageJsonLd =
   title={post.seo.metaTitle}
   description={post.seo.metaDescription}
   ogImage={post.seo.ogImage}
+  ogImageAlt={post.title}
   canonicalUrl={post.seo.canonicalUrl}
   noIndex={post.seo.noIndex}
   type="article"
   publishedAt={post.publishedAt}
   updatedAt={post.updatedAt}
+  section={articleSection}
+  tags={tagNames}
 >
   <script
     slot="head"
