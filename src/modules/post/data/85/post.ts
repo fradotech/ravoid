@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Cost Analysis', slug: 'cost-analysis' },
   ],
   imageId: '/images/posts/continuous-batching-vllm.webp',
-  publishedAt: '2026-07-26T02:00:00.000Z',
+  publishedAt: '2026-07-26T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

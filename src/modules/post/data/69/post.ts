@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Performance', slug: 'performance' },
   ],
   imageId: '/images/posts/spot-gpu-cost.webp',
-  publishedAt: '2026-07-10T10:00:00.000Z',
+  publishedAt: '2026-07-10T13:00:00.000Z',
   featured: false,
   trendingScore: 22,
 };

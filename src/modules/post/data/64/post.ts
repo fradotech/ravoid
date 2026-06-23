@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Production', slug: 'production' },
   ],
   imageId: '/images/posts/fine-tuning-deprecation.webp',
-  publishedAt: '2026-07-05T10:00:00.000Z',
+  publishedAt: '2026-07-05T13:00:00.000Z',
   featured: false,
   trendingScore: 22,
 };

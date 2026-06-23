@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Performance', slug: 'performance' },
   ],
   imageId: '/images/posts/prompt-caching-cost-savings.webp',
-  publishedAt: '2026-06-22T02:00:00.000Z',
+  publishedAt: '2026-06-22T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

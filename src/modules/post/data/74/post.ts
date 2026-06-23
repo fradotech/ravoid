@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Observability', slug: 'observability' },
   ],
   imageId: '/images/posts/snowflake-cost.webp',
-  publishedAt: '2026-07-15T02:00:00.000Z',
+  publishedAt: '2026-07-15T13:00:00.000Z',
   featured: false,
   trendingScore: 26,
 };

@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Engineering Leadership', slug: 'engineering-leadership' },
   ],
   imageId: '/images/posts/shadow-mcp.webp',
-  publishedAt: '2026-07-23T02:00:00.000Z',
+  publishedAt: '2026-07-23T13:00:00.000Z',
   featured: false,
   trendingScore: 27,
 };

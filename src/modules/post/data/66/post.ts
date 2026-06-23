@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Production', slug: 'production' },
   ],
   imageId: '/images/posts/self-hosted-llm-devops-tax.webp',
-  publishedAt: '2026-07-07T10:00:00.000Z',
+  publishedAt: '2026-07-07T13:00:00.000Z',
   featured: false,
   trendingScore: 23,
 };

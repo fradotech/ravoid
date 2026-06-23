@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Multi-Tenant', slug: 'multi-tenant' },
   ],
   imageId: '/images/posts/ai-data-residency.webp',
-  publishedAt: '2026-08-04T02:00:00.000Z',
+  publishedAt: '2026-08-04T13:00:00.000Z',
   featured: false,
   trendingScore: 26,
 };

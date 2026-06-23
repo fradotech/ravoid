@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Multi-Tenant', slug: 'multi-tenant' },
   ],
   imageId: '/images/posts/websocket-cost-at-scale.webp',
-  publishedAt: '2026-07-18T02:00:00.000Z',
+  publishedAt: '2026-07-18T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

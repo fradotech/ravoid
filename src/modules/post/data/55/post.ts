@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Engineering Leadership', slug: 'engineering-leadership' },
   ],
   imageId: '/images/posts/ai-gross-margin-cogs.webp',
-  publishedAt: '2026-06-26T10:00:00.000Z',
+  publishedAt: '2026-06-26T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

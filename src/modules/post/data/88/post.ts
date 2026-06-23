@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Architecture', slug: 'architecture' },
   ],
   imageId: '/images/posts/multi-agent-security.webp',
-  publishedAt: '2026-07-29T02:00:00.000Z',
+  publishedAt: '2026-07-29T13:00:00.000Z',
   featured: false,
   trendingScore: 27,
 };

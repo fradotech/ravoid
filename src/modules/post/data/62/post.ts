@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'LLM', slug: 'llm' },
   ],
   imageId: '/images/posts/ai-agent-evaluation-cost.webp',
-  publishedAt: '2026-07-03T10:00:00.000Z',
+  publishedAt: '2026-07-03T13:00:00.000Z',
   featured: false,
   trendingScore: 24,
 };

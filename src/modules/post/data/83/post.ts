@@ -15,7 +15,7 @@ export const post: PostSource = {
     { name: 'Performance', slug: 'performance' },
   ],
   imageId: '/images/posts/github-actions-cost.webp',
-  publishedAt: '2026-07-24T02:00:00.000Z',
+  publishedAt: '2026-07-24T13:00:00.000Z',
   featured: false,
   trendingScore: 24,
 };

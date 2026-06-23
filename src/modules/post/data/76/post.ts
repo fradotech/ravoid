@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Tooling', slug: 'tooling' },
   ],
   imageId: '/images/posts/mcp-tool-poisoning.webp',
-  publishedAt: '2026-07-17T02:00:00.000Z',
+  publishedAt: '2026-07-17T13:00:00.000Z',
   featured: false,
   trendingScore: 27,
 };

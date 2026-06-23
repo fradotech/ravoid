@@ -15,7 +15,7 @@ export const post: PostSource = {
     { name: 'Pricing', slug: 'pricing' },
   ],
   imageId: '/images/posts/burn-multiple.webp',
-  publishedAt: '2026-08-01T02:00:00.000Z',
+  publishedAt: '2026-08-01T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

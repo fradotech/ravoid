@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Observability', slug: 'observability' },
   ],
   imageId: '/images/posts/outcome-based-pricing-trap.webp',
-  publishedAt: '2026-06-30T10:00:00.000Z',
+  publishedAt: '2026-06-30T13:00:00.000Z',
   featured: false,
   trendingScore: 23,
 };

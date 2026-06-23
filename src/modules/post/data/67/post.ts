@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Migration', slug: 'migration' },
   ],
   imageId: '/images/posts/embedding-migration-cost.webp',
-  publishedAt: '2026-07-08T10:00:00.000Z',
+  publishedAt: '2026-07-08T13:00:00.000Z',
   featured: false,
   trendingScore: 22,
 };

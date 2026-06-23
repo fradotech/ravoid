@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Vector DB', slug: 'vector-db' },
   ],
   imageId: '/images/posts/postgres-for-everything-limits.webp',
-  publishedAt: '2026-06-29T10:00:00.000Z',
+  publishedAt: '2026-06-29T13:00:00.000Z',
   featured: false,
   trendingScore: 23,
 };

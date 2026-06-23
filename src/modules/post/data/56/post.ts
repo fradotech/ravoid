@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Architecture', slug: 'architecture' },
   ],
   imageId: '/images/posts/llm-gateway-build-vs-buy.webp',
-  publishedAt: '2026-06-27T10:00:00.000Z',
+  publishedAt: '2026-06-27T13:00:00.000Z',
   featured: false,
   trendingScore: 22,
 };

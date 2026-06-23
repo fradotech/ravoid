@@ -15,7 +15,7 @@ export const post: PostSource = {
     { name: 'Build vs Buy', slug: 'build-vs-buy' },
   ],
   imageId: '/images/posts/net-revenue-retention-2026.webp',
-  publishedAt: '2026-07-25T02:00:00.000Z',
+  publishedAt: '2026-07-25T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

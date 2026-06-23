@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Frontier Models', slug: 'frontier-models' },
   ],
   imageId: '/images/posts/token-surge-pricing.webp',
-  publishedAt: '2026-07-31T02:00:00.000Z',
+  publishedAt: '2026-07-31T13:00:00.000Z',
   featured: false,
   trendingScore: 28,
 };

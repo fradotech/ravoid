@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Architecture', slug: 'architecture' },
   ],
   imageId: '/images/posts/kubernetes-cost-2026.webp',
-  publishedAt: '2026-07-01T10:00:00.000Z',
+  publishedAt: '2026-07-01T13:00:00.000Z',
   featured: false,
   trendingScore: 23,
 };

@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'OpenAI', slug: 'openai' },
   ],
   imageId: '/images/posts/batch-inference-cost-savings.webp',
-  publishedAt: '2026-07-02T10:00:00.000Z',
+  publishedAt: '2026-07-02T13:00:00.000Z',
   featured: false,
   trendingScore: 23,
 };

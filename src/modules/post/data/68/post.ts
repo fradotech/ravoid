@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Architecture', slug: 'architecture' },
   ],
   imageId: '/images/posts/ai-platform-lock-in-cost.webp',
-  publishedAt: '2026-07-09T10:00:00.000Z',
+  publishedAt: '2026-07-09T13:00:00.000Z',
   featured: false,
   trendingScore: 23,
 };

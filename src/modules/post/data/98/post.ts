@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Architecture', slug: 'architecture' },
   ],
   imageId: '/images/posts/usage-based-billing-build-vs-buy.webp',
-  publishedAt: '2026-08-08T02:00:00.000Z',
+  publishedAt: '2026-08-08T13:00:00.000Z',
   featured: false,
   trendingScore: 26,
 };

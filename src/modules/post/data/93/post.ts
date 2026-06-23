@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Scaling', slug: 'scaling' },
   ],
   imageId: '/images/posts/multi-tenant-llm-isolation.webp',
-  publishedAt: '2026-08-03T02:00:00.000Z',
+  publishedAt: '2026-08-03T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

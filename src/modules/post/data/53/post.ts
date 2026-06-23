@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Production', slug: 'production' },
   ],
   imageId: '/images/posts/token-price-drop-myth.webp',
-  publishedAt: '2026-06-24T10:00:00.000Z',
+  publishedAt: '2026-06-24T13:00:00.000Z',
   featured: false,
   trendingScore: 27,
 };

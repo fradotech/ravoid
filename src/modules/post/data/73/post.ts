@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Scaling', slug: 'scaling' },
   ],
   imageId: '/images/posts/nat-gateway-cost.webp',
-  publishedAt: '2026-07-14T02:00:00.000Z',
+  publishedAt: '2026-07-14T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };

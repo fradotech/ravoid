@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Observability', slug: 'observability' },
   ],
   imageId: '/images/posts/databricks-cost.webp',
-  publishedAt: '2026-07-30T02:00:00.000Z',
+  publishedAt: '2026-07-30T13:00:00.000Z',
   featured: false,
   trendingScore: 24,
 };

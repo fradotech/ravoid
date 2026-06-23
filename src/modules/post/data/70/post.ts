@@ -17,7 +17,7 @@ export const post: PostSource = {
     { name: 'Scaling', slug: 'scaling' },
   ],
   imageId: '/images/posts/kv-cache-cost.webp',
-  publishedAt: '2026-07-11T02:00:00.000Z',
+  publishedAt: '2026-07-11T13:00:00.000Z',
   featured: false,
   trendingScore: 27,
 };

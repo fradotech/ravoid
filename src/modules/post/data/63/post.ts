@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Performance', slug: 'performance' },
   ],
   imageId: '/images/posts/multi-region-cost.webp',
-  publishedAt: '2026-07-04T10:00:00.000Z',
+  publishedAt: '2026-07-04T13:00:00.000Z',
   featured: false,
   trendingScore: 22,
 };

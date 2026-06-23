@@ -15,7 +15,7 @@ export const post: PostSource = {
     { name: 'Build vs Buy', slug: 'build-vs-buy' },
   ],
   imageId: '/images/posts/reserved-vs-on-demand.webp',
-  publishedAt: '2026-07-20T02:00:00.000Z',
+  publishedAt: '2026-07-20T13:00:00.000Z',
   featured: false,
   trendingScore: 24,
 };

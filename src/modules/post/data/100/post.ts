@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Performance', slug: 'performance' },
   ],
   imageId: '/images/posts/long-context-inference-cost.webp',
-  publishedAt: '2026-08-10T02:00:00.000Z',
+  publishedAt: '2026-08-10T13:00:00.000Z',
   featured: false,
   trendingScore: 28,
 };

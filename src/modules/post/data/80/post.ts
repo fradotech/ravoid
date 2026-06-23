@@ -16,7 +16,7 @@ export const post: PostSource = {
     { name: 'Production', slug: 'production' },
   ],
   imageId: '/images/posts/llm-quantization-production.webp',
-  publishedAt: '2026-07-21T02:00:00.000Z',
+  publishedAt: '2026-07-21T13:00:00.000Z',
   featured: false,
   trendingScore: 25,
 };
