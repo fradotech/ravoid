@@ -1,5 +1,5 @@
 ---
-export const prerender = true;
+export const prerender = false;
 
 import BaseLayout from "@/infrastructure/components/layout/BaseLayout.astro";
 import WebSiteSchema from "@/infrastructure/components/seo/WebSiteSchema.astro";
@@ -14,6 +14,11 @@ import { SiteConfig } from "@/app/config/site.config";
 import { getHomeData } from "@/modules/home/home.api";
 import { getAllTags } from "@/modules/tag/tag.api";
 import type { Tag } from "@/modules/post/post.type";
+
+Astro.response.headers.set(
+  "Cache-Control",
+  "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
+);
 
 const { featured, trending, latest } = await getHomeData();
 const tags = await getAllTags();
